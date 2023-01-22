@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>
-            Laravel App
+            Project Bord
         </title>
         @vite('resources/js/app.js')
 
@@ -14,9 +14,11 @@
     <body class="w-full h-full bg-gray-100">
         <div class="w-4/5 mx-auto pb-10">
             <div class="text-center pt-20">
-                <h1 class="text-3xl text-gray-700">
+                <h1 class="text-4xl text-gray-700">
                     All pages of: <br>
-                    <b>{{ Auth::user()->name }}</b>
+                    <div class="mt-2">
+                        <b>{{ Auth::user()->name }}</b>
+                    </div>
                 </h1>
                 <hr class="border border-1 border-gray-300 mt-10">
             </div>
@@ -55,7 +57,7 @@
                 <div class="w-11/12 mx-auto pb-0">
                     <h2 class="text-gray-900 text-2xl font-bold pt-6 pb-0 sm:pt-0 hover:text-gray-700 transition-all">
                         <a href="{{ route('bord.show', $page->id) }}">
-                            {{ $page->name }}
+                            {{ $page->id }}, {{ $page->name }}
                         </a>
                     </h2>
                     <p>

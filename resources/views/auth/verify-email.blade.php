@@ -1,4 +1,10 @@
 @vite('resources/js/app.js')
+
+<head>
+    <title>
+        Verify email
+    </title>
+</head>
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
