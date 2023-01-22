@@ -15,13 +15,16 @@
 
     <body class="overflow-y-hidden text-center font-bold">
 
-        <h1 class="h-max leading-10 text-2xl pt-8">
-            {{ $page->name }}
-        </h1>
+        <div class="text-center pt-10">
+            <h1 class="text-3xl text-gray-700">
+                <b>{{ $page->name }}</b>
+            </h1>
+            <hr class="border border-1 border-gray-300 mt-10">
+        </div>
 
         <div class="h-full">
-            <div class=" absolute flex flex-row top-1/3">
-                <div class="w-max h-max flex flex-col p-2">
+            <div class=" absolute flex flex-row top-1/3 justify-around" id="content-el">
+                <div class="w-max h-max flex flex-col p-2 none">
                     {!! $content = $page->content !!}
                 </div>
 
