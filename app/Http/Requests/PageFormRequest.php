@@ -24,13 +24,13 @@ class PageFormRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            // 'name' => 'required|max:30|unique:pages,name,' . $this->id,
-            // 'content' => 'required',
+            'name' => 'required|max:30|unique:pages,name,' . $this->id,
+            'content' => 'required',
             'image_path' => ['mimes:png,jpg,jpeg', 'max:5048'],
         ];
 
         if (in_array($this->method(), ['POST'])) {
-            $rules['image'] = ['required', 'mimes:jpg,png,jpeg', 'max:5048'];
+            $rules['image'] = ['mimes:jpg,png,jpeg', 'max:5048'];
         }
 
         return $rules;

@@ -41,6 +41,8 @@
                 <form action="{{ route('bord.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
+                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+
                     <input type="text" name="name" placeholder="Name..."
                         class="bg-white block rounded-lg w-full h-20 text-2xl outline-none border-none m-4 drop-shadow-xl">
 

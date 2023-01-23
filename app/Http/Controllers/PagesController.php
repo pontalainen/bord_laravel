@@ -104,16 +104,15 @@ class PagesController extends Controller
     public function update(PageFormRequest $request, $id)
     {
 
-        dd("test");
-        // $request->validated();
+        $request->validated();
 
-        // Page::where('id', $id)->update($request->except(
-        //     [
-        //         '_token', '_method'
-        //     ]
-        // ));
+        Page::where('id', $id)->update($request->except(
+            [
+                '_token', '_method'
+            ]
+        ));
 
-        // return redirect(route('bord.index'));
+        return redirect(route('bord.index'));
     }
 
     /**
@@ -146,7 +145,7 @@ class PagesController extends Controller
         ]);
     }
 
-    public function update_cards(PageFormRequest $request, $id)
+    public function update_cards(Request $request, $id)
     {
         DB::table('pages')->where('id', $id)->update([
             'primary_card' => $request->primary_card,
@@ -154,6 +153,6 @@ class PagesController extends Controller
         ]);
 
         return redirect(route('bord.cards'))
-            ->with('message', 'Cards for page' . " " . $id . " " . 'has been updated');
+            ->with('message', 'Cards for page' . " \"" . $request->name . "\" " . 'has been updated');
     }
 }

@@ -54,11 +54,13 @@
                     </h2>
 
 
-                    <input type="text" name="primary_card" value="{{ $page->primary_card }}"
+                    <input type="hidden" name="name" value="{{ $page->name }}">
+
+                    <input type="text" name="primary_card" value="{{ $page->primary_card }}" placeholder="Card id..."
                         class="bg-white block rounded-lg w-full h-20 text-2xl outline-none border-none m-4 drop-shadow-xl">
-                    {{-- class="bg-white pt-10 rounded-lg drop-shadow-2xl sm:basis-3/4 basis-full sm:mr-8 pb-10
-                    sm:pb-0"> --}}
+
                     <input type="text" name="secondary_card" value="{{ $page->secondary_card }}"
+                        placeholder="Card id..."
                         class="bg-white block rounded-lg w-full h-20 text-2xl outline-none border-none m-4 drop-shadow-xl">
 
                     <div class="float-right">
