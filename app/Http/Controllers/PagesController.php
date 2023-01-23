@@ -59,6 +59,7 @@ class PagesController extends Controller
         $request->validated();
 
         Page::create([
+            'admin_id' => $request->admin_id,
             'user_id' => $request->user_id,
             'name' => $request->name,
             'content' => $request->content,

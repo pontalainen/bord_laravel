@@ -19,6 +19,15 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
+            <div class="block mt-4 mb-4">
+                <label for="remember_me" class="inline-flex items-center">
+                    <input id="remember_me" type="checkbox"
+                        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        name="is_admin">
+                    <span class="ml-2 text-sm text-gray-600">{{ __('Admin') }}</span>
+                </label>
+            </div>
+
             <!-- Name -->
             <div>
                 <x-label for="name" :value="__('Name')" />
@@ -50,6 +59,7 @@
                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password"
                     name="password_confirmation" required />
             </div>
+
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
