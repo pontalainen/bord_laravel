@@ -9,6 +9,7 @@
     </head>
 
     <body class="w-full h-full bg-gray-100">
+        @if (Auth::user()->is_admin === "true")
         <div class="w-4/5 mx-auto">
             <div class="text-center pt-20">
                 <h1 class="text-4xl text-gray-700">
@@ -68,6 +69,33 @@
                     </div>
                 </form>
             </div>
+            @else
+
+            <div class="mx-auto w-4/5 pb-0 pt-2">
+                <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2 mt-24">
+                </div>
+                <div class="border border-t-1 border-blue-400 rounded-b bg-blue-100 px-4 py-10 text-center text-xl">
+                    <p>Only administrators can enter this page, sorry!</p>
+                </div>
+            </div>
+
+            <div class="py-10 sm:py-20">
+                <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
+                hover:bg-blue-400 m-auto absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-3/4 w-52 text-center"
+                    href="{{ route('dashboard') }}">
+                    Login admin
+                </a>
+            </div>
+
+            <div class="py-10 sm:py-20">
+                <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
+                hover:bg-blue-400 m-auto absolute left-1/2 top-3/6 -translate-x-1/2 -translate-y-3/4 w-52 text-center"
+                    href="{{ route('bord.index') }}">
+                    Go to bord
+                </a>
+            </div>
+
+            @endif
     </body>
 
 </html>

@@ -40,6 +40,44 @@ class RegisteredUserController extends Controller
         ]);
 
         $user = User::create([
+            'is_admin' => $request->is_admin,
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        event(new Registered($user));
+
+        Auth::login($user);
+
+        return redirect(RouteServiceProvider::HOME);
+    }
+
+    public function create_user()
+    {
+        return view('auth.register_user');
+    }
+
+    /**
+     * Handle an incoming registration request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     *
+     * @throws \Illuminate\Validation\ValidationException
+     */
+
+    public function store_user(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
+
+        $user = User::create([
+            'group_id' => $request->group_id,
+            'is_admin' => $request->is_admin,
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),

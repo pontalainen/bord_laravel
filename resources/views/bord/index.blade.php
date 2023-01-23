@@ -23,6 +23,7 @@
                 <hr class="border border-1 border-gray-300 mt-10">
             </div>
 
+            @if (Auth::user()->is_admin === "true")
             <div class="py-10 px-5 absolute top-2 left-2">
                 <a class="primary-btn inline text-base sm:text-xl bg-blue-400 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-300"
                     href="{{ route('bord.create') }}">
@@ -36,6 +37,7 @@
                     Edit cards
                 </a>
             </div>
+            @endif
 
         </div>
 
@@ -51,7 +53,7 @@
         @endif
 
         @foreach($pages as $page)
-        @if (Auth::id() === $page->user->id)
+        @if (Auth::id() === $page->user_id OR Auth::user()->group_id === $page->user_id)
         <div class="w-4/5 mx-auto pb-10">
             <div class="bg-white pt-10 rounded-lg drop-shadow-2xl sm:basis-3/4 basis-full sm:mr-8 pb-10 sm:pb-0">
                 <div class="w-11/12 mx-auto pb-0">

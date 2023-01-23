@@ -16,17 +16,13 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id()->autoIncrement();
 
-            $table->unsignedBigInteger('admin_id');
             $table->unsignedBigInteger('user_id');
-
             $table->string('name');
             $table->string('content');
             $table->string('image_path')->nullable();
             $table->string('primary_card')->nullable();
             $table->string('secondary_card')->nullable();
-
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('admin_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();
         });

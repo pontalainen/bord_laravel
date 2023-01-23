@@ -16,10 +16,11 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register_user') }}">
             @csrf
 
-            <input type="hidden" name="is_admin" value="true">
+            <input type="hidden" name="is_admin" value="false">
+            <input type="hidden" name="group_id" value="{{ Auth::user()->id }}">
 
             <!-- Name -->
             <div>

@@ -39,7 +39,7 @@ class PageFactory extends Factory
                 $this->faker->randomLetter() . ':' .
                 $this->faker->numberBetween(0, 9) .
                 $this->faker->randomLetter(),
-            'user_id' => 1
+            'user_id' => 1,
         ];
     }
 }
