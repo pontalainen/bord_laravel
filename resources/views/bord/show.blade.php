@@ -1,4 +1,5 @@
 @vite('resources/js/app.js')
+@vite('resources/js/nfc.js')
 
 
 <!DOCTYPE html>
@@ -17,6 +18,12 @@
 
     <body class="overflow-y-hidden text-center font-bold w-full h-full bg-gray-100">
 
+        <input type="text" name="input" id="input-el" placeholder="Page id...">
+        <button class="mt-10 border border-black p-2" id="search-btn">
+            SEARCH
+        </button>
+
+        {{-- ! Actual page --}}
         @if ( $page !== null )
         @if (Auth::user()->is_admin === 'true')
         <div class="py-10 px-5 absolute top-2 left-2">
@@ -51,9 +58,6 @@
 
                 <div class="w-1/3">
                     <img src="{{ $page->image_path }}" alt="sample">
-                    {{-- <img
-                        src="file:///C:/Users/03pool09/laravel-projects/laravel/public/images/63cf9c8700ba5-test.png"
-                        --}} {{-- <img src="public/images/63cfb14a4799e-Start.png" alt="sample"> --}}
                 </div>
             </div>
         </div>
