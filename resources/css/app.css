@@ -64,3 +64,22 @@
     padding: auto 0;
     margin: auto 0;
 }
+
+.ring-1.ring-black.rounded-md.ring-opacity-5.py-1.bg-white {
+    height: 3rem;
+}
+
+#logout-link {
+    line-height: 1.5rem;
+}
+
+#logout-form {
+    margin: 0;
+}
+
+.max-w-7xl.mx-auto.py-6.px-4 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 90%;
+}

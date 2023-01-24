@@ -51,6 +51,9 @@
 
                 <div class="w-1/3">
                     <img src="{{ $page->image_path }}" alt="sample">
+                    {{-- <img
+                        src="file:///C:/Users/03pool09/laravel-projects/laravel/public/images/63cf9c8700ba5-test.png"
+                        --}} {{-- <img src="public/images/63cfb14a4799e-Start.png" alt="sample"> --}}
                 </div>
             </div>
         </div>

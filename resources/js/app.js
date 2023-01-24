@@ -6,5 +6,3 @@ Alpine.start();
 //Loading of Tailwind
 //----------------------------------------
 //Actual JS
-
-console.log("test");
