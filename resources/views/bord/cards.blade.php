@@ -33,7 +33,7 @@
             </div>
 
             <div class="py-10 px-5 absolute top-2 left-2">
-                <a class="primary-btn inline text-base sm:text-xl bg-blue-400 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-300"
+                <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400"
                     href="{{ route('bord.index') }}">
                     Go Back
                 </a>
@@ -67,7 +67,7 @@
 
                     <div class="float-right">
                         <button type="submit"
-                            class="uppercase mt-15 bg-blue-400 text-gray-900 text-lg font-extrabold py-4 px-8 rounded-3xl mt-2 mb-2 drop-shadow-xl">
+                            class="uppercase mt-15 bg-blue-500 transition-all hover:bg-blue-400 text-gray-900 text-lg font-extrabold py-4 px-8 rounded-3xl mt-2 mb-2 drop-shadow-xl">
                             Save cards
                         </button>
                     </div>

@@ -13,7 +13,7 @@
 
     <body class="w-full h-full bg-gray-100">
         <div class="w-4/5 mx-auto pb-10">
-            <div class="text-center pt-20">
+            <div class="text-center pt-12">
                 <h1 class="text-4xl text-gray-700">
                     All pages of: <br>
                     <div class="mt-2">
@@ -24,17 +24,21 @@
             </div>
 
             @if (Auth::user()->is_admin === "true")
-            <div class="py-10 px-5 absolute top-2 left-2">
-                <a class="primary-btn inline text-base sm:text-xl bg-blue-400 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-300"
+            <div class="py-2 px-5 absolute top-2 left-2 flex flex-col">
+                <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 my-1"
                     href="{{ route('bord.create') }}">
                     New Page
                 </a>
-            </div>
-
-            <div class="py-10 px-5 absolute top-2 right-2">
-                <a class="primary-btn inline text-base sm:text-xl bg-blue-400 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-300"
+                <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 my-1"
                     href="{{ route('bord.cards') }}">
                     Edit cards
+                </a>
+            </div>
+
+            <div class="py-6 px-5 absolute top-2 right-2">
+                <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 my-1"
+                    href="{{ route('dashboard') }}">
+                    Dashboard
                 </a>
             </div>
             @endif

@@ -20,7 +20,7 @@
 
             <div class="m-auto pt-20">
                 <div class="py-10 px-5 absolute top-2 left-2">
-                    <a class="primary-btn inline text-base sm:text-xl bg-blue-400 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-300 font-normal"
+                    <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 font-normal"
                         href="{{ route('bord.index') }}">
                         Go back
                     </a>
@@ -50,22 +50,21 @@
                     <textarea name="content" placeholder="Content..."
                         class="py-20 bg-white block rounded-lg w-full h-60 text-xl outline-none border-none m-4 drop-shadow-xl"></textarea>
 
-                    <div class="bg-grey-lighter py-10">
+                    <div class="bg-grey-lighter py-10 flex flex-row justify-between items-center">
                         <label
                             class="w-44 flex flex-col items-center px-2 py-3 bg-white rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer m-4">
-                            <span class="mt-2 text-base leading-normal">
+                            <span class="text-base leading-6 h-6 text-center items-center table-cell">
                                 Select an image
                             </span>
                             <input type="file" name="image" class="hidden">
                         </label>
-                    </div>
 
-                    <div class="float-right">
                         <button type="submit"
-                            class="uppercase mt-15 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
+                            class="uppercase mt-15 bg-blue-500 text-gray-900 text-lg font-extrabold py-4 px-8 rounded-3xl leading-none h-16">
                             Submit page
                         </button>
                     </div>
+
                 </form>
             </div>
             @else

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PageFormRequest;
 use App\Models\Page;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PagesController extends Controller
@@ -31,6 +32,16 @@ class PagesController extends Controller
      */
     public function index()
     {
+        // if (Auth::user()->is_admin === 'false') {
+        //     return view('bord.show', [
+        //         'page' => Page::where('name', 'Start')
+        //     ]);
+        // }
+
+        if (Auth::user()->is_admin === 'false') {
+            dd(Page::where('name', 'Start')->id);
+        }
+
         return view('bord.index', [
             'pages' => Page::orderBy('updated_at', 'desc')
                 ->simplePaginate(5)
@@ -58,14 +69,22 @@ class PagesController extends Controller
     {
         $request->validated();
 
-        Page::create([
-            'user_id' => $request->user_id,
-            'group_id' => $request->user_id,
-            'name' => $request->name,
-            'content' => $request->content,
-            'image_path' => $this->storeImage($request)
-        ]);
-
+        if ($request->image !== null) {
+            Page::create([
+                'user_id' => $request->user_id,
+                'group_id' => $request->user_id,
+                'name' => $request->name,
+                'content' => $request->content,
+                'image_path' => $this->storeImage($request)
+            ]);
+        } else {
+            Page::create([
+                'user_id' => $request->user_id,
+                'group_id' => $request->user_id,
+                'name' => $request->name,
+                'content' => $request->content,
+            ]);
+        }
         return redirect(route('bord.index'));
     }
 

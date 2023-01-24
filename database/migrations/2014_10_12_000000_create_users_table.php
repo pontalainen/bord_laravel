@@ -19,7 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('group_id')->nullable();
             $table->boolean('is_admin')->nullable();
             $table->string('name');
-            $table->string('email');
+            $table->string('username')->unique();
+            $table->string('email')->unique()->nullable();
             $table->string('password');
             $table->rememberToken();
 
