@@ -21,23 +21,23 @@
                 </div>
             </div>
 
-            <div class="py-10 sm:py-20">
-                <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
-                hover:bg-blue-400 m-auto absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-3/4 w-52 text-center"
-                    href="{{ route('bord.index') }}">
-                    Go to Bord
-                </a>
-            </div>
+            <div class="flex flex-row w-96 justify-between m-auto">
+                <div class="py-10 sm:py-20">
+                    <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
+                    hover:bg-blue-400 m-auto text-center" href="{{ route('bord.index') }}">
+                        Go to Start
+                    </a>
+                </div>
 
-            @if (Auth::user()->is_admin === "true")
-            <div class="py-10 sm:py-20">
-                <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
-                hover:bg-blue-400 m-auto absolute left-1/2 top-4/6 -translate-x-1/2 -translate-y-3/4 w-52 text-center"
-                    href="{{ route('register_user') }}">
-                    Create user
-                </a>
+                @if (Auth::user()->is_admin === "true")
+                <div class="py-10 sm:py-20">
+                    <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
+                hover:bg-blue-400 m-auto text-center" href="{{ route('register_user') }}">
+                        Create user
+                    </a>
+                </div>
+                @endif
             </div>
-            @endif
         </div>
     </div>
     </x-app-layout>

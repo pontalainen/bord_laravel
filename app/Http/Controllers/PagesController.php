@@ -32,15 +32,15 @@ class PagesController extends Controller
      */
     public function index()
     {
-        // if (Auth::user()->is_admin === 'false') {
-        //     return view('bord.show', [
-        //         'page' => Page::where('name', 'Start')
-        //     ]);
-        // }
-
         if (Auth::user()->is_admin === 'false') {
-            dd(Page::where('name', 'Start')->id);
+            return view('bord.show', [
+                'page' => Page::where('name', 'Start')->first()
+            ]);
         }
+
+        // if (Auth::user()->is_admin === 'false') {
+        //     dd(Page::where('name', 'Start'));
+        // }
 
         return view('bord.index', [
             'pages' => Page::orderBy('updated_at', 'desc')

@@ -23,7 +23,6 @@
                 <hr class="border border-1 border-gray-300 mt-10">
             </div>
 
-            @if (Auth::user()->is_admin === "true")
             <div class="py-2 px-5 absolute top-2 left-2 flex flex-col">
                 <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 my-1"
                     href="{{ route('bord.create') }}">
@@ -41,7 +40,6 @@
                     Dashboard
                 </a>
             </div>
-            @endif
 
         </div>
 
