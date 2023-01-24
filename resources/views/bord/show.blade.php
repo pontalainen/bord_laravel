@@ -33,13 +33,12 @@
             </a>
         </div>
         @else
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button type="submit"
-                class="absolute top-8 right-8 primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 font-normal">
-                Log out
-            </button>
-        </form>
+        <div class="py-10 px-5 absolute top-2 right-2">
+            <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 font-normal"
+                href="{{ route('dashboard') }}">
+                Dashboard
+            </a>
+        </div>
         @endif
 
         @if (Auth::id() === $page->user_id OR Auth::user()->group_id === $page->user_id)
