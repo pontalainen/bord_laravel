@@ -18,10 +18,7 @@
 
     <body class="overflow-y-hidden text-center font-bold w-full h-full bg-gray-100">
 
-        <input type="text" name="input" id="input-el" placeholder="Page id...">
-        <button class="mt-10 border border-black p-2" id="search-btn">
-            SEARCH
-        </button>
+        <input type="text" name="input" id="input-el" placeholder="Page id..." class="mt-10">
 
         {{-- ! Actual page --}}
         @if ( $page !== null )
@@ -50,18 +47,19 @@
         </div>
 
         <div class="h-full justify-center">
-            <div class=" absolute left-2 flex flex-row justify-around bg-white py-20 mt-4 w-10/12" id="content-el">
+            <div class="flex flex-row justify-around bg-white py-20 mt-4 w-11/12 shadow-lg rounded-b-xl transition-all "
+                id="content-el">
                 <div class="w-max h-max flex flex-col p-2 none">
                     {!! $content = $page->content !!}
                 </div>
 
                 <div class="w-1/3">
-                    <img src="{{ $page->image_path }}" alt="sample">
+                    <img src="{{ URL::to('/') }}/images/{{ $page->image_path }}" alt="image" width="500" height="500"
+                        class="w-10/12">
                 </div>
             </div>
         </div>
         @else
-
 
         <div class="mx-auto w-4/5 pb-0 pt-2">
             <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2 mt-24">

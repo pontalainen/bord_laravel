@@ -62,7 +62,7 @@
     text-align: left;
     line-height: 2em;
     padding: auto 0;
-    margin: auto 0;
+    margin: 0 auto;
 }
 
 .ring-1.ring-black.rounded-md.ring-opacity-5.py-1.bg-white {

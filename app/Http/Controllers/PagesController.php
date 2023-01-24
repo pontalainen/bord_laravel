@@ -152,8 +152,9 @@ class PagesController extends Controller
     private function storeImage($request)
     {
         $newImageName = uniqid() . '-' . $request->name . '.' . $request->image->extension();
+        $request->image->move(public_path('images'), $newImageName);
 
-        return $request->image->move(public_path('images'), $newImageName);
+        return $newImageName;
     }
 
     // Functions for the "cards"-page
