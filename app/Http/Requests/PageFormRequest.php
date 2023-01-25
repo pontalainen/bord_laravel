@@ -26,7 +26,7 @@ class PageFormRequest extends FormRequest
         $rules = [
             'name' => 'required|max:30|unique:pages,name,' . $this->id,
             'content' => 'required',
-            'image_path' => ['mimes:png,jpg,jpeg', 'max:5048'],
+            'image' => ['mimes:png,jpg,jpeg', 'max:5048'],
         ];
 
         if (in_array($this->method(), ['POST'])) {

@@ -75,7 +75,7 @@ class PagesController extends Controller
                 'group_id' => $request->user_id,
                 'name' => $request->name,
                 'content' => $request->content,
-                'image_path' => $this->storeImage($request)
+                'image' => $this->storeImage($request)
             ]);
         } else {
             Page::create([

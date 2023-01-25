@@ -1,3 +1,7 @@
+#Ignore all img-files...
 *.png*
 *.jpg*
 *.jpeg*
+
+#...except this one
+!sample.jpg

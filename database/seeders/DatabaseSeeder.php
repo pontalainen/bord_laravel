@@ -17,6 +17,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(PagesTableSeeder::class);
-        Page::factory(30)->create();
+        Page::factory(20)->create();
     }
 }

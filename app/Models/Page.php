@@ -13,7 +13,7 @@ class Page extends Model
         'user_id',
         'name',
         'content',
-        'image_path',
+        'image',
         'primary_card',
         'secondary_card'
     ];

@@ -47,15 +47,14 @@
         </div>
 
         <div class="h-full justify-center">
-            <div class="flex flex-row justify-around bg-white py-20 mt-4 w-11/12 shadow-lg rounded-b-xl transition-all "
+            <div class="flex flex-row justify-between bg-white py-14 px-24 mt-4 w-11/12 shadow-lg rounded-b-xl transition-all h-4/6"
                 id="content-el">
-                <div class="w-max h-max flex flex-col p-2 none">
+                <div class="w-max max-w-2xl h-max flex flex-col p-2 none">
                     {!! $content = $page->content !!}
                 </div>
 
-                <div class="w-1/3">
-                    <img src="{{ URL::to('/') }}/images/{{ $page->image_path }}" alt="image" width="500" height="500"
-                        class="w-10/12">
+                <div class="w-3/6 flex justify-end">
+                    <img src="{{ URL::to('/') }}/images/{{ $page->image }}" alt="image" width="500" class=" w-10/12">
                 </div>
             </div>
         </div>

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->string('content');
-            $table->string('image_path')->nullable();
+            $table->string('image')->nullable();
             $table->string('primary_card')->nullable();
             $table->string('secondary_card')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
