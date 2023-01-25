@@ -14,8 +14,6 @@
         <title>Show page</title>
     </head>
 
-
-
     <body class="overflow-y-hidden text-center font-bold w-full h-full bg-gray-100">
 
         <input type="text" name="input" id="input-el" placeholder="Page id..." class="mt-10">
@@ -49,13 +47,14 @@
         <div class="h-full justify-center">
             <div class="flex flex-row justify-between bg-white py-14 px-24 mt-4 w-11/12 shadow-lg rounded-b-xl transition-all h-4/6"
                 id="content-el">
-                <div class="w-max max-w-2xl h-max flex flex-col p-2 none">
+                <div class="w-max max-w-3xl h-max flex flex-col p-2 none">
                     {!! $content = $page->content !!}
                 </div>
 
-                <div class="w-3/6 flex justify-end">
+                {{-- <div class="w-7/12 flex justify-end"> --}}
                     <img src="{{ URL::to('/') }}/images/{{ $page->image }}" alt="image" width="500" class=" w-10/12">
-                </div>
+                    {{--
+                </div> --}}
             </div>
         </div>
         @else

@@ -28,15 +28,36 @@
                 </x-slot>
 
                 <x-slot name="content">
-                    <!-- Authentication -->
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
 
-                        <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
-                                            this.closest('form').submit();">
-                            {{ __('Log Out') }}
-                        </x-dropdown-link>
-                    </form>
+
+                    <div class="flex flex-col">
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </x-dropdown-link>
+                        </form>
+
+                        @if (Auth::user()->is_admin === "true")
+                        <hr class="border border-1 border-gray-300 mx-2 -mt-4">
+
+                        <a href="{{ route('register_user') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100
+                            focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
+                            Create user
+                        </a>
+
+                        @else
+
+                        <style>
+                            .ring-1.ring-black.rounded-md.ring-opacity-5.py-1.bg-white {
+                                height: 2.7rem;
+                            }
+                        </style>
+                        @endif
+
+                    </div>
                 </x-slot>
             </x-dropdown>
         </div>
@@ -51,33 +72,14 @@
                 </div>
             </div>
 
-            @if (Auth::user()->is_admin === "true")
-            <div class="flex flex-row w-96 justify-between m-auto">
-                <div class="py-10 sm:py-20">
-                    <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
-                    hover:bg-blue-400 m-auto text-center" href="{{ route('bord.index') }}">
-                        Go to Start
-                    </a>
-                </div>
-
-                <div class="py-10 sm:py-20">
-                    <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
-                hover:bg-blue-400 m-auto text-center" href="{{ route('register_user') }}">
-                        Create user
-                    </a>
-                </div>
-
-                @else
-
-                <div class="py-10 sm:py-20 w-full flex">
-                    <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
+            <div class="py-10 sm:py-20 w-full flex">
+                <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
                     hover:bg-blue-400 m-auto text-center justify-center" href="{{ route('bord.index') }}">
-                        Go to Start
-                    </a>
-                </div>
-
-                @endif
+                    Go to Start
+                </a>
             </div>
+
         </div>
+    </div>
     </div>
     </x-app-layout>
