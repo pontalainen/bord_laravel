@@ -26,14 +26,18 @@ Route::get('/dashboard', function () {
 
 require __DIR__ . '/auth.php';
 
-// Additional routes for pages not included in resources
-Route::get('/bord/fruit', [PagesController::class, 'fruit'])->name('bord.fruit');
-Route::get('/bord/cards', [PagesController::class, 'cards'])->name('bord.cards');
-Route::get('/bord/{id}', [PagesController::class, 'air'])->name('bord.air');
-Route::patch('/bord/update_cards/{id}', [PagesController::class, 'update_cards'])->name('bord.update_cards');
-
 // Main Routes for "bord" inlcuded in resources
 Route::resource('/bord', PagesController::class);
+
+// Route for the fruit page
+Route::get('/bord/fruit', [PagesController::class, 'fruit'])->name('bord.fruit');
+
+// Routes for editing cards
+Route::get('/bord/cards', [PagesController::class, 'cards'])->name('bord.cards');
+Route::patch('/bord/update_cards/{id}', [PagesController::class, 'update_cards'])->name('bord.update_cards');
+
+// Route for showing air pages
+Route::get('/bord/{id}', [PagesController::class, 'air'])->name('bord.air');
 
 // Fallback Route, for when routes are called but not defined
 Route::fallback(FallbackController::class);
