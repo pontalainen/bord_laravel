@@ -12,60 +12,65 @@
 
     <body class="w-full h-full bg-gray-100">
         @if (Auth::user()->is_admin === "true")
-        <div class="w-4/5 mx-auto">
-            <div class="text-center pt-20">
-                <h1 class="text-3xl text-gray-700">
-                    Add new page
-                </h1>
-                <hr class="border border-1 border-gray-300 mt-10">
-            </div>
+        <form action="{{ route('bord.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="w-4/5 mx-auto">
+                <div class="flex text-center pt-10 justify-center">
 
-            <div class="m-auto">
-                <div class="py-10 px-5 absolute top-2 left-2">
-                    <a class="inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 font-normal"
-                        href="{{ route('bord.index') }}">
-                        Go back
-                    </a>
+                    {{-- Name input --}}
+                    <input type="text" name="name" placeholder="Page name..."
+                        class="bg-white block rounded-lg h-20 text-2xl outline-none border-none m-4 drop-shadow-xl w-max text-center">
+
                 </div>
-                <div class="pb-8">
-                    @if ($errors->any())
-                    <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
-                        Something went wrong...
+                <hr class="border border-1 border-gray-300 mt-10">
+
+                <div class="m-auto">
+                    <div class="py-10 px-5 absolute top-2 left-2">
+                        <a class="inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 font-normal"
+                            href="{{ route('bord.index') }}">
+                            Go back
+                        </a>
                     </div>
-                    <ul class="border border-t-0 border-red-400 rounder-b bg-red-100 px-4 py-3 text-red-700">
-                        @foreach ($errors->all() as $error)
-                        <li>
-                            {{ $error }}
-                        </li>
-                        @endforeach
-                    </ul>
-                    @endif
-                </div>
-                <form action="{{ route('bord.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
+                    @if ($errors->any())
+                    <div class="pb-8">
+                        <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+                            Something went wrong...
+                        </div>
+                        <ul class="border border-t-0 border-red-400 rounder-b bg-red-100 px-4 py-3 text-red-700">
+                            @foreach ($errors->all() as $error)
+                            <li>
+                                {{ $error }}
+                            </li>
+                            @endforeach
+                        </ul>
+                        @endif
+                    </div>
 
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 
-                    {{-- Name input --}}
-                    <input type="text" name="name" placeholder="Name..."
-                        class="bg-white block rounded-lg w-full h-20 text-2xl outline-none border-none m-4 drop-shadow-xl">
 
                     {{-- Markdown checkbox --}}
                     <div class="flex flex-row w-max mt-12">
                         <input type="checkbox" id="ckbx" name="checkbox"
                             class="bg-white block rounded-lg h-10 w-10 outline-none border-none mx-4 my-0 shadow-lg drop-shadow-xl">
-                        <label
-                            class="text-center leading-6 h-6 text-xl items-center cursor-pointer text-gray-500 my-auto"
+                        <label class="text-center leading-6 h-6 text-xl items-center text-gray-500 my-auto"
                             for="md">Markdown content</label>
                     </div>
 
-                    <div class="flex flex-row justify-between mt-4 w-full rounded-b-xl" id="content-el">
+                    <div class="flex flex-row justify-between mt-4 w-full rounded-b-xl h-3/6" id="input-wrapper">
+
                         {{-- Content input --}}
-                        <textarea name="content" placeholder="Content..."
-                            class="py-5 bg-white block rounded-lg w-full h-60 text-xl outline-none border-none m-4 drop-shadow-xl max-w-3xl"></textarea>
+                        {{-- <div class="w-3xl h-max flex flex-col p-2 none"> --}}
+                            <textarea name="content" placeholder="Content..." contenteditable="true" type="text"
+                                class="w-10/12 h-max flex flex-col px-2 none w-3xl none bg-white rounded-lg text-xl outline-none border-none mx-4 drop-shadow-xl resize"></textarea>
+                            {{--
+                        </div> --}}
 
                         {{-- Image preview --}}
-                        <img id="preview" alt="Select an image to preview it here" width="500" class=" w-10/12">
+                        <div class="w-7/12 flex justify-end">
+                            <img id="preview" alt="Select an image to preview it here"
+                                class=" w-max max-h-96 max-w-6xl">
+                        </div>
                     </div>
 
                     {{-- Image selector --}}
@@ -85,35 +90,35 @@
                         </button>
                     </div>
 
-                </form>
-            </div>
-            @else
+        </form>
+        </div>
+        @else
 
-            <div class="mx-auto w-4/5 pb-0 pt-2">
-                <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2 mt-24">
-                </div>
-                <div class="border border-t-1 border-blue-400 rounded-b bg-blue-100 px-4 py-10 text-center text-xl">
-                    <p>Only administrators can enter this page, sorry!</p>
-                </div>
+        <div class="mx-auto w-4/5 pb-0 pt-2">
+            <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2 mt-24">
             </div>
+            <div class="border border-t-1 border-blue-400 rounded-b bg-blue-100 px-4 py-10 text-center text-xl">
+                <p>Only administrators can enter this page, sorry!</p>
+            </div>
+        </div>
 
-            <div class="py-10 sm:py-20">
-                <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
+        <div class="py-10 sm:py-20">
+            <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
                 hover:bg-blue-400 m-auto absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-3/4 w-52 text-center"
-                    href="{{ route('dashboard') }}">
-                    Login admin
-                </a>
-            </div>
+                href="{{ route('dashboard') }}">
+                Login admin
+            </a>
+        </div>
 
-            <div class="py-10 sm:py-20">
-                <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
+        <div class="py-10 sm:py-20">
+            <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
                 hover:bg-blue-400 m-auto absolute left-1/2 top-3/6 -translate-x-1/2 -translate-y-3/4 w-52 text-center"
-                    href="{{ route('bord.index') }}">
-                    Go to bord
-                </a>
-            </div>
+                href="{{ route('bord.index') }}">
+                Go to bord
+            </a>
+        </div>
 
-            @endif
+        @endif
     </body>
 
 </html>

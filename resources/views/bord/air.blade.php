@@ -51,10 +51,10 @@
                     {!! $content = $page->content !!}
                 </div>
 
-                {{-- <div class="w-7/12 flex justify-end"> --}}
-                    <img src="{{ URL::to('/') }}/images/{{ $page->image }}" alt="image" width="500" class=" w-10/12">
-                    {{--
-                </div> --}}
+                <div class="w-7/12 flex justify-end">
+                    <img src="{{ URL::to('/') }}/images/{{ $page->image }}" alt="image" width="500"
+                        class="w-full max-w-6xl">
+                </div>
             </div>
         </div>
         @else
