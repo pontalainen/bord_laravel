@@ -23,6 +23,8 @@
 
 #### Run more commans
 
+Firstly, make sure to restart your CLI for the composer and php paths to load correctly. Then run:
+
 -   php artisan migrate
 -   php artisan serve (this is the command used to spin up the project on localhost:8000)
 
