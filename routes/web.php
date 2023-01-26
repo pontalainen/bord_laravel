@@ -27,7 +27,9 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 
 // Additional routes for pages not included in resources
+Route::get('/bord/fruit', [PagesController::class, 'fruit'])->name('bord.fruit');
 Route::get('/bord/cards', [PagesController::class, 'cards'])->name('bord.cards');
+Route::get('/bord/{id}', [PagesController::class, 'air'])->name('bord.air');
 Route::patch('/bord/update_cards/{id}', [PagesController::class, 'update_cards'])->name('bord.update_cards');
 
 // Main Routes for "bord" inlcuded in resources

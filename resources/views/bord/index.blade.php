@@ -34,10 +34,14 @@
                 </a>
             </div>
 
-            <div class="py-6 px-5 absolute top-2 right-2">
+            <div class="py-2 px-5 absolute top-2 right-2 flex flex-col">
                 <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 my-1"
                     href="{{ route('dashboard') }}">
                     Dashboard
+                </a>
+                <a class="primary-btn inline text-center sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 my-1"
+                    href="{{ route('bord.fruit') }}">
+                    Fruit
                 </a>
             </div>
 
@@ -60,12 +64,12 @@
             <div class="bg-white pt-10 rounded-lg drop-shadow-2xl sm:basis-3/4 basis-full sm:mr-8 pb-10 sm:pb-0">
                 <div class="w-11/12 mx-auto pb-0">
                     <h2 class="text-gray-900 text-2xl font-bold pt-6 pb-0 sm:pt-0 hover:text-gray-700 transition-all">
-                        <a href="{{ route('bord.show', $page->id) }}">
+                        <a href="{{ route('bord.air', $page->id) }}">
                             {{ $page->id }}, {{ $page->name }}
                         </a>
                     </h2>
                     <p>
-                        <a href="{{ route('bord.show', $page->id) }} ">
+                        <a href="{{ route('bord.air', $page->id) }} ">
                             <div
                                 class="text-gray-900 text-l pt-4 pb-4 sm:pt-0 hover:text-gray-700 transition-all max-h-16 overflow-hidden leading-8">
                                 {!! $page->content !!}

@@ -15,7 +15,7 @@ class PagesController extends Controller
     {
         $this->middleware('auth')->only([
             'index',
-            'show',
+            'air',
             'create',
             'edit',
             'update',
@@ -33,7 +33,7 @@ class PagesController extends Controller
     public function index()
     {
         if (Auth::user()->is_admin === 'false') {
-            return view('bord.show', [
+            return view('bord.air', [
                 'page' => Page::where('name', 'Start')->first()
             ]);
         }
@@ -49,7 +49,7 @@ class PagesController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * air the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -94,11 +94,16 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function air($id)
     {
-        return view('bord.show', [
+        return view('bord.air', [
             'page' => Page::findOrFail($id)
         ]);
+    }
+
+    public function fruit()
+    {
+        return view('bord.fruit');
     }
 
     /**

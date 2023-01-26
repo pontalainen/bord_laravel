@@ -11,7 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="resources/css/main.css">
 
-        <title>Show page</title>
+        <title>air page</title>
     </head>
 
     <body class="overflow-y-hidden text-center font-bold w-full h-full bg-gray-100">

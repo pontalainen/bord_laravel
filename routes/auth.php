@@ -59,7 +59,7 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
     ->middleware(['auth', 'throttle:6,1'])
     ->name('verification.send');
 
-Route::get('/confirm-password', [ConfirmablePasswordController::class, 'show'])
+Route::get('/confirm-password', [ConfirmablePasswordController::class, 'air'])
     ->middleware('auth')
     ->name('password.confirm');
 
