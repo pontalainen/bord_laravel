@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Create page</title>
+
         @vite('resources/js/app.js')
     </head>
 
@@ -18,7 +19,7 @@
                 <hr class="border border-1 border-gray-300 mt-10">
             </div>
 
-            <div class="m-auto pt-20">
+            <div class="m-auto">
                 <div class="py-10 px-5 absolute top-2 left-2">
                     <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 font-normal"
                         href="{{ route('bord.index') }}">
@@ -44,15 +45,24 @@
 
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 
+
                     <input type="text" name="name" placeholder="Name..."
                         class="bg-white block rounded-lg w-full h-20 text-2xl outline-none border-none m-4 drop-shadow-xl">
+
+                    <div class="flex flex-row w-max">
+                        <input type="checkbox" id="ckbx" value="map_one"
+                            class="bg-white block rounded-lg h-10 w-10 outline-none border-none m-4 shadow-lg drop-shadow-xl">
+                        <label
+                            class="text-center leading-6 h-6 text-xl items-center cursor-pointer text-gray-500 my-auto"
+                            for="md">Markdown content</label>
+                    </div>
 
                     <textarea name="content" placeholder="Content..."
                         class="py-20 bg-white block rounded-lg w-full h-60 text-xl outline-none border-none m-4 drop-shadow-xl"></textarea>
 
                     <div class="bg-grey-lighter py-10 flex flex-row justify-between items-center">
                         <label
-                            class="w-44 flex flex-col items-center px-2 py-3 bg-white rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer m-4">
+                            class="w-44 flex flex-col items-center px-2 py-3 bg-white rounded-lg shadow-lg tracking-wide uppercase border cursor-pointer m-4">
                             <span class="text-base leading-6 h-6 text-center items-center table-cell">
                                 Select an image
                             </span>
