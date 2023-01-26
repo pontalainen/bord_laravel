@@ -48,3 +48,11 @@ input[type="checkbox"]:checked:after {
     right: 0;
     transition: border 0.25s, left 0.15s 0.25s, right 0.25s 0.175s;
 }
+
+img {
+    width: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

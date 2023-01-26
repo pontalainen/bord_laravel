@@ -46,10 +46,11 @@
 
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 
-
+                    {{-- Name input --}}
                     <input type="text" name="name" placeholder="Name..."
                         class="bg-white block rounded-lg w-full h-20 text-2xl outline-none border-none m-4 drop-shadow-xl">
 
+                    {{-- Markdown checkbox --}}
                     <div class="flex flex-row w-max mt-12">
                         <input type="checkbox" id="ckbx" name="checkbox"
                             class="bg-white block rounded-lg h-10 w-10 outline-none border-none mx-4 my-0 shadow-lg drop-shadow-xl">
@@ -58,9 +59,16 @@
                             for="md">Markdown content</label>
                     </div>
 
-                    <textarea name="content" placeholder="Content..."
-                        class="py-5 bg-white block rounded-lg w-full h-60 text-xl outline-none border-none m-4 drop-shadow-xl overflow-y-show"></textarea>
+                    <div class="flex flex-row justify-between mt-4 w-full rounded-b-xl" id="content-el">
+                        {{-- Content input --}}
+                        <textarea name="content" placeholder="Content..."
+                            class="py-5 bg-white block rounded-lg w-full h-60 text-xl outline-none border-none m-4 drop-shadow-xl max-w-3xl"></textarea>
 
+                        {{-- Image preview --}}
+                        <img id="preview" alt="Select an image to preview it here" width="500" class=" w-10/12">
+                    </div>
+
+                    {{-- Image selector --}}
                     <div class="bg-grey-lighter py-10 flex flex-row justify-between items-center">
                         <label
                             class="w-44 flex flex-col items-center px-2 py-3 bg-white rounded-lg shadow-lg tracking-wide uppercase border cursor-pointer m-4">
@@ -70,6 +78,7 @@
                             <input type="file" name="image" class="hidden">
                         </label>
 
+                        {{-- Submit button --}}
                         <button type="submit"
                             class="uppercase mt-15 bg-blue-500 text-gray-900 text-lg font-extrabold py-4 px-8 rounded-3xl leading-none h-16 transition-all hover:bg-blue-400">
                             Submit page
