@@ -7,6 +7,7 @@
         <title>Create page</title>
 
         @vite('resources/js/app.js')
+        @vite('resources/js/create.js')
     </head>
 
     <body class="w-full h-full bg-gray-100">
@@ -21,7 +22,7 @@
 
             <div class="m-auto">
                 <div class="py-10 px-5 absolute top-2 left-2">
-                    <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 font-normal"
+                    <a class="inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 font-normal"
                         href="{{ route('bord.index') }}">
                         Go back
                     </a>
@@ -49,16 +50,16 @@
                     <input type="text" name="name" placeholder="Name..."
                         class="bg-white block rounded-lg w-full h-20 text-2xl outline-none border-none m-4 drop-shadow-xl">
 
-                    <div class="flex flex-row w-max">
-                        <input type="checkbox" id="ckbx" value="map_one"
-                            class="bg-white block rounded-lg h-10 w-10 outline-none border-none m-4 shadow-lg drop-shadow-xl">
+                    <div class="flex flex-row w-max mt-12">
+                        <input type="checkbox" id="ckbx" name="checkbox"
+                            class="bg-white block rounded-lg h-10 w-10 outline-none border-none mx-4 my-0 shadow-lg drop-shadow-xl">
                         <label
                             class="text-center leading-6 h-6 text-xl items-center cursor-pointer text-gray-500 my-auto"
                             for="md">Markdown content</label>
                     </div>
 
                     <textarea name="content" placeholder="Content..."
-                        class="py-20 bg-white block rounded-lg w-full h-60 text-xl outline-none border-none m-4 drop-shadow-xl"></textarea>
+                        class="py-5 bg-white block rounded-lg w-full h-60 text-xl outline-none border-none m-4 drop-shadow-xl overflow-y-show"></textarea>
 
                     <div class="bg-grey-lighter py-10 flex flex-row justify-between items-center">
                         <label
@@ -70,7 +71,7 @@
                         </label>
 
                         <button type="submit"
-                            class="uppercase mt-15 bg-blue-500 text-gray-900 text-lg font-extrabold py-4 px-8 rounded-3xl leading-none h-16">
+                            class="uppercase mt-15 bg-blue-500 text-gray-900 text-lg font-extrabold py-4 px-8 rounded-3xl leading-none h-16 transition-all hover:bg-blue-400">
                             Submit page
                         </button>
                     </div>

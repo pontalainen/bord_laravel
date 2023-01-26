@@ -7,6 +7,7 @@ use App\Models\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class PagesController extends Controller
 {
@@ -67,25 +68,22 @@ class PagesController extends Controller
      */
     public function store(PageFormRequest $request)
     {
-        $request->validated();
 
-        if ($request->image !== null) {
-            Page::create([
-                'user_id' => $request->user_id,
-                'group_id' => $request->user_id,
-                'name' => $request->name,
-                'content' => $request->content,
-                'image' => $this->storeImage($request)
-            ]);
-        } else {
-            Page::create([
-                'user_id' => $request->user_id,
-                'group_id' => $request->user_id,
-                'name' => $request->name,
-                'content' => $request->content,
-            ]);
-        }
-        return redirect(route('bord.index'));
+        dd($request->image);
+
+        // $request->validated();
+
+        // $pageData = [
+        //     'user_id' => $request->user_id,
+        //     'group_id' => $request->user_id,
+        //     'name' => $request->name,
+        //     'content' => $request->checkbox === "on" ? Str::markdown($request->content) : $request->content,
+        //     'image' => $request->image !== null ? $this->storeImage($request) : null
+        // ];
+
+        // Page::create($pageData);
+
+        // return redirect(route('bord.index'));
     }
 
     /**

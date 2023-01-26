@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\FallbackController;
 use App\Http\Controllers\PagesController;
-use App\Http\Controllers\SettingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +26,7 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 
 // Main Routes for "bord" inlcuded in resources
-Route::resource('/bord', PagesController::class);
+Route::resource('/bord', PagesController::class, ['except' => ['show']]);
 
 // Route for the fruit page
 Route::get('/bord/fruit', [PagesController::class, 'fruit'])->name('bord.fruit');
@@ -38,6 +37,7 @@ Route::patch('/bord/update_cards/{id}', [PagesController::class, 'update_cards']
 
 // Route for showing air pages
 Route::get('/bord/{id}', [PagesController::class, 'air'])->name('bord.air');
+
 
 // Fallback Route, for when routes are called but not defined
 Route::fallback(FallbackController::class);
