@@ -6,6 +6,13 @@
 
 -   PHP and Laravel
 -   npm
+-   composer
+
+#### In the php.ini make sure to:
+
+-   Enable the fileinfo extension
+-   Set post_max_size to 100M
+-   Set upload_max_filesize to 100M
 
 #### Run the following commands:
 

@@ -68,22 +68,19 @@ class PagesController extends Controller
      */
     public function store(PageFormRequest $request)
     {
+        $request->validated();
 
-        dd($request->image);
+        $pageData = [
+            'user_id' => $request->user_id,
+            'group_id' => $request->user_id,
+            'name' => $request->name,
+            'content' => $request->checkbox === "on" ? Str::markdown($request->content) : $request->content,
+            'image' => $request->image !== null ? $this->storeImage($request) : null
+        ];
 
-        // $request->validated();
+        Page::create($pageData);
 
-        // $pageData = [
-        //     'user_id' => $request->user_id,
-        //     'group_id' => $request->user_id,
-        //     'name' => $request->name,
-        //     'content' => $request->checkbox === "on" ? Str::markdown($request->content) : $request->content,
-        //     'image' => $request->image !== null ? $this->storeImage($request) : null
-        // ];
-
-        // Page::create($pageData);
-
-        // return redirect(route('bord.index'));
+        return redirect(route('bord.index'));
     }
 
     /**
