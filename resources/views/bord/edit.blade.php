@@ -7,7 +7,7 @@
         <title>Create page</title>
 
         @vite('resources/js/app.js')
-        @vite('resources/js/create.js')
+        @vite('resources/js/edit.js')
     </head>
 
     <body class="w-full h-full bg-gray-100">
@@ -15,6 +15,9 @@
         <form action="{{ route('bord.update', $page->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
+
+            <input type="hidden" name="primary_card" value="{{ $page->primary_card }}">
+            <input type="hidden" name="secondary_card" value="{{ $page->secondary_card }}">
 
             <div class="w-4/5 mx-auto">
                 <div class="flex text-center pt-10 justify-center">
@@ -33,6 +36,8 @@
                             Go back
                         </a>
                     </div>
+
+                    {{-- Errors --}}
                     @if ($errors->any())
                     <div class="pb-8">
                         <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
@@ -62,14 +67,11 @@
                     <div class="flex flex-row justify-between mt-4 w-full rounded-b-xl h-3/6" id="input-wrapper">
 
                         {{-- Content input --}}
-                        {{-- <div class="w-3xl h-max flex flex-col p-2 none"> --}}
-                            <textarea name="content" placeholder="Content..." contenteditable="true" type="text"
-                                value="{{ $page->content }}"
-                                class="w-10/12 h-max flex flex-col px-2 none w-3xl none bg-white rounded-lg text-xl outline-none border-none mx-4 drop-shadow-xl resize">
+                        <textarea name="content" placeholder="Content..." contenteditable="true" type="text"
+                            value="{{ $page->content }}"
+                            class="w-10/12 h-max flex flex-col px-2 none w-3xl none bg-white rounded-lg text-xl outline-none border-none mx-4 drop-shadow-xl resize">
                                 {{ $page->content }}
                             </textarea>
-                            {{--
-                        </div> --}}
 
                         {{-- Image preview --}}
                         <div class="w-7/12 justify-end hidden" id="preview-el">
