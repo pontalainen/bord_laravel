@@ -8,6 +8,6 @@ class FallbackController extends Controller
 {
     public function __invoke()
     {
-        return view('fallback.index');
+        return view('fallback.fallback');
     }
 }
