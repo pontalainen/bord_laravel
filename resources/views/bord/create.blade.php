@@ -7,7 +7,7 @@
         <title>Create page</title>
 
         @vite('resources/js/app.js')
-        @vite('resources/js/create.js')
+        @vite('resources/css/create.css')
     </head>
 
     <body class="w-full h-full bg-gray-100">

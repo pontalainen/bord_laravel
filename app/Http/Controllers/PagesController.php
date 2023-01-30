@@ -45,7 +45,6 @@ class PagesController extends Controller
 
         return view('bord.index', [
             'pages' => Page::orderBy('updated_at', 'desc')
-                ->simplePaginate(5)
         ]);
     }
 
