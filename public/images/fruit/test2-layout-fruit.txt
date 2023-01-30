@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Fruit</title>
-        @vite('resources/css/fruit.css')
-       
-    </head>
-
-    <body>
-    <div id="layout-fruit">
+<div id="layout-fruit">
       <style>
         @keyframes rotate1 {
           0% {
             transform: rotate(initial);
           }
           100% {
-            transform: rotate(31deg); /* Value is set in exakt kcal, to calculate degrees, use 0,2 * y ammount of kcal*/
+            transform: rotate(
+              31deg
+            ); /* Value is set in exakt kcal, to calculate degrees, use 0,2 * y ammount of kcal*/
           }
         }
         @keyframes rotate2 {
@@ -26,7 +15,9 @@
             transform: rotate(initial);
           }
           100% {
-            transform: rotate(162deg); /* This value is correct for the right side, for the left side, double the value*/
+            transform: rotate(
+              162deg
+            ); /* This value is correct for the right side, for the left side, double the value*/
           }
         }
         @keyframes rotate3 {
@@ -40,9 +31,6 @@
           }
         }
       </style>
-
-        <button class="side-btn">Vänster sida</button>
-
       <div class="grid">
         <div class="graph">
           <div class="circle">
@@ -215,15 +203,94 @@
               <li>CO<under>2</under> 1-40 kg CO<under>2</under>e/kg</li>
             </ul>
           </div>
-        </div>   
-        
-        <iframe id="leftIframe" scrolling="no" class="left" title="Inline Frame Example" src="" ></iframe>
-        <iframe id="rightIframe" scrolling="no" class="right" title="Inline Frame Example" src="" ></iframe>
+        </div>
 
+        <div class="container left">
+          <div class="circles">
+            <div class="text">
+              <h1>CO<under>2</under> Avtryck<br /></h1>
+              <h2>Jämförelse</h2>
+            </div>
+
+            <ul>
+              <li style="width: calc(5em * 1.2); height: calc(5em * 1.2)">
+                Sej
+              </li>
+              <li style="width: calc(5em * 1.4); height: calc(5em * 1.4)">
+                Kyckling
+              </li>
+              <li style="width: calc(5em * 1.6); height: calc(5em * 1.6)">
+                Fläskkött
+              </li>
+              <li style="width: calc(5em * 1.8); height: calc(5em * 1.8)">
+                Lammkött
+              </li>
+              <li style="width: calc(5em * 2); height: calc(5em * 2)">
+                Nötkött
+              </li>
+            </ul>
+          </div>
+
+          <!-- Här ändras frukten (h1) och Företaget eller landet där den kommer ifrån(h2) -->
+
+          <div class="logo">
+            <img src="resources/TCstenungsund.svg" alt="" />
+          </div>
+
+          <div class="info">
+            <ul>
+              <li>
+                <h1>Fläskkött</h1>
+              </li>
+              <li>
+                <h2>Sverige</h2>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container right">
+          <div class="circles">
+            <div class="text">
+              <h1>CO<under>2</under> Avtryck<br /></h1>
+              <h2>Jämförelse</h2>
+            </div>
+
+            <ul>
+              <li style="width: calc(5em * 1.2); height: calc(5em * 1.2)">
+                Sej
+              </li>
+              <li style="width: calc(5em * 1.4); height: calc(5em * 1.4)">
+                Kyckling
+              </li>
+              <li style="width: calc(5em * 1.6); height: calc(5em * 1.6)">
+                Fläskkött
+              </li>
+              <li style="width: calc(5em * 1.8); height: calc(5em * 1.8)">
+                Lammkött
+              </li>
+              <li style="width: calc(5em * 2); height: calc(5em * 2)">
+                Nötkött
+              </li>
+            </ul>
+          </div>
+
+          <!-- Här ändras frukten (h1) och Företaget eller landet där den kommer ifrån(h2) -->
+
+          <div class="logo">
+            <img src="resources/TCstenungsund.svg" alt="" />
+          </div>
+
+          <div class="info">
+            <ul>
+              <li>
+                <h1>Fläskkött</h1>
+              </li>
+              <li>
+                <h2>Sverige</h2>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-
-    @vite('resources/js/fruit_change_side.js')
-    </body>
-
-</html>

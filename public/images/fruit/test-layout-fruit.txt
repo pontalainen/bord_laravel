@@ -1,48 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Fruit</title>
-        @vite('resources/css/fruit.css')
-       
-    </head>
-
-    <body>
-    <div id="layout-fruit">
-      <style>
-        @keyframes rotate1 {
-          0% {
-            transform: rotate(initial);
-          }
-          100% {
-            transform: rotate(31deg); /* Value is set in exakt kcal, to calculate degrees, use 0,2 * y ammount of kcal*/
-          }
-        }
-        @keyframes rotate2 {
-          0% {
-            transform: rotate(initial);
-          }
-          100% {
-            transform: rotate(162deg); /* This value is correct for the right side, for the left side, double the value*/
-          }
-        }
-        @keyframes rotate3 {
-          0% {
-            transform: rotate(initial);
-          }
-          100% {
-            transform: rotate(
-              144deg
-            ); /* This value is correct for the right side, for the left side, double the value*/
-          }
-        }
-      </style>
-
-        <button class="side-btn">Vänster sida</button>
-
+<div id="layout-fruit">
       <div class="grid">
         <div class="graph">
           <div class="circle">
@@ -215,15 +171,66 @@
               <li>CO<under>2</under> 1-40 kg CO<under>2</under>e/kg</li>
             </ul>
           </div>
-        </div>   
-        
-        <iframe id="leftIframe" scrolling="no" class="left" title="Inline Frame Example" src="" ></iframe>
-        <iframe id="rightIframe" scrolling="no" class="right" title="Inline Frame Example" src="" ></iframe>
+        </div>
 
+        <div class="container left">
+          <div class="main-info side-left">
+            <div class="main-text">
+              <h2>Vilket klimatavtryck gör din mat?</h2>
+              <p>Jämför energiinnehåll och koldioxidavtryck.</p>
+              <p>
+                Jämför olika livsmedel med varandra och <br />
+                se möjliga alternativ.
+              </p>
+            </div>
+          </div>
+
+          <!-- Här ändras frukten (h1) och Företaget eller landet där den kommer ifrån(h2) -->
+          <!--<div class="info">
+        <ul>
+            <li>
+                <h1>Project Fruit</h1>
+            </li>
+            <li>
+                <h2>InfoBord UF</h2>
+            </li>
+        </ul>
+    </div>-->
+          <div class="second-info side-left">
+            <div class="second-text">
+              <h2>Placera vald produkt här</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="container right">
+          <div class="main-info side-right">
+            <div class="main-text">
+              <h2>Vilket klimatavtryck gör din mat?</h2>
+              <p>Jämför energiinnehåll och koldioxidavtryck.</p>
+              <p>
+                Jämför olika livsmedel med varandra och <br />
+                se möjliga alternativ.
+              </p>
+            </div>
+          </div>
+
+          <!-- Här ändras frukten (h1) och Företaget eller landet där den kommer ifrån(h2) -->
+          <!--<div class="info">
+        <ul>
+            <li>
+                <h1>Project Fruit</h1>
+            </li>
+            <li>
+                <h2>InfoBord UF</h2>
+            </li>
+  </ul>
+    </div>-->
+          <div class="second-info side-right">
+            <div class="second-text">
+              <h2>Placera vald produkt här</h2>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    @vite('resources/js/fruit_change_side.js')
-    </body>
-
-</html>
