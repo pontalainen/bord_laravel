@@ -10,7 +10,11 @@
 
 #### In the php.ini make sure to:
 
+To enable an extension you remove the semi colon (;) right before it.
+
 -   Enable the fileinfo extension
+-   Enable the pdo_sqlite extension
+-   Enable the sqlite3 extension
 -   Set post_max_size to 100M
 -   Set upload_max_filesize to 100M
 
