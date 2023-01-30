@@ -166,7 +166,7 @@ class PagesController extends Controller
         Page::destroy($id);
 
         return redirect(route('bord.index'))
-            ->with('message', 'Page has been deleted');
+            ->with('message', 'Page ' . $id . ' has been deleted');
     }
 
     private function storeImage($request)
