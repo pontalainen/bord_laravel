@@ -31,11 +31,11 @@
         <div class="py-5 px-5 absolute top-2 right-2">
 
             {{--* User menu --}}
-            <div class="sm:flex sm:items-center sm:ml-6 mb-2 text-left">
+            <div class="sm:flex sm:items-center sm:ml-6 mb-2 mx-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button
-                            class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                            class="flex items-center text-sm font-medium text-gray-800 hover:text-gray-900 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                             <div class="text-2xl">{{ Auth::user()->name }}</div>
 
                             <div class="ml-1">
@@ -50,8 +50,8 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <div class="flex flex-col">
-                            <form method="POST" action="{{ route('logout') }}">
+                        <div class="flex flex-col h-fit">
+                            <form method="POST" class="mb-0" action="{{ route('logout') }}">
                                 @csrf
 
                                 <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
@@ -61,10 +61,11 @@
                             </form>
 
                             @if (Auth::user()->is_admin === "true")
-                            <hr class="border border-1 border-gray-300 mx-2 -mt-4">
+
+                            <hr class="border border-1 border-gray-300">
 
                             <a href="{{ route('register_user') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100
-                                focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
+                                focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out h-max">
                                 Create user
                             </a>
 

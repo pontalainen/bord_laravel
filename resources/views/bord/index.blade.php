@@ -32,14 +32,18 @@
                     href="{{ route('bord.cards') }}">
                     Edit Cards
                 </a>
+                <a class="primary-btn inline text-center sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 my-1"
+                    href="{{ route('bord.fruit') }}">
+                    Fruit
+                </a>
             </div>
 
-            <div class="py-2 px-5 absolute top-2 right-2 flex flex-col">
+            <div class="py-2  absolute top-2 right-2 flex flex-col">
                 <div class="sm:flex sm:items-center sm:ml-6 mb-2 mx-6">
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             <button
-                                class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                class="flex items-center text-sm font-medium text-gray-800 hover:text-gray-900 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                                 <div class="text-2xl">{{ Auth::user()->name }}</div>
 
                                 <div class="ml-1">
@@ -54,10 +58,8 @@
                         </x-slot>
 
                         <x-slot name="content">
-
-
-                            <div class="flex flex-col">
-                                <form method="POST" action="{{ route('logout') }}">
+                            <div class="flex flex-col h-fit">
+                                <form method="POST" class="mb-0" action="{{ route('logout') }}">
                                     @csrf
 
                                     <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
@@ -67,10 +69,11 @@
                                 </form>
 
                                 @if (Auth::user()->is_admin === "true")
-                                <hr class="border border-1 border-gray-300 mx-2 -mt-4">
+
+                                <hr class="border border-1 border-gray-300">
 
                                 <a href="{{ route('register_user') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100
-                                    focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
+                                    focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out h-max">
                                     Create user
                                 </a>
 
@@ -87,10 +90,7 @@
                         </x-slot>
                     </x-dropdown>
                 </div>
-                <a class="primary-btn inline text-center sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 my-1"
-                    href="{{ route('bord.fruit') }}">
-                    Fruit
-                </a>
+
             </div>
 
         </div>
@@ -109,7 +109,7 @@
         @foreach($pages as $page)
         @if (Auth::id() === $page->user_id OR Auth::user()->group_id === $page->user_id)
         <div class="w-4/5 mx-auto pb-10">
-            <div class="bg-white pt-10 rounded-lg drop-shadow-xl sm:basis-3/4 basis-full sm:mr-8 pb-10 sm:pb-0">
+            <div class="bg-white pt-10 rounded-lg drop-shadow-lg sm:basis-3/4 basis-full sm:mr-8 pb-10 sm:pb-0">
                 <div class="w-11/12 mx-auto pb-0">
                     <h2 class="text-gray-900 text-2xl font-bold pt-6 pb-0 sm:pt-0 hover:text-gray-700 transition-all">
                         <a href="{{ route('bord.air', $page->id) }}">
