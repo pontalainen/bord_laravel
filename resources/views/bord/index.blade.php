@@ -30,7 +30,7 @@
                 </a>
                 <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 my-1"
                     href="{{ route('bord.cards') }}">
-                    Edit cards
+                    Edit Cards
                 </a>
             </div>
 
@@ -109,7 +109,7 @@
         @foreach($pages as $page)
         @if (Auth::id() === $page->user_id OR Auth::user()->group_id === $page->user_id)
         <div class="w-4/5 mx-auto pb-10">
-            <div class="bg-white pt-10 rounded-lg drop-shadow-2xl sm:basis-3/4 basis-full sm:mr-8 pb-10 sm:pb-0">
+            <div class="bg-white pt-10 rounded-lg drop-shadow-xl sm:basis-3/4 basis-full sm:mr-8 pb-10 sm:pb-0">
                 <div class="w-11/12 mx-auto pb-0">
                     <h2 class="text-gray-900 text-2xl font-bold pt-6 pb-0 sm:pt-0 hover:text-gray-700 transition-all">
                         <a href="{{ route('bord.air', $page->id) }}">
