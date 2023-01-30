@@ -1,11 +1,13 @@
 const iframe1 = document.getElementById("leftIframe");
 const iframe2 = document.getElementById("rightIframe");
-const sideBtn = document.querySelector(".side-btn");
+const scanModeBtn = document.querySelector(".scanModeBtn");
+const buttonLeft = document.querySelector(".changeSideBtnLeft");
+const buttonRight = document.querySelector(".changeSideBtnRight");
 
 let sideToLoadOn = "left";
+let touch = true;
 
 window.onload = (event) => {
-    console.log("hello wourld");
     iframe1.src = "../fruit_pages/first-side.html";
     iframe2.src = "../fruit_pages/first-side.html";
     changeUrl("side", "left");
@@ -19,64 +21,43 @@ function changeUrl(name, side) {
     history.pushState(null, "", newRelativePathQuery);
 }
 
-sideBtn.addEventListener("click", function () {
-    if (sideToLoadOn === "left") {
-        changeUrl("side", "right");
-        sideToLoadOn = "right";
-        sideBtn.innerHTML = "Höger sidan";
-    } else if (sideToLoadOn === "right") {
-        changeUrl("side", "left");
-        sideToLoadOn = "left";
-        sideBtn.innerHTML = "Vänster sidan";
+scanModeBtn.addEventListener("click", function () {
+    if (touch) {
+        scanModeBtn.innerHTML = "Touch: off";
+        touch = false;
+        console.log(touch);
+    } else if (touch === false) {
+        scanModeBtn.innerHTML = "Touch: on";
+        touch = true;
     }
 });
 
-window.addEventListener("click", function () {
-    /*if (sideToLoadOn === "left") {
-        changeUrl("side", "right");
-        sideToLoadOn = "right";
-        sideBtn.innerHTML = "Höger sidan";
-    } else if (sideToLoadOn === "right") {
-        changeUrl("side", "left");
-        sideToLoadOn = "left";
-        sideBtn.innerHTML = "Vänster sidan";
-    }*/
-    /*changeUrl("side", "right");
-    sideToLoadOn = "right";
-    sideBtn.innerHTML = "Höger sidan";
-    console.log("hej");*/
-});
-iframe1.contentWindow.addEventListener("click", function () {
-    changeUrl("side", "right");
-    sideToLoadOn = "right";
-    sideBtn.innerHTML = "Höger sidan";
-    console.log("hej");
-});
+function loadPage(a) {
+    if (touch) {
+        buttonLeft.addEventListener("click", function () {
+            changeUrl("side", "left");
+            sideToLoadOn = "left";
+            /*sideBtn.innerHTML = "Vänster sidan";*/
+        });
 
-iframe2.contentWindow.addEventListener("click", function () {
-    changeUrl("side", "right");
-    sideToLoadOn = "right";
-    sideBtn.innerHTML = "Höger sidan";
-    console.log("hej");
-});
-
-async function loadPage(a) {
+        buttonRight.addEventListener("click", function () {
+            changeUrl("side", "right");
+            sideToLoadOn = "right";
+            /*sideBtn.innerHTML = "Höger sidan";*/
+        });
+    } else {
+        if (sideToLoadOn === "left") {
+            changeUrl("side", "right");
+            sideToLoadOn = "right";
+        } else if (sideToLoadOn === "right") {
+            changeUrl("side", "left");
+            sideToLoadOn = "left";
+        }
+    }
     if (sideToLoadOn === "left") {
         iframe1.src = a;
-        let innerDoc = iframe1.contentWindow.document;
-
-        var link = document.createElement("link");
-        link.type = "text/css";
-        link.rel = "stylesheet";
-        link.href = "left.css";
-
-        innerDoc.querySelector("head").appendChild(link);
-        console.log(innerDoc.querySelector("head").innerHTML);
     } else if (sideToLoadOn === "right") {
         iframe2.src = a;
-        let innerDoc = iframe2.contentWindow.document;
-
-        innerDoc.querySelector(".container").classList.add("right");
     }
 }
 
@@ -114,9 +95,5 @@ window.addEventListener("keydown", function (a) {
         case "0":
             loadPage("../../fruit_pages/first-side.html");
             break;
-        case "c":
-            console.log(
-                iframe1.contentWindow.document.querySelector("head").innerHTML
-            );
     }
 });

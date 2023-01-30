@@ -41,7 +41,7 @@
         }
       </style>
 
-        <button class="side-btn">Vänster sida</button>
+      <button class="scanModeBtn">Touch: on</button>
 
       <div class="grid">
         <div class="graph">
@@ -215,10 +215,13 @@
               <li>CO<under>2</under> 1-40 kg CO<under>2</under>e/kg</li>
             </ul>
           </div>
-        </div>   
-        
+        </div>
+
         <iframe id="leftIframe" scrolling="no" class="left" title="Inline Frame Example" src="" ></iframe>
+        <button class="changeSideBtnLeft"></button>
+
         <iframe id="rightIframe" scrolling="no" class="right" title="Inline Frame Example" src="" ></iframe>
+        <button class="changeSideBtnRight"></button>
 
       </div>
     </div>
