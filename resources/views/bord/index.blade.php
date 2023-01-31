@@ -1,3 +1,4 @@
+@vite('resources/js/app.js')
 <html>
 
     <head>
@@ -7,7 +8,6 @@
         <title>
             Project Bord
         </title>
-        @vite('resources/js/app.js')
 
     </head>
 

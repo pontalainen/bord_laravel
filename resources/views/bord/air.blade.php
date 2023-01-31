@@ -1,6 +1,5 @@
-@vite('resources/js/app.js')
-@vite('resources/js/nfc.js')
-
+{{-- @vite('resources/js/app.js') --}}
+{{-- @vite('resources/js/nfc.js') --}}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +11,7 @@
         <link rel="stylesheet" href="resources/css/main.css">
 
         <title>air page</title>
+        <link rel="stylesheet" href="resources/css/app.css">
     </head>
 
     <body class="overflow-y-hidden text-center font-bold w-full h-full bg-gray-100">
