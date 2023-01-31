@@ -1,4 +1,5 @@
 @vite('resources/js/app.js')
+@vite('resources/css/app.css')
 @vite('resources/js/nfc.js')
 
 
@@ -22,7 +23,7 @@
         @if ( $page !== null )
         @if (Auth::user()->is_admin === 'true')
         <div class="py-10 px-5 absolute top-2 left-2">
-            <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 font-normal"
+            <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl transition-all hover:bg-blue-400 font-normal"
                 href="{{ route('bord.index') }}">
                 Go back
             </a>
