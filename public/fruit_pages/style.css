@@ -47,7 +47,7 @@
 .container.left ul li:first-child {
     margin-top: -1rem;
 }
-@keyframes slide-in {
+@keyframes slide-in-left {
     0% {
         transform: translateX(-130%);
     }
@@ -135,6 +135,9 @@ under {
     align-items: center;
     justify-content: center;
     animation: slide-in 2s forwards;
+}
+.container.left .info ul {
+    animation: slide-in-left 2s forwards;
 }
 
 .circles {

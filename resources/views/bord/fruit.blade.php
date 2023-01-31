@@ -11,6 +11,15 @@
     </head>
 
     <body>
+    <header class="header">
+      <input type="text" name="input" id="input-el" placeholder="Page id..." class="mt-10">
+      <button class="scanModeBtn">Touch: On</button>
+
+      <hr>
+    </header>
+
+    
+    
     <div id="layout-fruit">
       <style>
         @keyframes rotate1 {
@@ -40,8 +49,6 @@
           }
         }
       </style>
-
-      <button class="scanModeBtn">Touch: on</button>
 
       <div class="grid">
         <div class="graph">

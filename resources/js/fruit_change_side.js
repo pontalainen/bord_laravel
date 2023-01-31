@@ -23,11 +23,11 @@ function changeUrl(name, side) {
 
 scanModeBtn.addEventListener("click", function () {
     if (touch) {
-        scanModeBtn.innerHTML = "Touch: off";
+        scanModeBtn.innerHTML = "Touch: Off";
         touch = false;
         console.log(touch);
     } else if (touch === false) {
-        scanModeBtn.innerHTML = "Touch: on";
+        scanModeBtn.innerHTML = "Touch: On";
         touch = true;
     }
 });
