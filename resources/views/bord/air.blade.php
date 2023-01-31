@@ -1,5 +1,7 @@
-{{-- @vite('resources/js/app.js') --}}
-{{-- @vite('resources/js/nfc.js') --}}
+@vite('resources/js/app.js')
+@vite('resources/css/app.css')
+@vite('resources/js/nfc.js')
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,13 +18,13 @@
 
     <body class="overflow-y-hidden text-center font-bold w-full h-full bg-gray-100">
 
-        <input type="text" name="input" id="input-el" placeholder="Page id..." class="mt-10">
+        {{-- <input type="text" name="input" id="input-el" placeholder="Page id..." class="mt-10"> --}}
 
         {{-- ! Actual page --}}
         @if ( $page !== null )
         @if (Auth::user()->is_admin === 'true')
         <div class="py-10 px-5 absolute top-2 left-2">
-            <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 font-normal"
+            <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl transition-all hover:bg-blue-400 font-normal"
                 href="{{ route('bord.index') }}">
                 Go back
             </a>

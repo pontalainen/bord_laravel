@@ -31,7 +31,7 @@
 
                 <div class="m-auto">
                     <div class="py-10 px-5 absolute top-2 left-2">
-                        <a class="inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 font-normal"
+                        <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl transition-all hover:bg-blue-400 font-normal"
                             href="{{ route('bord.index') }}">
                             Go back
                         </a>
@@ -98,7 +98,7 @@
 
                         {{-- Submit button --}}
                         <button type="submit"
-                            class="uppercase mt-15 bg-blue-500 text-gray-900 text-lg font-extrabold py-4 px-8 rounded-3xl leading-none h-16 transition-all hover:bg-blue-400">
+                            class="primary-btn uppercase mt-15 bg-blue-500 text-gray-900 text-lg font-extrabold py-4 px-8 leading-none h-16 transition-all hover:bg-blue-400">
                             Submit page
                         </button>
                     </div>
