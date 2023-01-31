@@ -17,7 +17,7 @@
 
     <body class="overflow-y-hidden text-center font-bold w-full h-full bg-gray-100">
 
-        <input type="text" name="input" id="input-el" placeholder="Page id..." class="mt-10">
+        {{-- <input type="text" name="input" id="input-el" placeholder="Page id..." class="mt-10"> --}}
 
         {{-- ! Actual page --}}
         @if ( $page !== null )

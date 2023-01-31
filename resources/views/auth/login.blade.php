@@ -8,11 +8,6 @@
 </head>
 <x-guest-layout>
     <x-auth-card>
-        {{-- <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot> --}}
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -55,8 +50,7 @@
                     <a class="underline text-sm hover:text-gray-500 text" href="{{ route('register') }}">
                         {{ __('Not registred yet?') }}
                     </a>
-                    <a class="underline text-sm hover:text-gray-500 pl-4 text"
-                        href="{{ route('password.request') }}">
+                    <a class="underline text-sm hover:text-gray-500 pl-4 text" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 </div>
