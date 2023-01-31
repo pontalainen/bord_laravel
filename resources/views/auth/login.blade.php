@@ -1,4 +1,5 @@
 @vite('resources/js/app.js')
+@vite('resources/css/login.css')
 
 <head>
     <title>
@@ -44,17 +45,17 @@
                     <input id="remember_me" type="checkbox"
                         class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                         name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <span class="ml-2 text-sm text">{{ __('Remember me') }}</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-between mt-4">
                 @if (Route::has('password.request'))
                 <div>
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                    <a class="underline text-sm hover:text-gray-500 text" href="{{ route('register') }}">
                         {{ __('Not registred yet?') }}
                     </a>
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 pl-4"
+                    <a class="underline text-sm hover:text-gray-500 pl-4 text"
                         href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
