@@ -79,3 +79,8 @@
     margin: 0 auto;
     max-width: 90%;
 }
+
+.primary-btn {
+    border-radius: 6px;
+    padding: 8 16;
+}
