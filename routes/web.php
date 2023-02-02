@@ -19,10 +19,6 @@ Route::get('/', function () {
     return redirect('bord');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
 require __DIR__ . '/auth.php';
 
 // Main Routes for "bord" inlcuded in resources
