@@ -4,6 +4,7 @@
     <title>
         Register
     </title>
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <x-guest-layout>
     <x-auth-card>
