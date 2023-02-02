@@ -9,7 +9,6 @@
         <title>
             Project Bord
         </title>
-        <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     </head>
 
     <body class="w-full h-full bg-gray-100">
