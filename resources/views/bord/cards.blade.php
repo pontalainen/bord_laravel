@@ -14,7 +14,7 @@
         @if (Auth::user()->is_admin === "true")
         <div class="w-4/5 mx-auto">
             <div class="text-center pt-20">
-                <h1 class="text-4xl text-gray-700">
+                <h1 class="text-4xl text-gray-250">
                     Edit cards
                 </h1>
                 <hr class="border border-1 border-gray-300 mt-10">
@@ -34,7 +34,7 @@
             </div>
 
             <div class="py-10 px-5 absolute top-2 left-2">
-                <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400"
+                <a class="primary-btn inline text-base sm:text-xl bg-gray-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-gray-400"
                     href="{{ route('bord.index') }}">
                     Go Back
                 </a>
@@ -52,7 +52,7 @@
                     @method('PATCH')
 
                     {{-- Page name --}}
-                    <h2 class="text-3xl text-center pb-2 font-bold">
+                    <h2 class="text-3xl text-center pb-2 font-bold h2_cards">
                         {{ $page->name }}
                     </h2>
 
@@ -68,7 +68,7 @@
 
                     <div class="float-right">
                         <button type="submit"
-                            class="uppercase mt-15 bg-blue-500 transition-all hover:bg-blue-400 text-gray-900 text-lg font-extrabold py-4 px-8 rounded-3xl mt-2 mb-2 drop-shadow-xl">
+                            class="uppercase mt-15 bg-gray-900 transition-all hover:bg-gray-400 text-gray-200 text-lg font-extrabold py-4 px-8 rounded-3xl mt-2 mb-2 drop-shadow-xl knapp">
                             Save cards
                         </button>
                     </div>
@@ -76,7 +76,7 @@
                     {{-- <div class="flex flex-row justify-around border-gray-300 border-2 max-w-2xl m-auto">
                         <div class="bg-grey-lighter py-10">
                             <label
-                                class="w-44 flex flex-col items-center px-2 py-3 bg-white-rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer bg-blue-400 hover:bg-blue-500">
+                                class="w-44 flex flex-col items-center px-2 py-3 bg-white-rounded-lg shadow-lg tracking-wide uppercase border border-gray cursor-pointer bg-gray-400 hover:bg-gray-500">
                                 <span class="mt-2 text-base leading-normal">
                                     Primary Card
                                 </span>
@@ -85,7 +85,7 @@
                         </div>
                         <div class="bg-grey-lighter py-10">
                             <label
-                                class="w-44 flex flex-col items-center px-2 py-3 bg-white-rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer bg-blue-300 hover:bg-blue-200">
+                                class="w-44 flex flex-col items-center px-2 py-3 bg-white-rounded-lg shadow-lg tracking-wide uppercase border border-gray cursor-pointer bg-gray-300 hover:bg-gray-200">
                                 <span class="mt-2 text-base leading-normal">
                                     Secondary Card
                                 </span>
@@ -106,9 +106,9 @@
             @else
 
             <div class="mx-auto w-4/5 pb-0 pt-2">
-                <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2 mt-24">
+                <div class="bg-gray-500 text-white font-bold rounded-t px-4 py-2 mt-24">
                 </div>
-                <div class="border border-t-1 border-blue-400 rounded-b bg-blue-100 px-4 py-10 text-center text-xl">
+                <div class="border border-t-1 border-gray-400 rounded-b bg-gray-100 px-4 py-10 text-center text-xl">
                     <p>Only administrators can enter this page, sorry!</p>
                 </div>
             </div>
@@ -118,8 +118,8 @@
                     @csrf
 
                     <x-dropdown-link :href="route('logout')"
-                        class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
-                    hover:bg-blue-400 m-auto absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-3/4 w-52 text-center text-black" onclick="event.preventDefault();
+                        class="primary-btn inline sm:text-xl text-2xl bg-gray-500 py-4 px-4 shadow-xl rounded-full transition-all
+                    hover:bg-gray-400 m-auto absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-3/4 w-52 text-center text-black" onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-dropdown-link>
@@ -127,8 +127,8 @@
             </div>
 
             <div class="py-10 sm:py-20">
-                <form class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
-                hover:bg-blue-400 m-auto absolute left-1/2 top-3/6 -translate-x-1/2 -translate-y-3/4 w-52 text-center">
+                <form class="primary-btn inline sm:text-xl text-2xl bg-gray-500 py-4 px-4 shadow-xl rounded-full transition-all
+                hover:bg-gray-400 m-auto absolute left-1/2 top-3/6 -translate-x-1/2 -translate-y-3/4 w-52 text-center">
                     <input type="button" value="Go back" onclick="history.back()">
                 </form>
             </div>
