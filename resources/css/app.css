@@ -94,3 +94,13 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     background-blend-mode: multiply;
 }
+
+.bg-white {
+    opacity: 0.85;
+    border-radius: 0.15em;
+}
+
+.ljus {
+    padding: 20px;
+    text-shadow: 0 0 5px rgb(0, 0, 0, 0.6);
+}
