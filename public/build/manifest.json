@@ -4,15 +4,15 @@
     "src": "resources/images/mountains_Background.png"
   },
   "resources/js/app.css": {
-    "file": "assets/app-5baa3a98.css",
+    "file": "assets/app-3306645d.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-d19fb95b.js",
+    "file": "assets/app-efa71ab6.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-5baa3a98.css"
+      "assets/app-3306645d.css"
     ],
     "assets": [
       "assets/mountains_Background-d679f514.png"

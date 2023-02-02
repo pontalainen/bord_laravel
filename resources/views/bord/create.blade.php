@@ -10,6 +10,7 @@
     </head>
 
     <body class="w-full h-full bg-gray-100">
+
         @if (Auth::user()->is_admin === "true")
         <form action="{{ route('bord.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -122,6 +123,7 @@
         </div>
 
         @endif
+        <script src="{{ asset('js/create.js') }}"></script>
     </body>
 
 </html>

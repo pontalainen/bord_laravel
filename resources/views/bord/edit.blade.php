@@ -135,6 +135,7 @@
         </div>
 
         @endif
+        <script src="{{ asset('js/edit.js') }}"></script>
     </body>
 
 </html>
