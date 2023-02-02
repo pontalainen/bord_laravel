@@ -1,6 +1,4 @@
 @vite('resources/js/app.js')
-@vite('resources/js/nfc.js')
-
 
 <!DOCTYPE html>
 <html lang="en">
