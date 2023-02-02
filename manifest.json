@@ -1,0 +1,18 @@
+{
+    "name": "Fruit",
+    "short_name": "Fruit",
+    "display": "standalone",
+    "orientation": "landscape",
+    "scope": "http://[::1]:5173/",
+    "theme_color": "#000",
+    "background_color": "#000",
+    "start_url": "http://[::1]:5173/",
+    "id": "/bord__frontend/index.html",
+    "icons": [
+        {
+            "src": "../../public/images/sample.jpg",
+            "sizes": "5472x3648",
+            "type": "image/png"
+        }
+    ]
+}

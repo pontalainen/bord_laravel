@@ -359,20 +359,43 @@ hr {
     width: 16rem;
     height: 2.5rem;
     justify-self: center;
-    margin-bottom: -1rem;
+    margin-top: 2.5rem;
+    border-color: #6b7280;
+    border-width: 1px;
+    padding: 0.75rem;
+    padding-top: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 
 .scanModeBtn {
-    margin-bottom: -1rem;
+    margin-top: -2.5rem;
     display: flex;
     width: 8rem;
-    height: 2rem;
+    height: 3rem;
     justify-content: center;
     align-items: center;
     justify-self: flex-end;
+    border: none;
+    border-radius: 0.2rem;
+    /*background: #ed217c;*/
+    font-family: hemi-head;
+    background: #203354;
+    color: white;
+    font-size: 1.2rem;
 }
 
 @font-face {
     font-family: Hemi-head;
     src: url("../../public/images/fruit/hemi-head-bd-it.ttf");
+}
+
+@media screen and (orientation: portrait) {
+    body > * {
+        visibility: hidden;
+    }
+    body {
+        background-image: url("../../public/images/fruit/rotation.svg");
+    }
 }

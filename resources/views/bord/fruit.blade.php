@@ -7,6 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Fruit</title>
         @vite('resources/css/fruit.css')
+      
+        <link rel="manifest" href="http://[::1]:5173/manifest.json">
        
     </head>
 
@@ -234,6 +236,15 @@
     </div>
 
     @vite('resources/js/fruit_change_side.js')
+
+    <script>
+       if ("serviceWorker" in navigator) {
+         window.addEventListener("load", () => {
+           navigator.serviceWorker &&
+             navigator.serviceWorker.register('http://[::1]:5173/resources/js/sw.js');
+         });
+       }
+    </script>
     </body>
 
 </html>
