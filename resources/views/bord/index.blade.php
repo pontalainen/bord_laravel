@@ -1,5 +1,4 @@
 @vite('resources/js/app.js')
-@vite('resources/css/index.css')
 <html>
 
     <head>

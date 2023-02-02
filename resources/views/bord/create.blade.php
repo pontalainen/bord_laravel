@@ -8,8 +8,7 @@
 
         @vite('resources/js/app.js')
         @vite('resources/js/create.js')
-        @vite('resources/css/create.css')
-        @vite('resources/css/app.css')
+
     </head>
 
     <body class="w-full h-full bg-gray-100">
