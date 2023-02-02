@@ -45,7 +45,6 @@ class PagesController extends Controller
 
         return view('bord.index', [
             'pages' => Page::orderBy('updated_at', 'desc')
-                ->simplePaginate(5)
         ]);
     }
 
@@ -123,6 +122,27 @@ class PagesController extends Controller
      */
     public function update(PageFormRequest $request, $id)
     {
+        $request->validated();
+
+        // Needed to delete the old page and create a new one, since the storing of the image
+        // went nuts with the update method
+
+        Page::where('id', $id)->delete();
+
+        $pageData = [
+            'user_id' => $request->user_id,
+            'group_id' => $request->user_id,
+            'name' => $request->name,
+            'content' => $request->checkbox === "on" ? Str::markdown($request->content) : $request->content,
+            'image' => $request->image !== null ? $this->storeImage($request) : null,
+            'primary_card' => $request->primary_card,
+            'secondary_card' => $request->secondary_card
+        ];
+
+        Page::create($pageData);
+
+        return redirect(route('bord.index'));
+        // ___________________________________
 
         $request->validated();
 
@@ -146,7 +166,7 @@ class PagesController extends Controller
         Page::destroy($id);
 
         return redirect(route('bord.index'))
-            ->with('message', 'Page has been deleted');
+            ->with('message', 'Page ' . $id . ' has been deleted');
     }
 
     private function storeImage($request)

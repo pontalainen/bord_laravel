@@ -8,6 +8,8 @@
 
         @vite('resources/js/app.js')
         @vite('resources/js/create.js')
+        @vite('resources/css/create.css')
+        @vite('resources/css/app.css')
     </head>
 
     <body class="w-full h-full bg-gray-100">
@@ -26,7 +28,7 @@
 
                 <div class="m-auto">
                     <div class="py-10 px-5 absolute top-2 left-2">
-                        <a class="inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 font-normal"
+                        <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl transition-all hover:bg-blue-400 font-normal"
                             href="{{ route('bord.index') }}">
                             Go back
                         </a>
@@ -85,7 +87,7 @@
 
                         {{-- Submit button --}}
                         <button type="submit"
-                            class="uppercase mt-15 bg-blue-500 text-gray-900 text-lg font-extrabold py-4 px-8 rounded-3xl leading-none h-16 transition-all hover:bg-blue-400">
+                            class="primary-btn uppercase mt-15 bg-blue-500 text-gray-900 text-lg font-extrabold py-4 px-8 leading-none h-16 transition-all hover:bg-blue-400">
                             Submit page
                         </button>
                     </div>
@@ -103,19 +105,23 @@
         </div>
 
         <div class="py-10 sm:py-20">
-            <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
-                hover:bg-blue-400 m-auto absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-3/4 w-52 text-center"
-                href="{{ route('dashboard') }}">
-                Login admin
-            </a>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+
+                <x-dropdown-link :href="route('logout')"
+                    class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
+                hover:bg-blue-400 m-auto absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-3/4 w-52 text-center text-black" onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                    {{ __('Log Out') }}
+                </x-dropdown-link>
+            </form>
         </div>
 
         <div class="py-10 sm:py-20">
-            <a class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
-                hover:bg-blue-400 m-auto absolute left-1/2 top-3/6 -translate-x-1/2 -translate-y-3/4 w-52 text-center"
-                href="{{ route('bord.index') }}">
-                Go to bord
-            </a>
+            <form class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
+            hover:bg-blue-400 m-auto absolute left-1/2 top-3/6 -translate-x-1/2 -translate-y-3/4 w-52 text-center">
+                <input type="button" value="Go back" onclick="history.back()">
+            </form>
         </div>
 
         @endif

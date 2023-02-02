@@ -24,7 +24,7 @@ class PageFormRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'name' => 'required|max:30|unique:pages,name,' . $this->id,
+            'name' => 'required|max:30' . $this->id,
             'content' => 'required',
             'image' => 'image|mimes:jpg,jpeg,png|max:5048',
         ];
