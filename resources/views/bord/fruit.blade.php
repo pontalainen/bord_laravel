@@ -8,7 +8,7 @@
         <title>Fruit</title>
         @vite('resources/css/fruit.css')
       
-        <link rel="manifest" href="http://[::1]:5173/manifest.json">
+        <link rel="manifest"  href="http://localhost:5173/manifest.json">
        
     </head>
 
@@ -241,7 +241,7 @@
        if ("serviceWorker" in navigator) {
          window.addEventListener("load", () => {
            navigator.serviceWorker &&
-             navigator.serviceWorker.register('http://[::1]:5173/resources/js/sw.js');
+             navigator.serviceWorker.register(`http://localhost:5173/js/sw.js`);
          });
        }
     </script>
