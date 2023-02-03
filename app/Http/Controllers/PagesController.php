@@ -35,7 +35,7 @@ class PagesController extends Controller
     {
         if (Auth::user()->is_admin === 'false') {
             return view('bord.air', [
-                'page' => Page::where('name', 'Start')->first()
+                'page' => Page::where('name', 'Start')
             ]);
         }
 
@@ -182,7 +182,6 @@ class PagesController extends Controller
     {
         return view('bord.cards', [
             'pages' => Page::orderBy('updated_at', 'desc')
-                ->simplePaginate(5)
         ]);
     }
 
