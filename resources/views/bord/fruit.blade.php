@@ -1,3 +1,5 @@
+@vite('resources/js/app.js')
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Fruit</title>
         @vite('resources/css/fruit.css')
+        <link rel="stylesheet" href="{{ asset('css/fruit.css') }}">
       
         <!--<link rel="manifest"  href="http://localhost:5173/manifest.json">-->
        
@@ -14,7 +17,7 @@
 
     <body>
     <header class="header">
-      <input type="text" name="input" id="input-el" placeholder="Page id..." class="mt-10">
+      <h1>Fruit</h1>
       <button class="scanModeBtn">Touch: On</button>
     </header>
 
@@ -233,7 +236,7 @@
       </div>
     </div>
 
-    @vite('resources/js/fruit_change_side.js')
+    <script src="{{ asset('js/fruit_change_side.js') }}"></script>
 
     <script>
        // if ("serviceWorker" in navigator) {
