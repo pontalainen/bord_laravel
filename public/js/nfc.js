@@ -42,7 +42,7 @@ export function cardIdNfc() {
                         document.querySelector(
                             ".primary_card"
                         ).style.backgroundColor = "white";
-                        this.value = serialNumber;
+                        // document.querySelector(".secondary_card").value = serialNumber;
                         return serialNumber;
                     }
                 );
