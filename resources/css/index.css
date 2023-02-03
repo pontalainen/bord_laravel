@@ -1,5 +1,10 @@
-
-
-.primary-btn {
-    border-radius: 0.3;
+body {
+    background-image: url(../images/mountains_Background.png);
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: multiply;
 }
+
+
+
+

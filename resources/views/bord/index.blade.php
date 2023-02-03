@@ -1,4 +1,5 @@
 @vite('resources/js/app.js')
+@vite('resources/css/index.css')
 <html>
 
     <head>
@@ -14,7 +15,7 @@
     <body class="w-full h-full bg-gray-100">
         <div class="w-4/5 mx-auto pb-10">
             <div class="text-center pt-12">
-                <h1 class="text-4xl text-gray-700">
+                <h1 class="text-4xl text-gray-200">
                     All pages of: <br>
                     <div class="mt-2">
                         <b>{{ Auth::user()->name }}</b>
@@ -28,7 +29,7 @@
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             <button
-                                class="flex items-center text-sm font-medium text-gray-800 hover:text-gray-900 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                class="flex items-center text-sm font-medium text-gray-200 hover:text-gray-900 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                                 <div class="text-2xl">{{ Auth::user()->name }}</div>
 
                                 <div class="ml-1">
@@ -107,11 +108,11 @@
                     href="{{ route('bord.create') }}">
                     New Page
                 </a>
-                <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 my-1"
+                <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-gray-400 my-1"
                     href="{{ route('bord.cards') }}">
                     Edit Cards
                 </a>
-                <a class="primary-btn inline text-center sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 my-1"
+                <a class="primary-btn inline text-center sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-gray-400 my-1"
                     href="{{ route('bord.fruit') }}">
                     Fruit
                 </a>
@@ -119,15 +120,15 @@
 
             @else
             <div class="py-2 px-5 absolute top-2 left-2 flex flex-col">
-                <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 my-1"
+                <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-gray-400 my-1"
                     href="{{ route('bord.create') }}">
                     New Page
                 </a>
-                <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 my-1"
+                <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-gray-400 my-1"
                     href="{{ route('bord.cards') }}">
                     Edit Cards
                 </a>
-                <a class="primary-btn inline text-center sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-blue-400 my-1"
+                <a class="primary-btn inline text-center sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-gray-400 my-1"
                     href="{{ route('bord.fruit') }}">
                     Fruit
                 </a>
@@ -154,14 +155,14 @@
 
                         <div class="flex flex-row">
                             <a href="{{ route('bord.edit', $page->id) }}"
-                                class="block italic text-blue-400 border-b-1 mt-4 mr-4">
+                                class="block italic text-blue-800 border-b-1 mt-4 mr-4">
                                 Edit
                             </a>
 
                             <form action="{{ route('bord.destroy', $page->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="block italic text-red-500 border-b-lime-100 mt-4" type="submit">
+                                <button class="block italic text-red-800 border-b-lime-100 mt-4" type="submit">
                                     Delete
                                 </button>
                             </form>
