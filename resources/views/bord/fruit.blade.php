@@ -8,7 +8,7 @@
         <title>Fruit</title>
         @vite('resources/css/fruit.css')
       
-        <link rel="manifest"  href="http://localhost:5173/manifest.json">
+        <!--<link rel="manifest"  href="http://localhost:5173/manifest.json">-->
        
     </head>
 
@@ -236,12 +236,12 @@
     @vite('resources/js/fruit_change_side.js')
 
     <script>
-       if ("serviceWorker" in navigator) {
-         window.addEventListener("load", () => {
-           navigator.serviceWorker &&
-             navigator.serviceWorker.register(`http://localhost:5173/js/sw.js`);
-         });
-       }
+       // if ("serviceWorker" in navigator) {
+        // window.addEventListener("load", () => {
+          // navigator.serviceWorker &&
+            // navigator.serviceWorker.register(`http://localhost:5173/js/sw.js`);
+        // });
+      // }
     </script>
     </body>
 
