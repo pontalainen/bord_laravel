@@ -9,8 +9,8 @@ async function cardId() {
 }
 
 primaryCard.forEach((element) => {
-    element.addEventListener("click", function () {
-        this.value = cardId();
+    element.addEventListener("click", async function () {
+        this.value = await cardIdNfc();
     });
 });
 
