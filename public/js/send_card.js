@@ -4,7 +4,7 @@ const primaryCard = document.querySelectorAll(".primary_card");
 const secondaryCard = document.querySelectorAll(".secondary_card");
 
 async function cardId() {
-    const id = await cardIdNfc();
+    let id = await cardIdNfc();
     return id;
 }
 
