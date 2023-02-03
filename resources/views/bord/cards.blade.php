@@ -144,6 +144,7 @@
             @endif
 
             <script type="module" src="{{ asset('js/send_card.js') }}"></script>
+            <script type="module" src="{{ asset('js/send_card.js') }}"></script>
     </body>
 
 </html>
