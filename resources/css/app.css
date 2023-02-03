@@ -83,13 +83,14 @@
 .primary-btn {
     border-radius: 0.15em;
     padding: 8 16;
-    background-color: #77B5FE;
+    background-color: #77b5fe;
     color: #000;
 }
 
 body {
     background-image: url(../images/mountains_Background.png);
     background-size: cover;
+    background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.6);
     background-blend-mode: multiply;
 }
@@ -126,14 +127,13 @@ b {
 }
 
 #login-hr {
-    border-color: #77B5FE;
+    border-color: #77b5fe;
 }
-
 
 .text-color {
     color: #000;
 }
 
 .login-bn {
-    background-color: #77B5FE;
+    background-color: #77b5fe;
 }
