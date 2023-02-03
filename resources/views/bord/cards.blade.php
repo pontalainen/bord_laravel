@@ -48,8 +48,7 @@
                 <button id="scanButton">scan</button>
             </div>
 
-            @foreach ($pages as $page)
-            @if (Auth::id() === $page->user_id)
+            @foreach(Auth::user()->pages as $page)
             <div class="m-auto pt-4 mb-40">
 
                 {{-- Errors --}}
@@ -106,7 +105,6 @@
                 </form>
             </div>
 
-            @endif
             @endforeach
 
             @else

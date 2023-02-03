@@ -35,7 +35,7 @@ class PagesController extends Controller
     {
         if (Auth::user()->is_admin === 'false') {
             return view('bord.air', [
-                'page' => Page::where('name', 'Start')
+                'page' => Page::where('name', 'Start')->first()
             ]);
         }
 
