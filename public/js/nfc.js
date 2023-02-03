@@ -53,7 +53,7 @@ export function cardIdNfc() {
         navigator.permissions.query({ name: "nfc" }).then((result) => {
             if (result.state === "granted") {
                 //text.innerHTML = navigator.permissions.query({ name: "nfc" });
-                webWorker();
+                startScanning();
             } else if (result.state === "prompt") {
                 // Show a scan button.
                 document.querySelector("#scanButton").style.display = "block";
