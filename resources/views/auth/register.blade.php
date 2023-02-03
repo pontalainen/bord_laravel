@@ -34,7 +34,7 @@
             <div class="mt-4 text">
                 <x-label for="username" :value="__('Username')" />
 
-                <x-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')"
+                <x-input id="username" class="block mt-1 w-full text-color" type="text" name="username" :value="old('username')"
                     required />
             </div>
 
@@ -42,7 +42,7 @@
             <div class="mt-4 text">
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
+                <x-input id="email" class="block mt-1 w-full text-color" type="email" name="email" :value="old('email')"
                     required />
             </div>
 
@@ -50,7 +50,7 @@
             <div class="mt-4 text">
                 <x-label for="password" :value="__('Password')" />
 
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required
+                <x-input id="password" class="block mt-1 w-full text-color" type="password" name="password" required
                     autocomplete="new-password" />
             </div>
 
@@ -58,17 +58,17 @@
             <div class="mt-4 text">
                 <x-label for="password_confirmation" :value="__('Confirm Password')" />
 
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password"
+                <x-input id="password_confirmation" class="block mt-1 w-full text-color" type="password"
                     name="password_confirmation" required />
             </div>
 
 
             <div class="flex items-center justify-end mt-4 text">
-                <a class="underline text-sm text-gray-100 hover:text-gray-400" href="{{ route('login') }}">
+                <a class="underline text-sm text-gray-100 hover:text-blue-300" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
 
-                <x-button class="ml-4 text">
+                <x-button class="ml-4 text login-bn">
                     {{ __('Register') }}
                 </x-button>
             </div>
