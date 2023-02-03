@@ -20,7 +20,7 @@
                         <b>{{ Auth::user()->name }}</b>
                     </div>
                 </h1>
-                <hr class="border border-1 border-gray-300 mt-10">
+                <hr class="border border-1 border-gray-300 mt-10" id="login-hr">
             </div>
 
             <div class="py-2 absolute top-2 right-2 flex flex-col">
@@ -170,14 +170,14 @@
 
                         <div class="flex flex-row">
                             <a href="{{ route('bord.edit', $page->id) }}"
-                                class="block italic text-blue-800 border-b-1 mt-4 mr-4">
+                                class="block italic text-blue-500 border-b-1 mt-4 mr-4">
                                 Edit
                             </a>
 
                             <form action="{{ route('bord.destroy', $page->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="block italic text-red-800 border-b-lime-100 mt-4" type="submit">
+                                <button class="block italic text-red-500 border-b-lime-100 mt-4" type="submit">
                                     Delete
                                 </button>
                             </form>
