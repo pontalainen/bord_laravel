@@ -15,13 +15,10 @@ export async function cardIdNfc() {
                         //text.innerHTML =  "Error! Cannot read data from the NFC tag. Try a different one?";
                     });
                     // If you reading a tag successful
-                    ndef.addEventListener(
-                        "reading",
-                        ({ message, serialNumber }) => {
+                    ndef.addEventListener("reading", ({ message, serialNumber }) => {
                             // info.innerHTML = message + ", " + serialNumber;
                             // text.innerHTML = "NDEF message read.";
-                            document.querySelector(".secondary_card").value =
-                                serialNumber;
+                            document.querySelector(".secondary_card").value = serialNumber;
                             resolve(serialNumber);
                         }
                     );
