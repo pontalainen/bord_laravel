@@ -1,7 +1,7 @@
 export async function cardIdNfc(){
-   // return new Promise(async (resolve) => {
+   return new Promise(async (resolve) => {
         // Function scan after a nfc tag
-        function startScanning() {
+        async function startScanning() {
             // Get refercens to nfc reader
             const ndef = new NDEFReader();
 
@@ -19,8 +19,8 @@ export async function cardIdNfc(){
                         // info.innerHTML = message + ", " + serialNumber;
                         // text.innerHTML = "NDEF message read.";
                         
-                        // resolve(serialNumber);
-                        return serialNumber;
+                        resolve(serialNumber);
+                        // return serialNumber;
                     });
 
                     // If it get a error while starting the scan
@@ -50,8 +50,8 @@ export async function cardIdNfc(){
                         // Prompt user to allow to send and receive info when they tap NFC devices.
                         document.querySelector("#scanButton").style.display =
                             "none";
-                        webWorker();
-                        // startScanning();
+                        // webWorker();
+                        startScanning();
                     };
                 }
             });
@@ -80,5 +80,5 @@ export async function cardIdNfc(){
                 }
             });
         }
-   // });
+   });
 }
