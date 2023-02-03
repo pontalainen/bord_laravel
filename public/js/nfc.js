@@ -34,6 +34,9 @@ export function cardIdNfc() {
                 ndef.addEventListener("reading", ({ serialNumber }) => {
                     // info.innerHTML = message + ", " + serialNumber;
                     // text.innerHTML = "NDEF message read.";
+                    document.querySelector(
+                        ".primary_card"
+                    ).style.backgroundColor = "white";
                     return serialNumber;
                 });
 
