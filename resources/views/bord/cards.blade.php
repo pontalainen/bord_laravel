@@ -7,6 +7,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Edit cards</title>
+
+        <style>
+            #scanButton {
+                display: none;
+            }
+        </style>
     </head>
 
 
@@ -38,6 +44,8 @@
                     href="{{ route('bord.index') }}">
                     Go Back
                 </a>
+
+                <button id="scanButton">scan</button>
             </div>
 
             @foreach ($pages as $page)
