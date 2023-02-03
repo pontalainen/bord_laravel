@@ -5,8 +5,14 @@ const secondaryCard = document.querySelectorAll(".secondary_card");
 
 primaryCard.forEach((element) => {
     element.addEventListener("click", async function () {
-        const idInput = await cardIdNfc();
-        this.value = idInput;
+        try {
+            const idInput = await cardIdNfc();
+            if (idInput !== undefined) {
+                this.value = idInput;
+            }
+        } catch (error) {
+            this.value = error;
+        }
     });
 });
 
