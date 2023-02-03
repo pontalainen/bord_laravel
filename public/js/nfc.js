@@ -29,6 +29,9 @@ export function cardIdNfc() {
                 // If you get a error while reading a tag
                 ndef.addEventListener("readingerror", () => {
                     // text.innerHTML ="Error! Cannot read data from the NFC tag. Try a different one?";
+                    document.querySelector(
+                        ".primary_card"
+                    ).style.backgroundColor = "red";
                 });
                 // If you reading a tag successful
                 ndef.addEventListener("reading", ({ serialNumber }) => {
