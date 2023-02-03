@@ -11,9 +11,9 @@ inputEl.addEventListener("keypress", function (event) {
 export async function cardIdNfc() {
     // const text = document.querySelector(".nfc-info");
     // const info = document.querySelector(".nfc-output");
-    return new Promise(async (resolve) => {
-        // Function scan after a nfc tag
-        function startScanning() {
+    // Function scan after a nfc tag
+    function startScanning() {
+        return new Promise(async (resolve) => {
             // Get refercens to nfc reader
             document.querySelector(".primary_card").style.backgroundColor =
                 "hotpink";
@@ -53,58 +53,57 @@ export async function cardIdNfc() {
                 .catch((error) => {
                     // text.innerHTML = `Error! Scan failed to start: ${error}.`;
                 });
-        }
+        });
+    }
 
-        // Look if the device have NFC
-        if ("NDEFReader" in window) {
-            // const text = document.querySelector("h1");
-            // text.innerHTML = navigator.permissions.query({ name: "nfc" });
+    // Look if the device have NFC
+    if ("NDEFReader" in window) {
+        // const text = document.querySelector("h1");
+        // text.innerHTML = navigator.permissions.query({ name: "nfc" });
 
-            // Look if have permissions for a nfc is granted or not if permissions is not granded make a button that give browser permissions for nfc
-            navigator.permissions.query({ name: "nfc" }).then((result) => {
-                if (result.state === "granted") {
-                    //text.innerHTML = navigator.permissions.query({ name: "nfc" });
-                    startScanning();
-                } else if (result.state === "prompt") {
-                    // Show a scan button.
+        // Look if have permissions for a nfc is granted or not if permissions is not granded make a button that give browser permissions for nfc
+        navigator.permissions.query({ name: "nfc" }).then((result) => {
+            if (result.state === "granted") {
+                //text.innerHTML = navigator.permissions.query({ name: "nfc" });
+                startScanning();
+            } else if (result.state === "prompt") {
+                // Show a scan button.
+                document.querySelector("#scanButton").style.display = "block";
+                document.querySelector("#scanButton").onclick = (event) => {
+                    // Prompt user to allow to send and receive info when they tap NFC devices.
                     document.querySelector("#scanButton").style.display =
-                        "block";
-                    document.querySelector("#scanButton").onclick = (event) => {
-                        // Prompt user to allow to send and receive info when they tap NFC devices.
-                        document.querySelector("#scanButton").style.display =
-                            "none";
-                        // webWorker();
-                        document.querySelector(
-                            ".primary_card"
-                        ).style.backgroundColor = "blue";
-                        startScanning();
-                    };
-                }
-            });
-        } else {
-            // If device have no nfc reader or browser does not support NDEFReader
-            // text.innerHTML = "No nfc reader or browser does not support NDEFReader";
-        }
-
-        function webWorker() {
-            if (window.Worker) {
-                // text.innerHTML = navigator.permissions.query({ name: "nfc" });
-                workerMessage();
+                        "none";
+                    // webWorker();
+                    document.querySelector(
+                        ".primary_card"
+                    ).style.backgroundColor = "blue";
+                    startScanning();
+                };
             }
+        });
+    } else {
+        // If device have no nfc reader or browser does not support NDEFReader
+        // text.innerHTML = "No nfc reader or browser does not support NDEFReader";
+    }
+
+    function webWorker() {
+        if (window.Worker) {
+            // text.innerHTML = navigator.permissions.query({ name: "nfc" });
+            workerMessage();
         }
+    }
 
-        function workerMessage() {
-            let worker = new Worker("./worker.js");
-            // text.innerHTML = "Find web worker";
-            worker.addEventListener("message", function (evt) {
-                if (evt.data) {
-                    // text.innerHTML = evt.data;
+    function workerMessage() {
+        let worker = new Worker("./worker.js");
+        // text.innerHTML = "Find web worker";
+        worker.addEventListener("message", function (evt) {
+            if (evt.data) {
+                // text.innerHTML = evt.data;
 
-                    if (evt.data === 1) {
-                        startScanning();
-                    }
+                if (evt.data === 1) {
+                    startScanning();
                 }
-            });
-        }
-    });
+            }
+        });
+    }
 }
