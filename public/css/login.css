@@ -10,7 +10,7 @@ body {
 .login {
     margin: 1rem;
     font-size: 0.5;
-    padding: 2rem;
+    padding: 2rem 6rem;
     background-color: #000;
     width: max-content;
     border-radius: 0.1em;
