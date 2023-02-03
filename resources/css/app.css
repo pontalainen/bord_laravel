@@ -128,3 +128,12 @@ b {
 #login-hr {
     border-color: #77B5FE;
 }
+
+
+.text-color {
+    color: #000;
+}
+
+.login-bn {
+    background-color: #77B5FE;
+}
