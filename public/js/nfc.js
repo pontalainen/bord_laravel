@@ -1,4 +1,4 @@
-export async function cardIdNfc() {
+export async function cardIdNfc(){
     return new Promise(async (resolve) => {
         // Function scan after a nfc tag
         function startScanning() {
@@ -16,12 +16,11 @@ export async function cardIdNfc() {
                     });
                     // If you reading a tag successful
                     ndef.addEventListener("reading", ({ message, serialNumber }) => {
-                            // info.innerHTML = message + ", " + serialNumber;
-                            // text.innerHTML = "NDEF message read.";
-                            document.querySelector(".secondary_card").value = serialNumber;
-                            resolve(serialNumber);
-                        }
-                    );
+                        // info.innerHTML = message + ", " + serialNumber;
+                        // text.innerHTML = "NDEF message read.";
+                        
+                        resolve(serialNumber);
+                    });
 
                     // If it get a error while starting the scan
                 })
