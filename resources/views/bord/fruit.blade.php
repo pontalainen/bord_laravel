@@ -24,7 +24,7 @@
       <style>
         @keyframes rotate1 {
           0% {
-            transform: rotate(initial);
+            transform: rotate(initial); 
           }
           100% {
             transform: rotate(31deg); /* Value is set in exakt kcal, to calculate degrees, use 0,2 * y ammount of kcal*/
