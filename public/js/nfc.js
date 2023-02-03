@@ -8,17 +8,20 @@ export async function cardIdNfc() {
         document.querySelector(".primary_card").style.backgroundColor =
             "hotpink";
         const ndef = new NDEFReader();
+        alert("scannar");
 
         // Start scaning for NFC tags
         // Start scaning for NFC tags
         ndef.scan()
             .then(() => {
+                alert("scannar igen");
                 document.querySelector(".primary_card").style.backgroundColor =
                     "yellow";
                 // text.innerHTML = "Scan started successfully.";
 
                 // If you get a error while reading a tag
                 ndef.addEventListener("readingerror", () => {
+                    alert("error");
                     // text.innerHTML ="Error! Cannot read data from the NFC tag. Try a different one?";
                     document.querySelector(
                         ".primary_card"
@@ -28,6 +31,7 @@ export async function cardIdNfc() {
                 ndef.addEventListener(
                     "reading",
                     ({ message, serialNumber }) => {
+                        alert("read");
                         // info.innerHTML = message + ", " + serialNumber;
                         // text.innerHTML = "NDEF message read.";
                         document.querySelector(
@@ -46,6 +50,7 @@ export async function cardIdNfc() {
 
     // Look if the device have NFC
     if ("NDEFReader" in window) {
+        alert("window");
         //const text = document.querySelector("h1");
         //text.innerHTML = navigator.permissions.query({ name: "nfc" });
 
@@ -55,7 +60,8 @@ export async function cardIdNfc() {
                 //text.innerHTML = navigator.permissions.query({
                 //name: "nfc",
                 //});
-                webWorker();
+                alert("granted");
+                startScanning();
             } else if (result.state === "prompt") {
                 // Show a scan button.
                 document.querySelector("#scanButton").style.display = "block";
@@ -66,7 +72,8 @@ export async function cardIdNfc() {
                     // webWorker();
                     document.querySelector(
                         ".primary_card"
-                    ).style.backgroundColor = "blue";
+                    ).style.backgroundColor = "blue";t
+                    alert("prompt");
                     startScanning();
                 };
             }
