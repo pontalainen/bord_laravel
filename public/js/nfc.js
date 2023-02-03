@@ -1,5 +1,5 @@
 export async function cardIdNfc(){
-   return new Promise((resolve) => {
+//   return new Promise((resolve) => {
 
     
         // Function scan after a nfc tag
@@ -19,8 +19,8 @@ export async function cardIdNfc(){
                     ndef.addEventListener("reading", ({ message, serialNumber }) => {
                         // info.innerHTML = message + ", " + serialNumber;
                         // text.innerHTML = "NDEF message read.";                  
-                        resolve(serialNumber);
-                        // return serialNumber;
+                        //resolve(serialNumber);
+                         return serialNumber;
                     });
 
                     // If it get a error while starting the scan
@@ -81,5 +81,5 @@ export async function cardIdNfc(){
                 }
             });
         }
-   });
+  // });
 }
