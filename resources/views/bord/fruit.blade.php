@@ -16,8 +16,6 @@
     <header class="header">
       <input type="text" name="input" id="input-el" placeholder="Page id..." class="mt-10">
       <button class="scanModeBtn">Touch: On</button>
-
-      <hr>
     </header>
 
     
