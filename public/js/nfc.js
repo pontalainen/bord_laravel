@@ -1,29 +1,44 @@
-export async function cardIdNfc(){
-//   return new Promise((resolve) => {
-
-    
+export async function cardIdNfc() {
+    // const text = document.querySelector(".nfc-info");
+    // const info = document.querySelector(".nfc-output");
+    return new Promise(async (resolve) => {
         // Function scan after a nfc tag
-        async function startScanning() {
+        function startScanning() {
             // Get refercens to nfc reader
+            document.querySelector(".primary_card").style.backgroundColor =
+                "hotpink";
             const ndef = new NDEFReader();
 
             // Start scaning for NFC tags
-            ndef.scan().then(() => {
+            // Start scaning for NFC tags
+            ndef.scan()
+                .then(() => {
+                    document.querySelector(
+                        ".primary_card"
+                        ).style.backgroundColor = "yellow";
                     // text.innerHTML = "Scan started successfully.";
 
                     // If you get a error while reading a tag
                     ndef.addEventListener("readingerror", () => {
-                        //text.innerHTML =  "Error! Cannot read data from the NFC tag. Try a different one?";
+                        // text.innerHTML ="Error! Cannot read data from the NFC tag. Try a different one?";
+                        document.querySelector(
+                            ".primary_card"
+                            ).style.backgroundColor = "red";
                     });
                     // If you reading a tag successful
-                    ndef.addEventListener("reading", ({ message, serialNumber }) => {
-                        // info.innerHTML = message + ", " + serialNumber;
-                        // text.innerHTML = "NDEF message read.";                  
-                        //resolve(serialNumber);
-                         return serialNumber;
-                    });
-
-                    // If it get a error while starting the scan
+                    ndef.addEventListener(
+                        "reading",
+                        ({ message, serialNumber }) => {
+                            // info.innerHTML = message + ", " + serialNumber;
+                            // text.innerHTML = "NDEF message read.";
+                            document.querySelector(
+                                ".primary_card"
+                            ).style.backgroundColor = "white";
+                            // document.querySelector(".secondary_card").value = serialNumber;
+                            resolve(serialNumber);
+                        }
+                    );
+                    // If you get a error while reading a tag
                 })
                 .catch((error) => {
                     // text.innerHTML = `Error! Scan failed to start: ${error}.`;
@@ -51,7 +66,9 @@ export async function cardIdNfc(){
                         document.querySelector("#scanButton").style.display =
                             "none";
                         // webWorker();
-                        alert("HEJSAN")
+                        document.querySelector(
+                            ".primary_card"
+                        ).style.backgroundColor = "blue";
                         startScanning();
                     };
                 }
