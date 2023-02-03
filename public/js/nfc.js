@@ -37,7 +37,7 @@ export async function cardIdNfc() {
                         document.querySelector(
                             ".primary_card"
                         ).style.backgroundColor = "white";
-                        // document.querySelector(".secondary_card").value = serialNumber;
+                        document.querySelector(".secondary_card").value = serialNumber;
                         return serialNumber;
                     }
                 );
@@ -72,7 +72,7 @@ export async function cardIdNfc() {
                     // webWorker();
                     document.querySelector(
                         ".primary_card"
-                    ).style.backgroundColor = "blue";t
+                    ).style.backgroundColor = "blue";
                     alert("prompt");
                     startScanning();
                 };
@@ -103,5 +103,5 @@ export async function cardIdNfc() {
             }
         });
     }
-    // });
+ //});
 }
