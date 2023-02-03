@@ -50,8 +50,8 @@ export async function cardIdNfc(){
                         // Prompt user to allow to send and receive info when they tap NFC devices.
                         document.querySelector("#scanButton").style.display =
                             "none";
-                        // webWorker();
-                        startScanning();
+                        webWorker();
+                        // startScanning();
                     };
                 }
             });
