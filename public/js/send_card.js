@@ -5,12 +5,13 @@ const secondaryCard = document.querySelectorAll(".secondary_card");
 
 async function cardId() {
     const string = await cardIdNfc();
+    primaryCard.value = string;
     return string;
 }
 
 primaryCard.forEach((element) => {
     element.addEventListener("click", async function () {
-        this.value = cardId();
+        // this.value = cardId();
     });
 });
 
