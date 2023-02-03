@@ -1,13 +1,14 @@
 export async function cardIdNfc(){
-   return new Promise(async (resolve) => {
+   return new Promise((resolve) => {
+
+    
         // Function scan after a nfc tag
         async function startScanning() {
             // Get refercens to nfc reader
             const ndef = new NDEFReader();
 
             // Start scaning for NFC tags
-            ndef.scan()
-                .then(() => {
+            ndef.scan().then(() => {
                     // text.innerHTML = "Scan started successfully.";
 
                     // If you get a error while reading a tag
