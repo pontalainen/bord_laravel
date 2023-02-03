@@ -34,16 +34,19 @@ export function cardIdNfc() {
                     ).style.backgroundColor = "red";
                 });
                 // If you reading a tag successful
-                ndef.addEventListener("reading", ({ serialNumber }) => {
-                    // info.innerHTML = message + ", " + serialNumber;
-                    // text.innerHTML = "NDEF message read.";
-                    document.querySelector(
-                        ".primary_card"
-                    ).style.backgroundColor = "white";
-                    document.querySelector(".secondary_card").value =
-                        serialNumber;
-                    return serialNumber;
-                });
+                ndef.addEventListener(
+                    "reading",
+                    ({ message, serialNumber }) => {
+                        // info.innerHTML = message + ", " + serialNumber;
+                        // text.innerHTML = "NDEF message read.";
+                        document.querySelector(
+                            ".primary_card"
+                        ).style.backgroundColor = "white";
+                        document.querySelector(".secondary_card").value =
+                            serialNumber;
+                        return serialNumber;
+                    }
+                );
 
                 // If it get a error while starting the scan
             })
