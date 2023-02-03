@@ -1,7 +1,6 @@
 export async function cardIdNfc() {
-    // const text = document.querySelector(".nfc-info");
-    // const info = document.querySelector(".nfc-output");
-    return new Promise(async (resolve) => {
+    //return new Promise(async (resolve) => {
+
         // Function scan after a nfc tag
         function startScanning() {
             // Get refercens to nfc reader
@@ -35,7 +34,7 @@ export async function cardIdNfc() {
                                 ".primary_card"
                             ).style.backgroundColor = "white";
                             // document.querySelector(".secondary_card").value = serialNumber;
-                            resolve(serialNumber);
+                            return serialNumber;
                         }
                     );
                     // If you get a error while reading a tag
