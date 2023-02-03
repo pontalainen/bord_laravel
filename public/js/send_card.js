@@ -11,6 +11,7 @@ async function cardId() {
 
 primaryCard.forEach((element) => {
     element.addEventListener("click", async function () {
+        cardId();
         // this.value = cardId();
     });
 });
