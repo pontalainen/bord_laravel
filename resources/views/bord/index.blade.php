@@ -80,6 +80,54 @@
 
         </div>
 
+        <div class="py-2 absolute top-2 left-2 flex flex-col">
+            <div class="sm:flex sm:items-center sm:ml-6 mb-2 mx-6">
+                <x-dropdown align="left" width="48">
+                    <x-slot name="trigger">
+                        <button
+                            class="flex items-center text-sm font-medium text-gray-200 hover:text-gray-900 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                            <div class="text-2xl">Actions</div>
+
+                            <div class="ml-1">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </button>
+                    </x-slot>
+
+                    <x-slot name="content">
+                        <div class="flex flex-col h-fit">
+
+                            <a href="{{ route('bord.create') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100
+                            focus:outline-none transition duration-150 ease-in-out h-max">
+                                New Page
+                            </a>
+
+                            <hr class="border border-1 border-gray-300" id="login-hr">
+
+                            <a href="{{ route('bord.cards') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100
+                                focus:outline-none transition duration-150 ease-in-out h-max">
+                                Edit Cards
+                            </a>
+
+                            <hr class="border border-1 border-gray-300" id="login-hr">
+
+                            <a href="{{ route('bord.fruit') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100
+                                focus:outline-none transition duration-150 ease-in-out h-max">
+                                Fruit
+                            </a>
+
+                        </div>
+                    </x-slot>
+                </x-dropdown>
+            </div>
+
+        </div>
+
         @if (session()->has('message'))
         <div class="mx-auto w-4/5 pb-10">
             <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
@@ -92,46 +140,14 @@
         @endif
 
 
-        {{-- @if (Auth::id() === $page->user_id OR Auth::user()->group_id === $page->user_id) --}}
-
-        @if (Auth::user()->pages->count() <= 0) <div class="mx-auto w-4/5 pb-0 pt-2">
+        @if (Auth::user()->pages->count() <= 0) < class="mx-auto w-4/5 pb-0 pt-2">
             <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2 mt-24">
             </div>
             <div class="border border-t-1 border-blue-400 rounded-b bg-blue-100 px-4 py-10 text-center text-xl">
                 <p>You don't have any pages yet. Click on "New Page" to get started!</p>
             </div>
-            </div>
+            @endif
 
-            <div class="py-2 px-5 absolute top-2 left-2 flex flex-col">
-                <a class="primary-btn inline text-base sm:text-xl bg-green-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-green-400 my-1"
-                    href="{{ route('bord.create') }}">
-                    New Page
-                </a>
-                <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-gray-400 my-1"
-                    href="{{ route('bord.cards') }}">
-                    Edit Cards
-                </a>
-                <a class="primary-btn inline text-center sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-gray-400 my-1"
-                    href="{{ route('bord.fruit') }}">
-                    Fruit
-                </a>
-            </div>
-
-            @else
-            <div class="py-2 px-5 absolute top-2 left-2 flex flex-col">
-                <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-gray-400 my-1"
-                    href="{{ route('bord.create') }}">
-                    New Page
-                </a>
-                <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-gray-400 my-1"
-                    href="{{ route('bord.cards') }}">
-                    Edit Cards
-                </a>
-                <a class="primary-btn inline text-center sm:text-xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-gray-400 my-1"
-                    href="{{ route('bord.fruit') }}">
-                    Fruit
-                </a>
-            </div>
 
             @foreach(Auth::user()->pages as $page)
             <div class="w-4/5 mx-auto pb-10">
@@ -171,7 +187,6 @@
                 </div>
             </div>
             @endforeach
-            @endif
 
     </body>
 
