@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="Stylesheet" href="./style.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="main-info">
+                <div class="main-text">
+                    <h2>Vilket klimatavtryck gör din mat?</h2>
+                    <p>Jämför energiinnehåll och koldioxidavtryck.</p>
+                    <p>
+                        Jämför olika livsmedel med varandra och <br />
+                        se möjliga alternativ.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Här ändras frukten (h1) och Företaget eller landet där den kommer ifrån(h2) -->
+
+            <div class="second-info">
+                <div class="second-text">
+                    <h2>Placera vald produkt här</h2>
+                </div>
+            </div>
+        </div>
+        <script>
+            const params = new URLSearchParams(parent.window.location.search);
+            let side = params.get("side");
+            const container = document.querySelector(".container");
+            if (side === "left") {
+                container.classList.add("left");
+            } else if (side === "right") {
+                container.classList.add("right");
+            }
+        </script>
+    </body>
+</html>

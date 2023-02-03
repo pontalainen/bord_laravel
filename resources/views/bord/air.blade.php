@@ -21,7 +21,7 @@
         @if ( $page !== null )
         @if (Auth::user()->is_admin === 'true')
         <div class="py-10 px-5 absolute top-2 left-2">
-            <a class="primary-btn inline text-base sm:text-xl bg-blue-500 py-4 px-4 shadow-xl transition-all hover:bg-blue-400 font-normal"
+            <a class="primary-btn inline text-base sm:text-xl bg-gray-500 py-4 px-4 shadow-xl transition-all hover:bg-gray-400 font-normal"
                 href="{{ route('bord.index') }}">
                 Go back
             </a>
@@ -110,16 +110,16 @@
         @else
 
         <div class="mx-auto w-4/5 pb-0 pt-2">
-            <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2 mt-24">
+            <div class="bg-gray-500 text-white font-bold rounded-t px-4 py-2 mt-24">
             </div>
-            <div class="border border-t-1 border-blue-400 rounded-b bg-blue-100 px-4 py-10 text-center text-xl">
+            <div class="border border-t-1 border-gray-400 rounded-b bg-gray-100 px-4 py-10 text-center text-xl">
                 <p>You cannot enter this page, sorry!</p>
             </div>
         </div>
 
         <div class="py-10 sm:py-20">
-            <form class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
-            hover:bg-blue-400 m-auto absolute left-1/2 top-3/6 -translate-x-1/2 -translate-y-3/4 w-52 text-center">
+            <form class="primary-btn inline sm:text-xl text-2xl bg-gray-500 py-4 px-4 shadow-xl rounded-full transition-all
+            hover:bg-gray-400 m-auto absolute left-1/2 top-3/6 -translate-x-1/2 -translate-y-3/4 w-52 text-center">
                 <input type="button" value="Go back" onclick="history.back()">
             </form>
         </div>
@@ -128,9 +128,9 @@
 
         @else
         <div class="mx-auto w-4/5 pb-0 pt-2">
-            <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2 mt-24">
+            <div class="bg-gray-500 text-white font-bold rounded-t px-4 py-2 mt-24">
             </div>
-            <div class="border border-t-1 border-blue-400 rounded-b bg-blue-100 px-4 py-10 text-center text-xl ">
+            <div class="border border-t-1 border-gray-400 rounded-b bg-gray-100 px-4 py-10 text-center text-xl ">
                 <p>No start page has been created,
                     please contact an administrator.
                 </p>
@@ -141,8 +141,8 @@
                 @csrf
 
                 <x-dropdown-link :href="route('logout')"
-                    class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
-                hover:bg-blue-300 m-auto absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-3/4 w-52 text-center text-black" onclick="event.preventDefault();
+                    class="primary-btn inline sm:text-xl text-2xl bg-gray-500 py-4 px-4 shadow-xl rounded-full transition-all
+                hover:bg-gray-300 m-auto absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-3/4 w-52 text-center text-black" onclick="event.preventDefault();
                                     this.closest('form').submit();">
                     {{ __('Log Out') }}
                 </x-dropdown-link>
