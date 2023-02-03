@@ -18,8 +18,7 @@ export async function cardIdNfc(){
                     // If you reading a tag successful
                     ndef.addEventListener("reading", ({ message, serialNumber }) => {
                         // info.innerHTML = message + ", " + serialNumber;
-                        // text.innerHTML = "NDEF message read.";
-                        
+                        // text.innerHTML = "NDEF message read.";                  
                         resolve(serialNumber);
                         // return serialNumber;
                     });
@@ -52,6 +51,7 @@ export async function cardIdNfc(){
                         document.querySelector("#scanButton").style.display =
                             "none";
                         // webWorker();
+                        alert("HEJSAN")
                         startScanning();
                     };
                 }
