@@ -4,6 +4,8 @@
     <title>
         Forgot password
     </title>
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+
 </head>
 <x-guest-layout>
     <x-auth-card>

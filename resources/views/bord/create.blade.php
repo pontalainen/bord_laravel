@@ -1,3 +1,5 @@
+@vite('resources/js/app.js')
+
 <html>
 
     <head>
@@ -5,14 +7,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Create page</title>
-
-        @vite('resources/js/app.js')
-        @vite('resources/js/create.js')
-        @vite('resources/css/create.css')
-        @vite('resources/css/app.css')
+        <link rel="stylesheet" href="{{ asset('css/create.css') }}">
     </head>
 
     <body class="w-full h-full bg-gray-100">
+
         @if (Auth::user()->is_admin === "true")
         <form action="{{ route('bord.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -125,6 +124,7 @@
         </div>
 
         @endif
+        <script src="{{ asset('js/create.js') }}"></script>
     </body>
 
 </html>

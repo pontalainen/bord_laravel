@@ -1,6 +1,6 @@
 @import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
 :root {
-    --main-bg-color: rgb(20, 18, 18);
+    --main-bg-color: rgba(20, 18, 18, 0.8);
     --secondary-bg-color: rgb(58, 57, 57);
     --bubble-bg-color: #203354;
     --circle-bg-color: radial-gradient(circle at 100px 100px, #5cabff, #000);
@@ -34,6 +34,10 @@ body {
     display: grid;
     grid-template-areas: "left center right" "left center right";
     justify-content: center;
+    background-image: url(../images/mountains_Background.png);
+    background-color: rgba(0, 0, 0, 0.6);
+    background-size: cover;
+    background-blend-mode: multiply;
 }
 
 #layout-fruit {
@@ -191,15 +195,15 @@ body {
 }
 #layout-fruit .graph ul li:nth-of-type(1) {
     animation-delay: 6s;
-    list-style-image: url(../../public/images/fruit/blixt.svg);
+    list-style-image: url("../images/fruit/blixt.svg");
 }
 #layout-fruit .graph ul li:nth-of-type(2) {
     animation-delay: 8s;
-    list-style-image: url(../../public/images/fruit/truck.svg);
+    list-style-image: url("../images/fruit/truck.svg");
 }
 #layout-fruit .graph ul li:nth-of-type(3) {
     animation-delay: 10s;
-    list-style-image: url(../../public/images/fruit/factory.svg);
+    list-style-image: url("../images/fruit/factory.svg");
 }
 #layout-fruit .graph .info ul li {
     list-style-image: none;
@@ -349,28 +353,17 @@ button.changeSideBtnRight {
     display: grid;
     align-items: end;
 }
-
-hr {
-    border-color: rgb(209, 213, 219);
-    margin-bottom: -1rem;
-}
-
-.mt-10 {
-    width: 16rem;
-    height: 2.5rem;
+.header h1 {
+    color: #f5f5f5;
+    display: flex;
     justify-self: center;
-    margin-top: 2.5rem;
-    border-color: #6b7280;
-    border-width: 1px;
-    padding: 0.75rem;
-    padding-top: 0.5rem;
+    margin-top: 2rem;
+    font-size: 2rem;
     font-weight: bold;
-    font-size: 1rem;
-    line-height: 1.5rem;
 }
 
 .scanModeBtn {
-    margin-top: -2.5rem;
+    margin-top: -6.5rem;
     display: flex;
     width: 8rem;
     height: 3rem;
@@ -388,7 +381,7 @@ hr {
 
 @font-face {
     font-family: Hemi-head;
-    src: url("../../public/images/fruit/hemi-head-bd-it.ttf");
+    src: url("../images/fruit/hemi-head-bd-it.ttf");
 }
 
 @media screen and (orientation: portrait) {
@@ -396,6 +389,6 @@ hr {
         visibility: hidden;
     }
     body {
-        background-image: url("../../public/images/fruit/rotation.svg");
+        background-image: url("../images/fruit/rotation.svg");
     }
 }

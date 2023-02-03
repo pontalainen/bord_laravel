@@ -1,3 +1,4 @@
+// Main CSS being imported
 import "../css/app.css";
 
 import Alpine from "alpinejs";
