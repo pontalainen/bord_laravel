@@ -8,6 +8,8 @@ primaryCard.forEach((element) => {
         const idInput = await cardIdNfc();
         if (idInput !== undefined) {
             this.value = idInput;
+        } else {
+            this.value = idInput;
         }
     });
 });
