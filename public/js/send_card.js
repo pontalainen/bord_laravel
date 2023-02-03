@@ -9,13 +9,13 @@ async function cardId() {
 }
 
 primaryCard.forEach((element) => {
-    element.addEventListener("click", async function () {
+    element.addEventListener("click", function () {
         this.value = cardId();
     });
 });
 
 secondaryCard.forEach((element) => {
-    element.addEventListener("click", async function () {
+    element.addEventListener("click", function () {
         this.value = cardId();
     });
 });
