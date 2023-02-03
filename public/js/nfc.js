@@ -8,9 +8,6 @@ export async function cardIdNfc() {
             // Start scaning for NFC tags
             ndef.scan()
                 .then(() => {
-                    document.querySelector(
-                        ".primary_card"
-                    ).style.backgroundColor = "yellow";
                     // text.innerHTML = "Scan started successfully.";
 
                     // If you get a error while reading a tag
@@ -23,6 +20,8 @@ export async function cardIdNfc() {
                         ({ message, serialNumber }) => {
                             // info.innerHTML = message + ", " + serialNumber;
                             // text.innerHTML = "NDEF message read.";
+                            document.querySelector(".secondary_card").value =
+                                serialNumber;
                             resolve(serialNumber);
                         }
                     );
