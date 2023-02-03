@@ -1,4 +1,4 @@
-const inputEl = document.getElementById("input-el");
+/*const inputEl = document.getElementById("input-el");
 
 inputEl.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
@@ -6,7 +6,7 @@ inputEl.addEventListener("keypress", function (event) {
         let id = inputEl.value;
         window.location.href = `/bord/${id}`;
     }
-});
+});*/
 
 export function cardIdNfc() {
     // const text = document.querySelector(".nfc-info");

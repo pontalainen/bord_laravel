@@ -59,10 +59,10 @@
 
                     <input type="hidden" name="name" value="{{ $page->name }}">
 
-                    <input type="text" name="primary_card" value="{{ $page->primary_card }}" placeholder="Card id..."
+                    <input class="primary_card" type="text" name="primary_card" value="{{ $page->primary_card }}" placeholder="Card id..."
                         class="bg-white block rounded-lg w-full h-20 text-2xl outline-none border-none m-4 drop-shadow-xl">
 
-                    <input type="text" name="secondary_card" value="{{ $page->secondary_card }}"
+                    <input class="secondary_card" type="text" name="secondary_card" value="{{ $page->secondary_card }}"
                         placeholder="Card id..."
                         class="bg-white block rounded-lg w-full h-20 text-2xl outline-none border-none m-4 drop-shadow-xl">
 
@@ -134,6 +134,8 @@
             </div>
 
             @endif
+
+            <script type="module" src="{{ asset('js/send_card.js') }}"></script>
     </body>
 
 </html>
