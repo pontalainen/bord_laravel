@@ -15,11 +15,14 @@ export function cardIdNfc() {
     // Function scan after a nfc tag
     function startScanning() {
         // Get refercens to nfc reader
+        document.querySelector("input").style.backgroundColor = "hotpink";
         const ndef = new NDEFReader();
 
         // Start scaning for NFC tags
         ndef.scan()
             .then(() => {
+                document.querySelector("input").style.backgroundColor =
+                    "yellow";
                 // text.innerHTML = "Scan started successfully.";
 
                 // If you get a error while reading a tag
@@ -58,6 +61,8 @@ export function cardIdNfc() {
                     document.querySelector("#scanButton").style.display =
                         "none";
                     // webWorker();
+                    document.querySelector("input").style.backgroundColor =
+                        "blue";
                     startScanning();
                 };
             }
