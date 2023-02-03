@@ -8,6 +8,9 @@ export async function cardIdNfc() {
             // Start scaning for NFC tags
             ndef.scan()
                 .then(() => {
+                    document.querySelector(
+                        ".primary_card"
+                    ).style.backgroundColor = "yellow";
                     // text.innerHTML = "Scan started successfully.";
 
                     // If you get a error while reading a tag
