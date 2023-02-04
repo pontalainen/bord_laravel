@@ -34,10 +34,6 @@ body {
     display: grid;
     grid-template-areas: "left center right" "left center right";
     justify-content: center;
-    background-image: url(../images/mountains_Background.png);
-    background-color: rgba(0, 0, 0, 0.6);
-    background-size: cover;
-    background-blend-mode: multiply;
 }
 
 #layout-fruit {
@@ -362,14 +358,14 @@ button.changeSideBtnRight {
     font-weight: bold;
 }
 
-.scanModeBtn {
+.scanModeBtn,
+.airBtn {
     margin-top: -6.5rem;
     display: flex;
     width: 8rem;
     height: 3rem;
     justify-content: center;
     align-items: center;
-    justify-self: flex-end;
     border: none;
     border-radius: 0.2rem;
     /*background: #ed217c;*/
@@ -377,6 +373,10 @@ button.changeSideBtnRight {
     background: #203354;
     color: white;
     font-size: 1.2rem;
+}
+
+.scanModeBtn {
+    justify-self: flex-end;
 }
 
 @font-face {

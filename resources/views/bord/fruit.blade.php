@@ -7,9 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fruit</title>
-    {{-- @vite('resources/css/fruit.css') --}}
     <link rel="stylesheet" href="{{ asset('css/fruit.css') }}">
+    <title>Fruit</title>
 
     <!--<link rel="manifest"  href="http://localhost:5173/manifest.json">-->
 
@@ -19,6 +18,7 @@
     <header class="header">
       <h1>Fruit</h1>
       <button class="scanModeBtn">Touch: On</button>
+      <a class="airBtn" href="{{ route('bord.index') }}">Go to Air</a>
     </header>
 
 

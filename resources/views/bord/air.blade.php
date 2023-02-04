@@ -26,10 +26,24 @@
                 Go back
             </a>
         </div>
+
+        @else
+
+        <div class="py-10 px-5 absolute top-2 left-2">
+            <form method="POST" action="{{ route('logout') }}" class="m-0 -mt-2">
+                @csrf
+                <button
+                    class="primary-btn inline text-base sm:text-xl py-4 px-4 shadow-xl transition-all hover:bg-gray-400 font-normal"
+                    href="{{ route('bord.index') }}">
+                    Log Out
+                </button>
+            </form>
+        </div>
+
         @endif
 
         <div class="py-10 px-5 absolute top-2 right-2">
-            <a class="primary-btn inline text-base sm:text-xl bg-gray-500 py-4 px-4 shadow-xl transition-all hover:bg-gray-400 font-normal"
+            <a class="primary-btn inline text-base sm:text-xl py-4 px-4 shadow-xl transition-all hover:bg-gray-400 font-normal"
                 href="{{ route('bord.fruit') }}">
                 Go to Fruit
             </a>
@@ -77,9 +91,9 @@
 
         @else
         <div class="mx-auto w-4/5 pb-0 pt-2">
-            <div class="bg-gray-500 text-white font-bold rounded-t px-4 py-2 mt-24">
+            <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2 mt-24">
             </div>
-            <div class="border border-t-1 border-gray-400 rounded-b bg-gray-100 px-4 py-10 text-center text-xl ">
+            <div class="border border-t-1 border-blue-400 rounded-b bg-blue-100 px-4 py-10 text-center text-xl ">
                 <p>No start page has been created,
                     please contact an administrator.
                 </p>

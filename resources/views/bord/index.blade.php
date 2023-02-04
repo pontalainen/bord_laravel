@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>
-            Project Bord
+            Learn OL
         </title>
     </head>
 
@@ -140,7 +140,7 @@
         @endif
 
 
-        @if (Auth::user()->pages->count() <= 0) < class="mx-auto w-4/5 pb-0 pt-2">
+        @if (Auth::user()->pages->count() <= 0) <div class="mx-auto w-4/5 pb-0 pt-2">
             <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2 mt-24">
             </div>
             <div class="border border-t-1 border-blue-400 rounded-b bg-blue-100 px-4 py-10 text-center text-xl">
@@ -153,8 +153,7 @@
             <div class="w-4/5 mx-auto pb-10">
                 <div class="bg-white pt-10 rounded-lg drop-shadow-lg sm:basis-3/4 basis-full pb-10 sm:pb-0">
                     <div class="w-11/12 mx-auto pb-0">
-                        <h2
-                            class="text-gray-900 text-2xl font-bold pt-6 pb-0 sm:pt-0 hover:text-gray-700 transition-all">
+                        <h2 class="text-gray-900 text-2xl font-bold pt-6 pb-0 sm:pt-0 transition-all">
                             <a href="{{ route('bord.air', $page->id) }}">
                                 {{ $page->id }}, {{ $page->name }}
                             </a>
@@ -162,7 +161,7 @@
                         <p>
                             <a href="{{ route('bord.air', $page->id) }} ">
                                 <div
-                                    class="text-gray-900 text-l pt-4 pb-4 sm:pt-0 hover:text-gray-700 transition-all max-h-16 overflow-hidden leading-8">
+                                    class="text-gray-900 text-l pt-4 pb-4 sm:pt-0 transition-all max-h-16 overflow-hidden leading-8">
                                     {!! $page->content !!}
                                 </div>
                             </a>
