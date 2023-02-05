@@ -187,7 +187,7 @@ under {
 .text {
     color: white;
     position: relative;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     opacity: 0;
     animation: fadein 3s forwards linear;
     animation-delay: 14s;
