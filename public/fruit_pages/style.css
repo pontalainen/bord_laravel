@@ -23,12 +23,12 @@
     margin-right: 4rem;
 }
 .container.left .circles {
-    margin-left: 4rem;
+    margin-left: 2rem;
 }
 .container.left ul {
     justify-items: center;
-    margin-top: 3rem;
-    margin-left: 2rem;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
     direction: rtl;
     transform: translateX(-20%);
 }
@@ -38,11 +38,11 @@
 }
 .container.left .info ul {
     border-radius: 1rem 1rem 1rem 1rem;
-    padding: 3vh 3vh 0 8vh;
+    padding: 4vh 3vh 0 12vh;
     padding-right: 3rem;
-    margin-right: -6rem;
+    margin-right: -3rem;
     margin-top: 2rem;
-    width: 12rem;
+    width: 8rem;
 }
 .container.left ul li:first-child {
     margin-top: -1rem;
@@ -67,23 +67,23 @@
     margin-left: 6rem;
 }
 .container.right .circles {
-    margin-left: 10rem;
+    margin-left: 9rem;
 }
 .container.right .info {
     grid-area: logo;
     direction: ltr;
-    margin-left: -3rem;
+    margin-left: -1rem;
 }
 .container.right .info ul {
     border-radius: 1rem 1rem 1rem 1rem;
-    padding: 3vh 8vh 0 3vh;
+    padding: 4vh 12vh 0 3vh;
     padding-left: 3rem;
-    width: 12rem;
+    width: 8rem;
     margin-top: 2rem;
 }
 .container.right ul {
     justify-items: center;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     direction: ltr;
 }
 .container.right ul li:first-child {
@@ -154,7 +154,7 @@ under {
 .circles li {
     border-radius: 50%;
     margin-bottom: 3vh;
-    font-size: 0.7rem;
+    font-size: 0.4rem;
     opacity: 0;
     animation: fadein 3s forwards linear;
     background: var(--circle-bg-color);
@@ -187,7 +187,7 @@ under {
 .text {
     color: white;
     position: relative;
-    font-size: 1rem;
+    font-size: 0.7rem;
     opacity: 0;
     animation: fadein 3s forwards linear;
     animation-delay: 14s;
@@ -211,18 +211,18 @@ under {
 }
 div.second-info {
     grid-area: logo;
-    margin-top: 4rem;
+    margin-top: 1.5rem;
 }
 .main-text,
 .second-text {
     background: var(--bubble-bg-color);
     height: fit-content;
-    max-width: 65vw;
+    max-width: 75vw;
     border-radius: 1vh;
     position: relative;
     padding: 0;
-    margin-top: -2rem;
-    margin-left: 7.5rem;
+    margin-top: -1.5rem;
+    margin-left: 5.5rem;
     animation: fadein 5s forwards;
     z-index: 1;
 }
@@ -234,7 +234,7 @@ div.second-info {
     background-color: var(--bubble-bg-color);
     height: 6vw;
     width: 6vw;
-    margin: 0 2rem -0.8rem 0;
+    margin: 0 2rem -0.6rem 0;
     transform: rotateZ(45deg);
     border-radius: 50% 0 10% 0;
     z-index: 2;
@@ -242,12 +242,12 @@ div.second-info {
 .main-text h2,
 .second-info h2 {
     color: burlywood;
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     text-align: center;
 }
 .main-text p {
     color: aliceblue;
-    font-size: 1.7rem;
+    font-size: 1.1rem;
     text-align: center;
 }
 
@@ -259,6 +259,8 @@ div.second-info {
         opacity: 1;
     }
 }
+
+
 
 @font-face {
     font-family: Hemi-head;

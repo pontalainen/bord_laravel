@@ -39,7 +39,7 @@ body {
 #layout-fruit {
     grid-area: center;
     grid-row: 2;
-    margin-top: 1rem;
+    margin-top: 2rem;
     width: 95vw;
     height: 85vh;
 }
@@ -57,7 +57,7 @@ body {
     box-shadow: 0px 3px 10px #343434;
 }
 #layout-fruit .graph {
-    margin-top: 4rem;
+    margin-top: 2.5rem;
     grid-area: center;
     width: 33vw;
     display: grid;
@@ -72,14 +72,18 @@ body {
 #layout-fruit .graph .circle {
     grid-area: circle;
     justify-self: center;
-    margin-top: -3rem;
+    margin-top: -8rem;
+    margin-left: -1rem;
+    display: flex;
+    justify-content: center;
+    width: 60%;
 }
 #layout-fruit .graph .contient.one {
     grid-area: info;
     grid-row: 2;
     justify-self: center;
     width: max-content;
-    margin-top: 5rem;
+    margin-top: 0.5rem;
     margin-left: -17rem;
 }
 #layout-fruit .graph .contient.one #g18,
@@ -89,9 +93,9 @@ body {
 }
 #layout-fruit .graph .contient.one ul {
     justify-items: center;
-    margin-top: -4rem;
+    margin-top: -5rem;
     direction: rtl;
-    transform: translateX(-20%);
+    transform: translateX(-15%);
 }
 #layout-fruit .graph .contient.one .main-text::after,
 #layout-fruit .graph .contient.one .second-text::after {
@@ -105,7 +109,7 @@ body {
     justify-self: center;
     width: max-content;
     margin-right: 4rem;
-    margin-top: 5rem;
+    margin-top: 0.5rem;
 }
 #layout-fruit .graph .contient.two #g18,
 #layout-fruit .graph .contient.two #g1016,
@@ -115,9 +119,9 @@ body {
 #layout-fruit .graph .contient.two ul {
     justify-items: center;
     margin-left: 5em;
-    margin-top: -4rem;
+    margin-top: -5rem;
     direction: ltr;
-    transform: translateX(70%);
+    transform: translateX(75%);
 }
 #layout-fruit .graph .contient.two .main-text::after,
 #layout-fruit .graph .contient.two .second-text::after {
@@ -173,7 +177,11 @@ body {
     overflow: visible;
     flex: 1 1;
     flex-basis: 75vh;
-    min-width: 100%;
+    min-width: 60%;
+}
+
+#layout-fruit .circle svg {
+    width: 60%;
 }
 #layout-fruit .graph ul {
     flex: 0 0 10%;
@@ -181,7 +189,7 @@ body {
 }
 #layout-fruit .graph ul li {
     color: white;
-    font-size: 1rem;
+    font-size: 0.8rem;
     padding-bottom: 1em;
     opacity: 0;
     animation: fadein 3s forwards linear;
@@ -331,10 +339,12 @@ iframe {
 button.changeSideBtnLeft,
 iframe.left {
     grid-area: left;
+    margin-left: -1rem;
 }
 button.changeSideBtnRight,
 iframe.right {
     grid-area: right;
+    margin-left: 1rem;
 }
 button.changeSideBtnLeft,
 button.changeSideBtnRight {
@@ -353,7 +363,7 @@ button.changeSideBtnRight {
     color: #f5f5f5;
     display: flex;
     justify-self: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 2rem;
     font-weight: bold;
 }
