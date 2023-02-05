@@ -8,9 +8,12 @@ let sideToLoadOn = "left";
 let touch = true;
 
 window.onload = (event) => {
-    iframe1.src = "../fruit_pages/first-side.html";
-    iframe2.src = "../fruit_pages/first-side.html";
+    /*iframe1.src = "../fruit_pages/first-side.html";
+    iframe2.src = "../fruit_pages/first-side.html";*/
+    iframe1.src = "../../fruit_pages/pork.html";
     changeUrl("side", "left");
+    changeUrl("side", "right");
+    iframe2.src = "../../fruit_pages/sugar.html";
 };
 
 function changeUrl(name, side) {
