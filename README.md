@@ -22,8 +22,6 @@ To enable an extension you remove the semi colon (;) right before it.
 
 -   composer install
 -   npm install
--   npm run dev
--   npm run build
 
 #### Do the following file changes:
 
@@ -38,6 +36,7 @@ Firstly, make sure to restart your CLI for the composer and php paths to load co
 
 -   php artisan migrate
 -   php artisan serve (this is the command used to spin up the project on localhost:8000)
+-   npm run dev (this is the command used to run vite in development)
 
 #### Register a user
 
@@ -51,4 +50,4 @@ Firstly, make sure to restart your CLI for the composer and php paths to load co
 #### Done!
 
 Now you should be able to use the project. If not, try to just wait a minute or so and then try again.
-If the CSS won't load, try stopping the vite instance, reboot it and run the npm run build command once more.
+If the CSS won't load, try stopping the vite instance, reboot it and run the npm run dev command once more.
