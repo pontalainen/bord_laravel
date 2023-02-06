@@ -68,7 +68,6 @@ async function getNfcId(){
 
 console.log(window.paths);
 const cardId = await cardIdNfc("none");
-alert(window.nfcId);
 alert(cardId);
 document.querySelector("h1").innerHTML = cardId;
 
