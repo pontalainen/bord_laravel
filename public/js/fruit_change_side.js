@@ -8,8 +8,6 @@ const buttonRight = document.querySelector(".changeSideBtnRight");
 let sideToLoadOn = "left";
 let touch = true;
 
-document.body.style.backgroundColor = "hotpink";
-
 window.onload = (event) => {
     // iframe1.src = "../fruit_pages/first-side.html";
     iframe2.src = "../fruit_pages/first-side.html";
@@ -70,6 +68,10 @@ async function getNfcId(){
 
 console.log(window.paths);
 const cardId = await cardIdNfc("none");
+
+if(cardId !== undefined){
+    document.body.style.backgroundColor = "black";
+}
 alert(await cardIdNfc("none"));
 document.querySelector("h1").innerHTML = cardId;
 
