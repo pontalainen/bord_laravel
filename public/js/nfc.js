@@ -1,6 +1,6 @@
 export async function cardIdNfc(card) {
     //return new Promise(async (resolve) => {
-
+    await new Promise((resolve) => {
     // Function scan after a nfc tag
     function startScanning() {
         // Get refercens to nfc reader
@@ -36,11 +36,11 @@ export async function cardIdNfc(card) {
                             ).value = serialNumber;
                         }
                         document.body.style.backgroundColor = "hotpink";
-
+                        
                         if(serialNumber !== undefined){
                             resolve(serialNumber);
                         }
-                        
+                    
                     }
                 );
                 // If you get a error while reading a tag
@@ -79,7 +79,7 @@ export async function cardIdNfc(card) {
         // If device have no nfc reader or browser does not support NDEFReader
         //text.innerHTML = "No nfc reader, or browser does not support NDEFReader";
     }
-
+});
     function webWorker() {
         if (window.Worker) {
             //text.innerHTML = navigator.permissions.query({ name: "nfc" });
