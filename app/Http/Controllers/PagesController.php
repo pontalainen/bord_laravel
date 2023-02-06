@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PageFormRequest;
 use App\Models\Page;
+use App\Models\Fruit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -98,7 +99,7 @@ class PagesController extends Controller
     public function fruit()
     {
         return view('bord.fruit', [
-            'pages' => Page::all()
+            'fruits' => Fruit::all()
         ]);
     }
 

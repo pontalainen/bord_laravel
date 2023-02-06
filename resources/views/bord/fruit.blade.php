@@ -23,15 +23,17 @@
       @else
       <a class="airBtn" href="{{ route('bord.index') }}">Go to Air</a>
       @endif
-      @foreach(Auth::user()->pages as $page)
 
-      @if ($page->user_id == 3)
+      @foreach($fruits as $fruit)
+
+      @if ($fruit->id === 1)
       <p>
-        $page->name
+        {{ $fruit->name }}
       </p>
       @endif
 
       @endforeach
+
     </header>
 
 
