@@ -73,8 +73,8 @@ let cardId = await cardIdNfc("none");
 alert(await cardIdNfc("none"));
 
 switch (cardId){
-    case "1":
-      window.path.push("{{ $fruit->path }}");
+    case "4a:2c:74:1b":
+        loadPage("../../fruit_pages/rice.html");
       break;
     case "2":
       window.path.push("{{ $fruit->path }}");
