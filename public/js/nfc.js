@@ -37,7 +37,7 @@ export async function cardIdNfc(card) {
                         }
                         catch{
                             var nfcId = serialNumber;
-                            resolve(serialNumber);
+                            resolve(nfcId);
                         }
                             
                     
