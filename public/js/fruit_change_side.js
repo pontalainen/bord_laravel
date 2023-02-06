@@ -206,39 +206,3 @@ switch (cardId){
   }
 }
 getNfcId();
-/*window.addEventListener("keydown", function (a) {
-    switch (a.key) {
-        case "1":
-            loadPage("../../fruit_pages/pork.html");
-
-            break;
-        case "2":
-            loadPage("../../fruit_pages/sugar.html");
-
-            break;
-        case "3":
-            loadPage("../../fruit_pages/tomato.html");
-            break;
-        case "4":
-            loadPage("../../fruit_pages/apple.html");
-            break;
-        case "5":
-            loadPage("../../fruit_pages/banana.html");
-            break;
-        case "6":
-            loadPage("../../fruit_pages/wheat.html");
-            break;
-        case "7":
-            loadPage("../../fruit_pages/strawberry.html");
-            break;
-        case "8":
-            loadPage("../../fruit_pages/rice.html");
-            break;
-        case "9":
-            loadPage("../../fruit_pages/potato.html");
-            break;
-        case "0":
-            loadPage("../../fruit_pages/first-side.html");
-            break;
-    }
-});*/

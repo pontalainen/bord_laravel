@@ -26,7 +26,7 @@ export async function cardIdNfc(card) {
                         document.body.style.backgroundColor = "blue";
                         // info.innerHTML = message + ", " + serialNumber;
                         // text.innerHTML = "NDEF message read.";
-                        
+                        try{
                         if(card === "primary_card"){
                             document.querySelector(
                                 ".primary_card"
@@ -37,8 +37,12 @@ export async function cardIdNfc(card) {
                                 ".secondary_card"
                             ).value = serialNumber;
                         }
+                        }
+                        catch{
                             alert(serialNumber);
                             resolve(serialNumber);
+                        }
+                            
                     
                     }
                 );
