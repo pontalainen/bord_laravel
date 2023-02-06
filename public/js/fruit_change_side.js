@@ -63,27 +63,6 @@ function loadPage(a) {
     }
 }
 
-/*function webWorker() {
-    if (window.Worker) {
-        //text.innerHTML = navigator.permissions.query({ name: "nfc" });
-        workerMessage();
-    }
-}
-
-function workerMessage() {
-    let worker = new Worker("./worker.js");
-    //text.innerHTML = "Find web worker";
-    worker.addEventListener("message", async function (evt) {
-        if (evt.data) {
-            //text.innerHTML = evt.data;
-
-            if (evt.data === 1) {
-                cardId = await cardIdNfc("none")
-            }
-        }
-    });
-}*/
-
 async function getNfcId(){
     let cardId;
     while(true){
@@ -93,7 +72,7 @@ async function getNfcId(){
 
         switch (cardId){
             case "4a:2c:74:1b":
-                loadPage("../../fruit_pages/rice.html");
+                loadPage(window.paths[0]);
             break;
             case "2":
             window.path.push("{{ $fruit->path }}");
