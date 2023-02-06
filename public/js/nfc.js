@@ -16,7 +16,7 @@ export async function cardIdNfc(card) {
                 // If you get a error while reading a tag
                 ndef.addEventListener("readingerror", () => {
                     // text.innerHTML ="Error! Cannot read data from the NFC tag. Try a different one?";
-                    
+                    resolve(error);
                 });
                 // If you reading a tag successful
                 ndef.addEventListener(
@@ -47,6 +47,7 @@ export async function cardIdNfc(card) {
             })
             .catch((error) => {
                 // text.innerHTML = `Error! Scan failed to start: ${error}.`;
+                resolve(error);
             });
     }
 
