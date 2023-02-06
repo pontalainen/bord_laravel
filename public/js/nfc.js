@@ -33,11 +33,11 @@ export async function cardIdNfc(card) {
                             document.querySelector(
                                 ".secondary_card"
                             ).value = serialNumber;
+                            resolve(serialNumber);
                         }
                         }
                         catch{
-                            var nfcId = serialNumber;
-                            resolve(nfcId);
+                            resolve(serialNumber);
                         }
                             
                     
