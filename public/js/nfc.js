@@ -35,7 +35,7 @@ export async function cardIdNfc(card) {
                                 ".secondary_card"
                             ).value = serialNumber;
                         }
-                        return serialNumber;
+                        resolve(serialNumber);
                     }
                 );
                 // If you get a error while reading a tag
