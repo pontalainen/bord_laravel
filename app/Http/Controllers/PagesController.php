@@ -97,7 +97,9 @@ class PagesController extends Controller
 
     public function fruit()
     {
-        return view('bord.fruit');
+        return view('bord.fruit', [
+            'pages' => Page::all()
+        ]);
     }
 
     /**
