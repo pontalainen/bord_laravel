@@ -68,6 +68,7 @@ async function getNfcId(){
 
 console.log(window.paths);
 const cardId = await cardIdNfc("none");
+alert(window.nfcId);
 alert(cardId);
 if(cardId !== undefined){
     document.body.style.backgroundColor = "black";

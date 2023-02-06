@@ -8,10 +8,8 @@ export async function cardIdNfc(card) {
 
         // Start scaning for NFC tags
         // Start scaning for NFC tags
-        document.body.style.backgroundColor = "hotpink";
         ndef.scan()
             .then(() => {
-                document.body.style.backgroundColor = "yellow";
                 // text.innerHTML = "Scan started successfully.";
 
                 // If you get a error while reading a tag
@@ -23,7 +21,6 @@ export async function cardIdNfc(card) {
                 ndef.addEventListener(
                     "reading",
                     ({ message, serialNumber }) => {
-                        document.body.style.backgroundColor = "blue";
                         // info.innerHTML = message + ", " + serialNumber;
                         // text.innerHTML = "NDEF message read.";
                         try{
@@ -39,7 +36,7 @@ export async function cardIdNfc(card) {
                         }
                         }
                         catch{
-                            alert(serialNumber);
+                            var nfcId = serialNumber;
                             resolve(serialNumber);
                         }
                             
