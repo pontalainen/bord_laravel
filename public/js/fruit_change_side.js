@@ -63,10 +63,30 @@ function loadPage(a) {
     }
 }
 
+function webWorker() {
+    if (window.Worker) {
+        //text.innerHTML = navigator.permissions.query({ name: "nfc" });
+        workerMessage();
+    }
+}
+let cardId;
+function workerMessage() {
+    let worker = new Worker("./worker.js");
+    //text.innerHTML = "Find web worker";
+    worker.addEventListener("message", async function (evt) {
+        if (evt.data) {
+            //text.innerHTML = evt.data;
+
+            if (evt.data === 1) {
+                cardId = await cardIdNfc("none")
+            }
+        }
+    });
+}
+
 async function getNfcId(){
 
-
-const cardId = await cardIdNfc("none");
+    webWorker();
 
 alert(cardId);
 

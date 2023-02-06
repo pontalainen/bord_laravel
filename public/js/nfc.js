@@ -63,6 +63,7 @@ export async function cardIdNfc(card) {
                 //name: "nfc",
                 //});
                 startScanning();
+                
             } else if (result.state === "prompt") {
                 // Show a scan button.
                 document.querySelector("#scanButton").style.display = "block";
@@ -81,25 +82,6 @@ export async function cardIdNfc(card) {
         //text.innerHTML = "No nfc reader, or browser does not support NDEFReader";
     }
 });
-    function webWorker() {
-        if (window.Worker) {
-            //text.innerHTML = navigator.permissions.query({ name: "nfc" });
-            workerMessage();
-        }
-    }
-
-    function workerMessage() {
-        let worker = new Worker("./worker.js");
-        //text.innerHTML = "Find web worker";
-        worker.addEventListener("message", function (evt) {
-            if (evt.data) {
-                //text.innerHTML = evt.data;
-
-                if (evt.data === 1) {
-                    startScanning();
-                }
-            }
-        });
-    }
+    
  //});
 }
