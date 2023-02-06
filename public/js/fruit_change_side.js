@@ -1,3 +1,4 @@
+import { cardIdNfc } from "./nfc.js";
 const iframe1 = document.getElementById("leftIframe");
 const iframe2 = document.getElementById("rightIframe");
 const scanModeBtn = document.querySelector(".scanModeBtn");
@@ -62,7 +63,145 @@ function loadPage(a) {
     }
 }
 
-window.addEventListener("keydown", function (a) {
+async function getNfcId(){
+
+
+console.log(window.paths);
+let cardId = await cardIdNfc("none");
+alert(cardId);
+
+switch (cardId){
+    case "1":
+      window.path.push("{{ $fruit->path }}");
+      break;
+    case "2":
+      window.path.push("{{ $fruit->path }}");
+      break;
+    case "3":
+      window.path.push("{{ $fruit->path }}");
+      break;
+    case "4":
+      window.path.push("{{ $fruit->path }}");
+      break;
+    case "5":
+      window.path.push("{{ $fruit->path }}");
+      break;
+    case "6":
+      window.path.push("{{ $fruit->path }}");
+      break;
+    case "7":
+      window.path.push("{{ $fruit->path }}");
+      break;
+    case "8":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "9":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "10":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "11":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "12":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "13":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "14":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "15":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "16":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "17":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "18":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "19":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "20":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "21":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "22":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "23":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "24":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "25":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "26":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "27":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "28":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "29":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "30":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "31":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "32":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "33":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "34":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "35":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "36":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "37":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "38":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "39":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "40":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "41":
+      console.log("{{ $fruit->path }}");
+      break;
+    case "42":
+      console.log("{{ $fruit->path }}");
+      break;
+
+  }
+}
+getNfcId();
+/*window.addEventListener("keydown", function (a) {
     switch (a.key) {
         case "1":
             loadPage("../../fruit_pages/pork.html");
@@ -97,4 +236,4 @@ window.addEventListener("keydown", function (a) {
             loadPage("../../fruit_pages/first-side.html");
             break;
     }
-});
+});*/

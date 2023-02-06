@@ -4,24 +4,19 @@ export async function cardIdNfc(card) {
     // Function scan after a nfc tag
     function startScanning() {
         // Get refercens to nfc reader
-        document.querySelector(".primary_card").style.backgroundColor =
-            "hotpink";
         const ndef = new NDEFReader();
 
         // Start scaning for NFC tags
         // Start scaning for NFC tags
         ndef.scan()
             .then(() => {
-                document.querySelector(".primary_card").style.backgroundColor =
-                    "yellow";
+                
                 // text.innerHTML = "Scan started successfully.";
 
                 // If you get a error while reading a tag
                 ndef.addEventListener("readingerror", () => {
                     // text.innerHTML ="Error! Cannot read data from the NFC tag. Try a different one?";
-                    document.querySelector(
-                        ".primary_card"
-                    ).style.backgroundColor = "red";
+                    
                 });
                 // If you reading a tag successful
                 ndef.addEventListener(
@@ -29,9 +24,7 @@ export async function cardIdNfc(card) {
                     ({ message, serialNumber }) => {
                         // info.innerHTML = message + ", " + serialNumber;
                         // text.innerHTML = "NDEF message read.";
-                        document.querySelector(
-                            ".primary_card"
-                        ).style.backgroundColor = "white";
+                        
                         if(card === "primary_card"){
                             document.querySelector(
                                 ".primary_card"
@@ -72,9 +65,7 @@ export async function cardIdNfc(card) {
                     document.querySelector("#scanButton").style.display =
                         "none";
                     // webWorker();
-                    document.querySelector(
-                        ".primary_card"
-                    ).style.backgroundColor = "blue";
+                    
                     startScanning();
                 };
             }

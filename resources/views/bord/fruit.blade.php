@@ -24,17 +24,12 @@
       <a class="airBtn" href="{{ route('bord.index') }}">Go to Air</a>
       @endif
 
-      @foreach($fruits as $fruit)
-
-      @if ($fruit->id === 1)
-      <p>
-        {{ $fruit->name }}
-      </p>
-      @endif
-
-      @endforeach
+      
 
     </header>
+
+    
+
 
 
 
@@ -44,29 +39,24 @@
           0% {
             transform: rotate(initial);
           }
-
           100% {
             transform: rotate(31deg);
             /* Value is set in exakt kcal, to calculate degrees, use 0,2 * y ammount of kcal*/
           }
         }
-
         @keyframes rotate2 {
           0% {
             transform: rotate(initial);
           }
-
           100% {
             transform: rotate(162deg);
             /* This value is correct for the right side, for the left side, double the value*/
           }
         }
-
         @keyframes rotate3 {
           0% {
             transform: rotate(initial);
           }
-
           100% {
             transform: rotate(144deg);
             /* This value is correct for the right side, for the left side, double the value*/
@@ -169,7 +159,22 @@
       </div>
     </div>
 
-    <script src="{{ asset('js/fruit_change_side.js') }}"></script>
+    
+
+    <script>
+  var paths = [];
+</script>
+    @foreach($fruits as $fruit)
+      
+    <script>
+
+      window.paths.push("{{ $fruit->name }}");
+
+    </script>
+
+    @endforeach
+    
+    <script type="module" src="{{ asset('js/fruit_change_side.js') }}"></script>
 
     <script>
       // if ("serviceWorker" in navigator) {
