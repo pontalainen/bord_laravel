@@ -36,7 +36,11 @@ export async function cardIdNfc(card) {
                             ).value = serialNumber;
                         }
                         document.body.style.backgroundColor = "hotpink";
-                        resolve(serialNumber);
+
+                        if(serialNumber !== undefined){
+                            resolve(serialNumber);
+                        }
+                        
                     }
                 );
                 // If you get a error while reading a tag
