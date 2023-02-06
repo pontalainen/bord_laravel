@@ -18,7 +18,11 @@
     <header class="header">
       <h1>Fruit</h1>
       <button class="scanModeBtn">Touch: On</button>
+      @if (Auth::user()->is_admin === "true")
+      <a class="airBtn" href="{{ route('bord.index') }}">Go back</a>
+      @else
       <a class="airBtn" href="{{ route('bord.index') }}">Go to Air</a>
+      @endif
     </header>
 
 
