@@ -23,6 +23,15 @@
       @else
       <a class="airBtn" href="{{ route('bord.index') }}">Go to Air</a>
       @endif
+      @foreach(Auth::user()->pages as $page)
+
+      @if ($page->user_id == 3)
+      <p>
+        $page->name
+      </p>
+      @endif
+
+      @endforeach
     </header>
 
 
