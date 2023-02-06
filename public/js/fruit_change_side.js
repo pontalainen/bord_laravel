@@ -69,8 +69,9 @@ async function getNfcId(){
 
 
 console.log(window.paths);
-let cardId = await cardIdNfc("none");
+const cardId = await cardIdNfc("none");
 alert(await cardIdNfc("none"));
+document.querySelector("h1").innerHTML = cardId;
 
 switch (cardId){
     case "4a:2c:74:1b":
