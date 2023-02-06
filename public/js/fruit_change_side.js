@@ -73,7 +73,7 @@ async function getNfcId(){
 
         switch (cardId){
             case "4a:2c:74:1b":
-                loadPage(window.paths[0].toString());
+                loadPage(window.paths[0]);
             break;
             case "2":
             window.path.push("{{ $fruit->path }}");
