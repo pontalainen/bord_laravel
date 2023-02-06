@@ -168,7 +168,7 @@
       
     <script>
 
-      window.paths.push("{{ $fruit->name }}");
+      window.paths.push("{{ $fruit->path }}");
 
     </script>
 
