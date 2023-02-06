@@ -34,13 +34,16 @@
 }
 .container.left .info {
     direction: rtl;
-    grid-area: logo;
+    grid-area: graph;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .container.left .info ul {
     border-radius: 1rem 1rem 1rem 1rem;
     padding: 4vh 3vh 0 12vh;
     padding-right: 3rem;
-    margin-right: -3rem;
     margin-top: 1rem;
     width: 8rem;
 }
@@ -67,12 +70,16 @@
     margin-left: 6rem;
 }
 .container.right .circles {
-    margin-left: 9rem;
+    margin-left: 2rem;
 }
 .container.right .info {
-    grid-area: logo;
+    grid-area: graph;
     direction: ltr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: -1rem;
+    height: 50vh;
 }
 .container.right .info ul {
     border-radius: 1rem 1rem 1rem 1rem;
@@ -259,7 +266,6 @@ div.second-info {
         opacity: 1;
     }
 }
-
 
 
 @font-face {
