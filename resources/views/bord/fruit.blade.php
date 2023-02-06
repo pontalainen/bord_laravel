@@ -162,8 +162,9 @@
     
 
     <script>
-  var paths = [];
-</script>
+      var paths = [];
+    </script>
+    
     @foreach($fruits as $fruit)
       
     <script>
@@ -180,7 +181,7 @@
       // if ("serviceWorker" in navigator) {
         // window.addEventListener("load", () => {
           // navigator.serviceWorker &&
-            // navigator.serviceWorker.register(`http://localhost:5173/js/sw.js`);
+            // navigator.serviceWorker.register("{{ asset('js/sw.js') }}");
         // });
       // }
     </script>

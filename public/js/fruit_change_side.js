@@ -65,7 +65,9 @@ function loadPage(a) {
 
 async function getNfcId(){
     let cardId;
+    
     while(true){
+        alert(window.paths[0]);
         cardId = await cardIdNfc("none");
 
         alert(cardId);
