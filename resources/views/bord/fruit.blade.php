@@ -163,6 +163,7 @@
 
     <script>
       var paths = [];
+      var card = [];
     </script>
     
     @foreach($fruits as $fruit)
@@ -170,6 +171,7 @@
     <script>
 
       window.paths.push("{{ $fruit->path }}");
+      window.card.push("{{ $fruit->primary_card }}");
 
     </script>
 

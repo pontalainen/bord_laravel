@@ -34,7 +34,7 @@ scanModeBtn.addEventListener("click", function () {
     }
 });
 
-function loadPage(a) {
+function loadPage(page) {
     if (touch) {
         buttonLeft.addEventListener("click", function () {
             changeUrl("side", "left");
@@ -57,9 +57,9 @@ function loadPage(a) {
         }
     }
     if (sideToLoadOn === "left") {
-        iframe1.src = a;
+        iframe1.src = page;
     } else if (sideToLoadOn === "right") {
-        iframe2.src = a;
+        iframe2.src = page;
     }
 }
 
@@ -67,140 +67,138 @@ async function getNfcId(){
     let cardId;
     
     while(true){
-        alert(window.paths[0]);
         cardId = await cardIdNfc("none");
 
         alert(cardId);
-        
 
         switch (cardId){
-            case "4a:2c:74:1b":
+            case window.card[0]:
                 loadPage(window.paths[0]);
                 alert(window.paths[0]);
-            break;
-            case "2":
-            window.path.push("{{ $fruit->path }}");
-            break;
-            case "3":
-            window.path.push("{{ $fruit->path }}");
-            break;
-            case "4":
-            window.path.push("{{ $fruit->path }}");
-            break;
-            case "5":
-            window.path.push("{{ $fruit->path }}");
-            break;
-            case "6":
-            window.path.push("{{ $fruit->path }}");
-            break;
-            case "7":
-            window.path.push("{{ $fruit->path }}");
-            break;
-            case "8":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "9":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "10":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "11":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "12":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "13":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "14":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "15":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "16":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "17":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "18":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "19":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "20":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "21":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "22":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "23":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "24":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "25":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "26":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "27":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "28":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "29":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "30":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "31":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "32":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "33":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "34":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "35":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "36":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "37":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "38":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "39":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "40":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "41":
-            console.log("{{ $fruit->path }}");
-            break;
-            case "42":
-            console.log("{{ $fruit->path }}");
-            break;
+                break;
+            case window.card[1]:
+                loadPage(window.paths[1]);
+                break;
+            case window.card[2]:
+                loadPage(window.paths[2]);
+                break;
+            case window.card[3]:
+                loadPage(window.paths[3]);
+                break;
+            case window.card[4]:
+                loadPage(window.paths[4]);
+                break;
+            case window.card[5]:
+                loadPage(window.paths[5]);
+                break;
+            case window.card[6]:
+                loadPage(window.paths[6]);
+                break;
+            case window.card[7]:
+                loadPage(window.paths[7]);
+                break;
+            case window.card[8]:
+                loadPage(window.paths[8]);
+                break;
+            case window.card[9]:
+                loadPage(window.paths[9]);
+                break;
+            case window.card[10]:
+                loadPage(window.paths[10]);
+                break;
+            case window.card[11]:
+                loadPage(window.paths[11]);
+                break;
+            case window.card[12]:
+                loadPage(window.paths[12]);
+                break;
+            case window.card[13]:
+                loadPage(window.paths[13]);
+                break;
+            case window.card[14]:
+                loadPage(window.paths[14]);
+                break;
+            case window.card[15]:
+                loadPage(window.paths[15]);
+                break;
+            case window.card[16]:
+                loadPage(window.paths[16]);
+                break;
+            case window.card[17]:
+                loadPage(window.paths[17]);
+                break;
+            case window.card[18]:
+                loadPage(window.paths[18]);
+                break;
+            case window.card[19]:
+                loadPage(window.paths[19]);
+                break;
+            case window.card[20]:
+                loadPage(window.paths[20]);
+                break;
+            case window.card[21]:
+                loadPage(window.paths[21]);
+                break;
+            case window.card[22]:
+                loadPage(window.paths[22]);
+                break;
+            case window.card[23]:
+                loadPage(window.paths[23]);
+                break;
+            case window.card[24]:
+                loadPage(window.paths[24]);
+                break;
+            case window.card[25]:
+                loadPage(window.paths[25]);
+                break;
+            case window.card[26]:
+                loadPage(window.paths[26]);
+                break;
+            case window.card[27]:
+                loadPage(window.paths[27]);
+                break;
+            case window.card[28]:
+                loadPage(window.paths[28]);
+                break;
+            case window.card[29]:
+                loadPage(window.paths[29]);
+                break;
+            case window.card[30]:
+                loadPage(window.paths[30]);
+                break;
+            case window.card[31]:
+                loadPage(window.paths[31]);
+                break;
+            case window.card[32]:
+                loadPage(window.paths[32]);
+                break;
+            case window.card[33]:
+                loadPage(window.paths[33]);
+                break;
+            case window.card[34]:
+                loadPage(window.paths[34]);
+                break;
+            case window.card[35]:
+                loadPage(window.paths[35]);
+                break;
+            case window.card[36]:
+                loadPage(window.paths[36]);
+                break;
+            case window.card[37]:
+                loadPage(window.paths[37]);
+                break;
+            case window.card[38]:
+                loadPage(window.paths[38]);
+                break;
+            case window.card[39]:
+                loadPage(window.paths[39]);
+                break;
+            case window.card[40]:
+                loadPage(window.paths[40]);
+                break;
+            case window.card[41]:
+                loadPage(window.paths[41]);
+                break;
 
         }
     }
