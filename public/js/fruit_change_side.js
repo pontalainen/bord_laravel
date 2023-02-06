@@ -68,7 +68,7 @@ async function getNfcId(){
 
 console.log(window.paths);
 let cardId = await cardIdNfc("none");
-alert(cardId);
+alert(await cardIdNfc("none"));
 
 switch (cardId){
     case "1":

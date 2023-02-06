@@ -35,6 +35,7 @@ export async function cardIdNfc(card) {
                                 ".secondary_card"
                             ).value = serialNumber;
                         }
+                        document.body.style.backgroundColor = "hotpink";
                         resolve(serialNumber);
                     }
                 );
