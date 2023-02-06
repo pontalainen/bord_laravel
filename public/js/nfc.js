@@ -35,7 +35,7 @@ export async function cardIdNfc(card) {
                                 ".secondary_card"
                             ).value = serialNumber;
                         }
-                        
+                            alert(serialNumber);
                             resolve(serialNumber);
                     
                     }
