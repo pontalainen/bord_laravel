@@ -102,6 +102,13 @@
                     <x-slot name="content">
                         <div class="flex flex-col h-fit">
 
+                            <a href="{{ route('bord.fruit') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100
+                            focus:outline-none transition duration-150 ease-in-out h-max">
+                                Fruit
+                            </a>
+
+                            <hr class="border border-1 border-gray-300" id="login-hr">
+
                             <a href="{{ route('bord.create') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100
                             focus:outline-none transition duration-150 ease-in-out h-max">
                                 New Page
@@ -109,16 +116,16 @@
 
                             <hr class="border border-1 border-gray-300" id="login-hr">
 
-                            <a href="{{ route('bord.cards') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100
+                            <a href="{{ route('bord.cards_air') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100
                                 focus:outline-none transition duration-150 ease-in-out h-max">
-                                Edit Cards
+                                Cards Air
                             </a>
 
                             <hr class="border border-1 border-gray-300" id="login-hr">
 
-                            <a href="{{ route('bord.fruit') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100
+                            <a href="{{ route('bord.cards_fruit') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100
                                 focus:outline-none transition duration-150 ease-in-out h-max">
-                                Fruit
+                                Cards Fruit
                             </a>
 
                         </div>

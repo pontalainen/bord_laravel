@@ -28,8 +28,11 @@ Route::resource('/bord', PagesController::class, ['except' => ['show']]);
 Route::get('/bord/fruit', [PagesController::class, 'fruit'])->name('bord.fruit');
 
 // Routes for editing cards
-Route::get('/bord/cards', [PagesController::class, 'cards'])->name('bord.cards');
-Route::patch('/bord/update_cards/{id}', [PagesController::class, 'update_cards'])->name('bord.update_cards');
+Route::get('/bord/cards_air', [PagesController::class, 'cards_air'])->name('bord.cards_air');
+Route::patch('/bord/update_air/{id}', [PagesController::class, 'update_air'])->name('bord.update_air');
+
+Route::get('/bord/cards_fruit', [PagesController::class, 'cards_fruit'])->name('bord.cards_fruit');
+Route::patch('/bord/update_fruit/{id}', [PagesController::class, 'update_fruit'])->name('bord.update_fruit');
 
 // Route for showing air pages
 Route::get('/bord/{id}', [PagesController::class, 'air'])->name('bord.air');
