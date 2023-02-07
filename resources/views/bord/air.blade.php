@@ -61,7 +61,7 @@
                 <b>{{ $page->name }}</b>
             </h1>
             <hr class="border border-1 border-gray-300 mt-10">
-            
+
             <button id="scanButton">scan</button>
         </div>
 
@@ -123,7 +123,7 @@
 
         <script>
             var id = [];
-            var card = [];
+            var airCard = [];
         </script>
     
     @foreach($pages as $page)
@@ -131,7 +131,7 @@
         <script>
 
         window.id.push("{{ $page->id }}");
-        window.card.push("{{ $page->primary_card }}");
+        window.airCard.push("{{ $page->primary_card }}");
 
         </script>
 
