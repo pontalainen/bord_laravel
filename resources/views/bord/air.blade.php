@@ -112,6 +112,25 @@
             </form>
         </div>
         @endif
+
+        <script>
+            var id = [];
+            var card = [];
+        </script>
+    
+        @foreach($pages as $page)
+      
+        <script>
+
+        window.id.push("{{ $page->id }}");
+        window.card.push("{{ $page->primary_card }}");
+
+        </script>
+
+        @endforeach
+
+
+        <script src="{{ asset('js/air_change_sida.js') }}"></script>
     </body>
 
 </html>

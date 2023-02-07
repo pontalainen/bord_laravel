@@ -11,7 +11,6 @@ let touch = true;
 window.onload = (event) => {
     iframe1.src = "../fruit_pages/first-side.html";
     iframe2.src = "../fruit_pages/first-side.html";
-    // iframe1.src = "../../fruit_pages/pork.html";
     changeUrl("side", "left");
 };
 
@@ -68,8 +67,6 @@ async function getNfcId(){
     
     while(true){
         cardId = await cardIdNfc("none");
-
-        alert(cardId);
 
         switch (cardId){
             case window.card[0]:
