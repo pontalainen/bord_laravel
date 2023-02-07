@@ -23,7 +23,7 @@ export async function cardIdNfc(card) {
                     ({ message, serialNumber }) => {
                         // info.innerHTML = message + ", " + serialNumber;
                         // text.innerHTML = "NDEF message read.";
-                        /*try{
+                        // try{
                         if(card === "primary_card"){
                             document.querySelector(
                                 ".primary_card"
@@ -35,8 +35,8 @@ export async function cardIdNfc(card) {
                             ).value = serialNumber;
                             resolve(serialNumber);
                         }
-                        }
-                         catch{*/
+                        //}
+                         //catch{
                             resolve(serialNumber);
                         // }
                             
