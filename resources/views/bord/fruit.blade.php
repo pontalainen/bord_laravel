@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="{{ asset('css/fruit.css') }}">
     <title>Fruit</title>
 
+    <style>
+        #scanButton {
+          display: none;
+        }
+    </style>
+
     <!--<link rel="manifest"  href="http://localhost:5173/manifest.json">-->
 
   </head>
@@ -24,7 +30,7 @@
       <a class="airBtn" href="{{ route('bord.index') }}">Go to Air</a>
       @endif
 
-      
+      <button id="scanButton">scan</button>
 
     </header>
 

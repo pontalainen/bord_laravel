@@ -11,6 +11,12 @@
 
         <title>air page</title>
         <link rel="stylesheet" href="resources/css/app.css">
+
+        <style>
+            #scanButton {
+                display: none;
+            }
+        </style>
     </head>
 
     <body class="overflow-y-hidden text-center font-bold w-full h-full bg-gray-100">
@@ -55,6 +61,8 @@
                 <b>{{ $page->name }}</b>
             </h1>
             <hr class="border border-1 border-gray-300 mt-10">
+            
+            <button id="scanButton">scan</button>
         </div>
 
         <div class="h-full justify-center">
