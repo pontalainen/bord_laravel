@@ -118,6 +118,7 @@
             var card = [];
         </script>
     
+    @foreach($pages as $page)
       
         <script>
 
@@ -126,8 +127,10 @@
 
         </script>
 
+    @endforeach
 
-        <script src="{{ asset('js/air_change_sida.js') }}"></script>
+
+        <script- type="module" src="{{ asset('js/air_change_sida.js') }}"></script>
     </body>
 
 </html>
