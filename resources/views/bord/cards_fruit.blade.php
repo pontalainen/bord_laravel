@@ -7,6 +7,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Edit cards</title>
+
+        <style>
+            #scanButton {
+                display: none;
+            }
+        </style>
     </head>
 
 
@@ -38,31 +44,39 @@
                     href="{{ route('bord.index') }}">
                     Go Back
                 </a>
+
+                <button id="scanButton">scan</button>
             </div>
 
-            @foreach ($pages as $page)
-            @if (Auth::id() === $page->user_id)
+            <div class="py-10 px-5 absolute top-2 right-2">
+                <a class="primary-btn inline text-base sm:text-xl bg-gray-500 py-4 px-4 shadow-xl rounded-full transition-all hover:bg-gray-400"
+                    href="{{ route('bord.cards_air') }}">
+                    Switch to Air
+                </a>
+
+                <button id="scanButton">scan</button>
+            </div>
+
+            @foreach($fruits as $fruit)
             <div class="m-auto pt-4 mb-40">
 
-                {{-- Errors --}}
-
-
-                <form action="{{ route('bord.update_cards', $page->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('bord.update_fruit', $fruit->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
 
                     {{-- Page name --}}
                     <h2 class="text-3xl text-center pb-2 font-bold h2_cards">
-                        {{ $page->name }}
+                        {{ $fruit->name }}
                     </h2>
 
 
-                    <input type="hidden" name="name" value="{{ $page->name }}">
+                    <input type="hidden" name="name" value="{{ $fruit->name }}">
 
-                    <input type="text" name="primary_card" value="{{ $page->primary_card }}" placeholder="Card id..."
+                    <input class="primary_card" type="text" name="primary_card" value="{{ $fruit->primary_card }}"
+                        placeholder="Card id..."
                         class="bg-white block rounded-lg w-full h-20 text-2xl outline-none border-none m-4 drop-shadow-xl">
 
-                    <input type="text" name="secondary_card" value="{{ $page->secondary_card }}"
+                    <input class="secondary_card" type="text" name="secondary_card" value="{{ $fruit->secondary_card }}"
                         placeholder="Card id..."
                         class="bg-white block rounded-lg w-full h-20 text-2xl outline-none border-none m-4 drop-shadow-xl">
 
@@ -97,12 +111,8 @@
                 </form>
             </div>
 
-            @endif
             @endforeach
 
-            <div class="mx-auto pb-10 w-4/5">
-                {{ $pages->links() }}
-            </div>
             @else
 
             <div class="mx-auto w-4/5 pb-0 pt-2">
@@ -134,6 +144,8 @@
             </div>
 
             @endif
+
+            <script type="module" src="{{ asset('js/send_card.js') }}"></script>
     </body>
 
 </html>

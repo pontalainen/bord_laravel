@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PageFormRequest;
 use App\Models\Page;
+use App\Models\Fruit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -17,6 +18,7 @@ class PagesController extends Controller
         $this->middleware('auth')->only([
             'index',
             'air',
+            'fruit',
             'create',
             'edit',
             'update',
@@ -35,7 +37,7 @@ class PagesController extends Controller
     {
         if (Auth::user()->is_admin === 'false') {
             return view('bord.air', [
-                'page' => Page::where('name', 'Start')
+                'page' => Page::where('name', 'Start')->first()
             ]);
         }
 
@@ -91,13 +93,16 @@ class PagesController extends Controller
     public function air($id)
     {
         return view('bord.air', [
-            'page' => Page::findOrFail($id)
+            'page' => Page::findOrFail($id),
+            'pages' => Page::all()
         ]);
     }
 
     public function fruit()
     {
-        return view('bord.fruit');
+        return view('bord.fruit', [
+            'fruits' => Fruit::all()
+        ]);
     }
 
     /**
@@ -178,21 +183,39 @@ class PagesController extends Controller
     }
 
     // Functions for the "cards"-page
-    public function cards()
+    public function cards_air()
     {
-        return view('bord.cards', [
+        return view('bord.cards_air', [
             'pages' => Page::orderBy('updated_at', 'desc')
         ]);
     }
 
-    public function update_cards(Request $request, $id)
+    public function cards_fruit()
+    {
+        return view('bord.cards_fruit', [
+            'fruits' => Fruit::all()
+        ]);
+    }
+
+    public function update_air(Request $request, $id)
     {
         DB::table('pages')->where('id', $id)->update([
             'primary_card' => $request->primary_card,
             'secondary_card' => $request->secondary_card
         ]);
 
-        return redirect(route('bord.cards'))
+        return redirect(route('bord.cards_air'))
+            ->with('message', 'Cards for page' . " \"" . $request->name . "\" " . 'has been updated');
+    }
+
+    public function update_fruit(Request $request, $id)
+    {
+        DB::table('fruits')->where('id', $id)->update([
+            'primary_card' => $request->primary_card,
+            'secondary_card' => $request->secondary_card
+        ]);
+
+        return redirect(route('bord.cards_fruit'))
             ->with('message', 'Cards for page' . " \"" . $request->name . "\" " . 'has been updated');
     }
 }

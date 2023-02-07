@@ -98,6 +98,7 @@
 body {
     background-image: url(../images/mountains_Background.png);
     background-size: cover;
+    background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.6);
     background-blend-mode: multiply;
 }
@@ -153,3 +154,4 @@ img {
     align-items: center;
     object-fit: contain;
 }
+
