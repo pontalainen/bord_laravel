@@ -63,13 +63,10 @@ function loadPage(page) {
 }
 
 async function getNfcId(){
-    alert("hellow");
     let cardId;
     
     while(true){
-        alert("scan");
         cardId = await cardIdNfc("none");
-        alert(cardId);
 
         switch (cardId){
             case window.card[0]:

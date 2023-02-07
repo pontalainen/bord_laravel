@@ -3,12 +3,9 @@ import { cardIdNfc } from "./nfc.js";
 getNfcId();
 async function getNfcId(){
     let cardId;    
-    alert("hellow");
 
     while(true){
-        alert("scan");
         cardId = await cardIdNfc("none");
-        alert(cardId);
 
 
         switch (cardId){

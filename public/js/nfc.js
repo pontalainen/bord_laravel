@@ -39,7 +39,7 @@ export async function cardIdNfc(card) {
                         }
                         catch{
                             resolve(serialNumber);
-                         }
+                        }
                             
                     
                     }
