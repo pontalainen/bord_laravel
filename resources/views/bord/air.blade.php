@@ -65,16 +65,20 @@
             <h1 class="text-3xl text-gray-700">
                 <b>{{ $page->name }}</b>
             </h1>
+
             <hr class="border border-1 border-gray-300 mt-10">
 
             <button id="scanButton">scan</button>
+
         </div>
 
         <div class="h-full justify-center">
-            <div class="flex flex-row justify-between bg-white py-14 px-24 mt-4 w-11/12 shadow-lg rounded-b-xl transition-all h-4/6"
-                id="content-el">
-                <div class="w-max max-w-3xl h-max flex flex-col p-2 none">
-                    {!! $content = $page->content !!}
+            <div
+                class="flex flex-row justify-between bg-white py-14 px-24 mt-4 w-11/12 shadow-lg rounded-b-xl transition-all h-4/6 content-el">
+                <div class="w-max max-w-3xl h-max flex flex-col p-2 content">
+                    <p>
+                        {!! $content = $page->content !!}
+                    </p>
                 </div>
 
                 <div class="w-7/12 flex justify-end">
