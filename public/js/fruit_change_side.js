@@ -71,7 +71,6 @@ async function getNfcId(){
         switch (cardId){
             case window.card[0]:
                 loadPage(window.paths[0]);
-                alert(window.paths[0]);
                 break;
             case window.card[1]:
                 loadPage(window.paths[1]);
