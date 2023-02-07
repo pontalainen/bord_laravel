@@ -1,8 +1,5 @@
 hr {
-    background-color: #ccc;
-    border: 0;
-    height: 1px;
-    margin: 8px;
+    margin: 0;
 }
 input[type="checkbox"]:focus {
     outline: 0;
@@ -55,6 +52,7 @@ img {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    object-fit: contain;
 }
 
 #preview {
@@ -68,4 +66,8 @@ img {
 .w-7\/12 {
     height: fit-content;
     width: 100.3%;
+}
+
+textarea {
+    resize: none;
 }

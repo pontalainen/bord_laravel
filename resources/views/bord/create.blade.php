@@ -16,61 +16,65 @@
         <form action="{{ route('bord.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="w-4/5 mx-auto">
-                <div class="flex text-center pt-10 justify-center">
+                <div class="flex text-center py-5 justify-center">
 
                     {{-- Name input --}}
                     <input type="text" name="name" placeholder="Page name..."
-                        class="bg-white block rounded-lg h-20 text-2xl outline-none border-none m-4 drop-shadow-xl w-max text-center">
+                        class="bg-white block rounded-lg h-20 text-3xl outline-none border-none drop-shadow-xl w-max text-center font-bold">
 
                 </div>
-                <hr class="border border-1 border-gray-300 mt-10">
+                <hr class="border border-1 border-gray-300>
 
-                <div class="m-auto">
-                    <div class="py-10 px-5 absolute top-2 left-2">
-                        <a class="primary-btn inline text-base sm:text-xl bg-gray-500 py-4 px-4 shadow-xl transition-all hover:bg-gray-400 font-normal"
-                            href="{{ route('bord.index') }}">
-                            Go back
-                        </a>
+                <div class=" m-auto">
+                <div class="py-10 px-5 absolute top-2 left-2">
+                    <a class="primary-btn inline text-base sm:text-xl bg-gray-500 py-4 px-4 shadow-xl transition-all hover:bg-gray-400 font-normal"
+                        href="{{ route('bord.index') }}">
+                        Go back
+                    </a>
+                </div>
+                @if ($errors->any())
+                <div class="pb-8">
+                    <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+                        Something went wrong...
                     </div>
-                    @if ($errors->any())
-                    <div class="pb-8">
-                        <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
-                            Something went wrong...
-                        </div>
-                        <ul class="border border-t-0 border-red-400 rounder-b bg-red-100 px-4 py-3 text-red-700">
-                            @foreach ($errors->all() as $error)
-                            <li>
-                                {{ $error }}
-                            </li>
-                            @endforeach
-                        </ul>
-                        @endif
-                    </div>
+                    <ul class="border border-t-0 border-red-400 rounder-b bg-red-100 px-4 py-3 text-red-700">
+                        @foreach ($errors->all() as $error)
+                        <li>
+                            {{ $error }}
+                        </li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </div>
 
-                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 
 
-                    {{-- Markdown checkbox --}}
-                    <div class="flex flex-row w-max mt-12">
-                        <input type="checkbox" id="ckbx" name="checkbox"
-                            class="bg-white block rounded-lg h-10 w-10 outline-none border-none mx-4 my-0 shadow-lg drop-shadow-xl">
-                        <label class="text-center leading-6 h-6 text-xl items-center text-gray-200 my-auto ljus"
-                            for="md">Markdown content</label>
-                    </div>
+                {{-- Markdown checkbox --}}
+                <div class="flex flex-row w-max mt-5">
+                    <input type="checkbox" id="ckbx" name="checkbox"
+                        class="bg-white block rounded-lg h-10 w-10 outline-none border-none mx-4 my-0 shadow-lg drop-shadow-xl">
+                    <label class="text-center leading-6 h-6 text-xl items-center text-gray-200 my-auto ljus"
+                        for="md">Markdown content</label>
+                </div>
 
-                    <div class="flex flex-row justify-between mt-4 w-full rounded-b-xl h-3/6" id="input-wrapper">
+                <div class="flex flex-row justify-between mt-4 w-full rounded-b-xl h-3/6" id="input-wrapper">
+                    <div
+                        class="flex flex-row justify-between bg-white py-14 px-14 mt-4 w-11/12 shadow-lg rounded-b-xl transition-all h-4/6 min-h-full content-el">
 
                         {{-- Content input --}}
                         {{-- <div class="w-3xl h-max flex flex-col p-2 none"> --}}
                             <textarea name="content" placeholder="Content..." contenteditable="true" type="text"
-                                class="w-10/12 h-max flex flex-col px-2 none w-3xl none bg-white rounded-lg text-xl outline-none border-none mx-4 drop-shadow-xl resize"></textarea>
-                            {{--
-                        </div> --}}
+                                class="h-full w-full flex flex-col px-2 none w-3xl none bg-white rounded-lg text-xl outline-none border mx-4 drop-shadow-xl resize-none"></textarea>
 
-                        {{-- Image preview --}}
-                        <div class="w-7/12 flex justify-end">
-                            <img id="preview" alt="Select an image to preview it here"
-                                class=" w-max max-h-96 max-w-6xl">
+
+
+                            {{-- Image preview --}}
+                            {{-- <div class="w-max flex justify-end"> --}}
+                                <img id="preview" alt="Select an image to preview it here"
+                                    class=" w-max max-h-96 max-w-full">
+                                {{--
+                            </div> --}}
                         </div>
                     </div>
 
