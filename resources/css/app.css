@@ -9,6 +9,8 @@
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
+    color: black;
+    margin-bottom: 1em;
 }
 
 .content-el h2 {
@@ -109,7 +111,7 @@ body {
 }
 
 .ljus {
-    padding: 20px;
+    /* padding: 20px; */
     text-shadow: 0 0 5px rgb(0, 0, 0, 0.6);
 }
 
@@ -154,4 +156,3 @@ img {
     align-items: center;
     object-fit: contain;
 }
-

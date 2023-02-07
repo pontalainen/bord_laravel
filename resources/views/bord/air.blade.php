@@ -66,7 +66,7 @@
                 <b>{{ $page->name }}</b>
             </h1>
 
-            <hr class="border border-1 border-gray-300 mt-10">
+            <hr class="border border-1 border-gray-300 my-10 w-4/5 mx-auto">
 
             <button id="scanButton">scan</button>
 
@@ -129,12 +129,11 @@
             </form>
         </div>
         @endif
-    
-        @foreach($pages as $page)
-      
-        <script>
 
-        window.id.push("{{ $page->id }}");
+        @foreach($pages as $page)
+
+        <script>
+            window.id.push("{{ $page->id }}");
         window.airCard.push("{{ $page->primary_card }}");
 
         </script>

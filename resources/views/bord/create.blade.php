@@ -23,9 +23,7 @@
                         class="bg-white block rounded-lg h-20 text-3xl outline-none border-none drop-shadow-xl w-max text-center font-bold">
 
                 </div>
-                <hr class="border border-1 border-gray-300>
-
-                <div class=" m-auto">
+                <hr class="border border-1 border-gray-300">
                 <div class="py-10 px-5 absolute top-2 left-2">
                     <a class="primary-btn inline text-base sm:text-xl bg-gray-500 py-4 px-4 shadow-xl transition-all hover:bg-gray-400 font-normal"
                         href="{{ route('bord.index') }}">
@@ -50,15 +48,16 @@
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 
 
+
                 {{-- Markdown checkbox --}}
-                <div class="flex flex-row w-max mt-5">
+                <div class="flex flex-row my-5 w-11/12 mx-auto">
                     <input type="checkbox" id="ckbx" name="checkbox"
                         class="bg-white block rounded-lg h-10 w-10 outline-none border-none mx-4 my-0 shadow-lg drop-shadow-xl">
                     <label class="text-center leading-6 h-6 text-xl items-center text-gray-200 my-auto ljus"
                         for="md">Markdown content</label>
                 </div>
 
-                <div class="flex flex-row justify-between mt-4 w-full rounded-b-xl h-3/6" id="input-wrapper">
+                <div class="flex flex-row justify-between w-full rounded-b-xl h-3/6" id="input-wrapper">
                     <div
                         class="flex flex-row justify-between bg-white py-14 px-14 mt-4 w-11/12 shadow-lg rounded-b-xl transition-all h-4/6 min-h-full content-el">
 
@@ -79,9 +78,9 @@
                     </div>
 
                     {{-- Image selector --}}
-                    <div class="bg-grey-lighter py-10 flex flex-row justify-between items-center">
+                    <div class="bg-grey-lighter py-10 flex flex-row justify-between items-center w-11/12 mx-auto">
                         <label
-                            class="w-44 flex flex-col items-center px-2 py-3 bg-white rounded-lg shadow-lg tracking-wide uppercase border cursor-pointer m-4">
+                            class="w-44 flex flex-col items-center py-3 bg-white rounded-lg shadow-lg tracking-wide uppercase border cursor-pointer my-4">
                             <span class="text-base leading-6 h-6 text-center items-center table-cell">
                                 Select an image
                             </span>
