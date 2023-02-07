@@ -118,7 +118,6 @@
             var card = [];
         </script>
     
-        <!-- @foreach($pages as $page) -->
       
         <script>
 
@@ -126,8 +125,6 @@
         window.card.push("{{ $page->primary_card }}");
 
         </script>
-
-        <!-- @endforeach -->
 
 
         <script src="{{ asset('js/air_change_sida.js') }}"></script>
