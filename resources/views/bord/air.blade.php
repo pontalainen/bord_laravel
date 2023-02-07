@@ -126,7 +126,7 @@
             var airCard = [];
         </script>
     
-    @foreach($pages as $page)
+        @foreach($pages as $page)
       
         <script>
 
@@ -135,10 +135,10 @@
 
         </script>
 
-    @endforeach
+        @endforeach
 
 
-        <script- type="module" src="{{ asset('js/air_change_sida.js') }}"></script>
+        <script type="module" src="{{ asset('js/air_change_sida.js') }}"></script>
     </body>
 
 </html>

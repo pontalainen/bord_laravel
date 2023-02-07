@@ -63,9 +63,11 @@ function loadPage(page) {
 }
 
 async function getNfcId(){
+    alert("hellow");
     let cardId;
     
     while(true){
+        alert("scan");
         cardId = await cardIdNfc("none");
         alert(cardId);
 
