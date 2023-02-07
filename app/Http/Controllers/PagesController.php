@@ -93,7 +93,8 @@ class PagesController extends Controller
     public function air($id)
     {
         return view('bord.air', [
-            'page' => Page::findOrFail($id)
+            'page' => Page::findOrFail($id),
+            'pages' => Page::all()
         ]);
     }
 
