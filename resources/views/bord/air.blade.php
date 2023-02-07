@@ -17,6 +17,11 @@
                 display: none;
             }
         </style>
+
+        <script>
+            var id = [];
+            var airCard = [];
+        </script>
     </head>
 
     <body class="overflow-y-hidden text-center font-bold w-full h-full bg-gray-100">
@@ -120,11 +125,6 @@
             </form>
         </div>
         @endif
-
-        <script>
-            var id = [];
-            var airCard = [];
-        </script>
     
         @foreach($pages as $page)
       

@@ -16,6 +16,11 @@
         }
     </style>
 
+    <script>
+      var paths = [];
+      var card = [];
+    </script>
+
     <!--<link rel="manifest"  href="http://localhost:5173/manifest.json">-->
 
   </head>
@@ -164,13 +169,6 @@
 
       </div>
     </div>
-
-    
-
-    <script>
-      var paths = [];
-      var card = [];
-    </script>
     
     @foreach($fruits as $fruit)
       

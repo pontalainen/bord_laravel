@@ -9,6 +9,11 @@
         <title>
             Learn OL
         </title>
+
+        <script>
+                var id = [];
+                var airCard = [];
+        </script>
     </head>
 
     <body class="w-full h-full bg-gray-100">
@@ -192,7 +197,19 @@
                     </div>
                 </div>
             </div>
+            
+            <script>
+                window.id.push("{{ $page->id }}");
+                window.airCard.push("{{ $page->primary_card }}");
+            </script>
+
             @endforeach
+
+        
+
+
+
+        <script type="module" src="{{ asset('js/air_change_sida.js') }}"></script>
 
     </body>
 
