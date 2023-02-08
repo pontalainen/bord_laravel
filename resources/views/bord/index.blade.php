@@ -11,7 +11,7 @@
         </title>
 
         <script>
-                var id = [];
+            var id = [];
                 var airCard = [];
         </script>
     </head>
@@ -64,7 +64,7 @@
 
                                 <a href="{{ route('register_user') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100
                                     focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out h-max">
-                                    Create user
+                                    Create User
                                 </a>
 
                                 @else
@@ -197,7 +197,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <script>
                 window.id.push("{{ $page->id }}");
                 window.airCard.push("{{ $page->primary_card }}");
@@ -205,11 +205,7 @@
 
             @endforeach
 
-        
-
-
-
-        <script type="module" src="{{ asset('js/air_change_sida.js') }}"></script>
+            <script type="module" src="{{ asset('js/air_change_sida.js') }}"></script>
 
     </body>
 

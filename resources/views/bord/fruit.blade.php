@@ -11,9 +11,9 @@
     <title>Fruit</title>
 
     <style>
-        #scanButton {
-          display: none;
-        }
+      #scanButton {
+        display: none;
+      }
     </style>
 
     <script>
@@ -39,35 +39,35 @@
 
     </header>
 
-    
-
-
-
-
     <div id="layout-fruit">
       <style>
         @keyframes rotate1 {
           0% {
             transform: rotate(initial);
           }
+
           100% {
             transform: rotate(31deg);
             /* Value is set in exakt kcal, to calculate degrees, use 0,2 * y ammount of kcal*/
           }
         }
+
         @keyframes rotate2 {
           0% {
             transform: rotate(initial);
           }
+
           100% {
             transform: rotate(162deg);
             /* This value is correct for the right side, for the left side, double the value*/
           }
         }
+
         @keyframes rotate3 {
           0% {
             transform: rotate(initial);
           }
+
           100% {
             transform: rotate(144deg);
             /* This value is correct for the right side, for the left side, double the value*/
@@ -169,18 +169,17 @@
 
       </div>
     </div>
-    
-    @foreach($fruits as $fruit)
-      
-    <script>
 
+    @foreach($fruits as $fruit)
+
+    <script>
       window.paths.push("{{ $fruit->path }}");
       window.card.push("{{ $fruit->primary_card }}");
 
     </script>
 
     @endforeach
-    
+
     <script type="module" src="{{ asset('js/fruit_change_side.js') }}"></script>
 
     <script>

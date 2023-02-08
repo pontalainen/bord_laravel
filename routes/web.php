@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 require __DIR__ . '/auth.php';
 
-// Main Routes for "bord" inlcuded in resources
+// Main Routes for "bord" inlcuded in resources ("show" was replaced with "air")
 Route::resource('/bord', PagesController::class, ['except' => ['show']]);
 
 // Route for the fruit page
@@ -36,7 +36,6 @@ Route::patch('/bord/update_fruit/{id}', [PagesController::class, 'update_fruit']
 
 // Route for showing air pages
 Route::get('/bord/{id}', [PagesController::class, 'air'])->name('bord.air');
-
 
 // Fallback Route, for when routes are called but not defined
 Route::fallback(FallbackController::class);
