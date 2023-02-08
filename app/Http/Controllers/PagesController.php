@@ -37,13 +37,10 @@ class PagesController extends Controller
     {
         if (Auth::user()->is_admin === 'false') {
             return view('bord.air', [
-                'page' => Page::where('name', 'Start')->first()
+                'page' => Page::where('name', 'Start')->first(),
+                'pages' => Page::all()
             ]);
         }
-
-        // if (Auth::user()->is_admin === 'false') {
-        //     dd(Page::where('name', 'Start'));
-        // }
 
         return view('bord.index', [
             'pages' => Page::orderBy('updated_at', 'desc')

@@ -20,9 +20,10 @@
         </div>
 
         <div class="py-10 sm:py-20">
-            <form class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
-            hover:bg-blue-400 m-auto absolute left-1/2 top-3/6 -translate-x-1/2 -translate-y-3/4 w-52 text-center">
-                <input type="button" value="Go back" onclick="history.back()">
+            <form
+                class="primary-btn inline sm:text-xl text-2xl bg-blue-500 py-4 px-4 shadow-xl rounded-full transition-all
+            hover:bg-blue-400 m-auto absolute left-1/2 top-3/6 -translate-x-1/2 -translate-y-3/4 w-52 text-center hover:cursor-pointer">
+                <input class="hover:cursor-pointer" type="button" value="Go back" onclick="history.back()">
             </form>
         </div>
 

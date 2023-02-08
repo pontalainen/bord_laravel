@@ -87,6 +87,7 @@
                         </button>
                     </div>
 
+                    {{--* Buttons more like the image-input ones --}}
                     {{-- <div class="flex flex-row justify-around border-gray-300 border-2 max-w-2xl m-auto">
                         <div class="bg-grey-lighter py-10">
                             <label

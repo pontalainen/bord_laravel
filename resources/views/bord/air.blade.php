@@ -26,8 +26,6 @@
 
     <body class="overflow-y-hidden text-center font-bold w-full h-full bg-gray-100">
 
-        {{-- <input type="text" name="input" id="input-el" placeholder="Page id..." class="mt-10"> --}}
-
         {{-- ! Actual page --}}
         @if ( $page !== null )
         @if (Auth::user()->is_admin === 'true')
@@ -82,7 +80,7 @@
                 </div>
 
                 <div class="w-7/12 flex justify-end">
-                    <img src="{{ URL::to('/') }}/images/{{ $page->image }}" alt="image" width="500"
+                    <img src="{{ URL::to('/') }}/images/{{ $page->image }}" alt="No image chosen" width="500"
                         class="w-full max-w-6xl">
                 </div>
             </div>

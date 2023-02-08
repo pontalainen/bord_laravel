@@ -62,37 +62,33 @@
                         class="flex flex-row justify-between bg-white py-14 px-14 mt-4 w-11/12 shadow-lg rounded-b-xl transition-all h-4/6 min-h-full content-el">
 
                         {{-- Content input --}}
-                        {{-- <div class="w-3xl h-max flex flex-col p-2 none"> --}}
-                            <textarea name="content" placeholder="Content..." contenteditable="true" type="text"
-                                class="h-full w-full flex flex-col px-2 none w-3xl none bg-white rounded-lg text-xl outline-none border mx-4 drop-shadow-xl resize-none"></textarea>
+                        <textarea name="content" placeholder="Content..." contenteditable="true" type="text"
+                            class="h-full w-full flex flex-col px-2 none w-3xl none bg-white rounded-lg text-xl outline-none border mx-4 drop-shadow-xl resize-none"></textarea>
 
 
 
-                            {{-- Image preview --}}
-                            {{-- <div class="w-max flex justify-end"> --}}
-                                <img id="preview" alt="Select an image to preview it here"
-                                    class=" w-max max-h-96 max-w-full">
-                                {{--
-                            </div> --}}
-                        </div>
+                        {{-- Image preview --}}
+                        <img id="preview" alt="Select an image to preview it here" class=" w-max max-h-96 max-w-full">
+
                     </div>
+                </div>
 
-                    {{-- Image selector --}}
-                    <div class="bg-grey-lighter py-10 flex flex-row justify-between items-center w-11/12 mx-auto">
-                        <label
-                            class="w-44 flex flex-col items-center py-3 bg-white rounded-lg shadow-lg tracking-wide uppercase border cursor-pointer my-4">
-                            <span class="text-base leading-6 h-6 text-center items-center table-cell">
-                                Select an image
-                            </span>
-                            <input type="file" name="image" class="hidden">
-                        </label>
+                {{-- Image selector --}}
+                <div class="bg-grey-lighter py-10 flex flex-row justify-between items-center w-11/12 mx-auto">
+                    <label
+                        class="w-44 flex flex-col items-center py-3 bg-white rounded-lg shadow-lg tracking-wide uppercase border cursor-pointer my-4">
+                        <span class="text-base leading-6 h-6 text-center items-center table-cell">
+                            Select an image
+                        </span>
+                        <input type="file" name="image" class="hidden">
+                    </label>
 
-                        {{-- Submit button --}}
-                        <button type="submit"
-                            class="primary-btn uppercase mt-15 bg-gray-500 text-gray-900 text-lg font-extrabold py-4 px-8 leading-none h-16 transition-all hover:bg-gray-400">
-                            Submit page
-                        </button>
-                    </div>
+                    {{-- Submit button --}}
+                    <button type="submit"
+                        class="primary-btn uppercase mt-15 bg-gray-500 text-gray-900 text-lg font-extrabold py-4 px-8 leading-none h-16 transition-all hover:bg-gray-400">
+                        Submit page
+                    </button>
+                </div>
 
         </form>
         </div>
