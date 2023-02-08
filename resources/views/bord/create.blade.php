@@ -65,8 +65,6 @@
                         <textarea name="content" placeholder="Content..." contenteditable="true" type="text"
                             class="h-full w-full flex flex-col px-2 none w-3xl none bg-white rounded-lg text-xl outline-none border mx-4 drop-shadow-xl resize-none"></textarea>
 
-
-
                         {{-- Image preview --}}
                         <img id="preview" alt="Select an image to preview it here" class=" w-max max-h-96 max-w-full">
 
