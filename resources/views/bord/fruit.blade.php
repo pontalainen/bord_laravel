@@ -28,7 +28,7 @@
   <body>
     <header class="header">
       <h1>Fruit</h1>
-      <button class="scanModeBtn">Touch: On</button>
+      <button class="scanModeBtn">Touch: Manual</button>
       @if (Auth::user()->is_admin === "true")
       <a class="airBtn" href="{{ route('bord.index') }}">Go back</a>
       @else
@@ -143,23 +143,6 @@
               </g>
             </svg>
           </div>
-
-          <!--<div class="contient one">
-            <ul>
-              <li>Energi Innehåll (kcal/100g)</li>
-              <li>CO<under>2</under> 0-1 kg CO<under>2</under>e/kg</li>
-              <li>CO<under>2</under> 1-40 kg CO<under>2</under>e/kg</li>
-            </ul>
-          </div>
-
-          <div class="contient two">
-            <ul>
-              <li>Energi Innehåll (kcal/100g)</li>
-              <li>CO<under>2</under> 0-1 kg CO<under>2</under>e/kg</li>
-              <li>CO<under>2</under> 1-40 kg CO<under>2</under>e/kg</li>
-            </ul>
-          </div>
-        </div>-->
 
       </div>
 
