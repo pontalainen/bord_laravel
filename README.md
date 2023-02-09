@@ -103,7 +103,7 @@ Firstly, make sure to restart your CLI for the composer and php paths to load co
 -   Make sure the DB_CONNECTION variable in the above mentioned file is set equal to "sqlite"
 -   Create the file "database.sqlite" inside the database directory
 
-#### Run more commans
+#### Run more commands
 
 -   php artisan migrate
 -   php artisan serve (this is the command used to spin up the project on localhost:8000)
