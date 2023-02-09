@@ -197,6 +197,11 @@ async function getNfcId(){
                 break;
 
         }
+        delay(1000).then();
     }
 }
 getNfcId();
+
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
