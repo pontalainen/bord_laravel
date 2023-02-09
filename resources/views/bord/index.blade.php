@@ -10,9 +10,22 @@
             Learn OL
         </title>
 
+        <style>
+            #scanButton {
+                display: none;
+
+                border-radius: 0.15em;
+                padding: 8 16;
+                background-color: #77b5fe;
+                color: #000;
+                font-size: 1.25rem;
+                font-weight: 400;
+            }
+        </style>
+
         <script>
             var id = [];
-                var airCard = [];
+            var airCard = [];
         </script>
     </head>
 
@@ -25,6 +38,9 @@
                         <b>{{ Auth::user()->name }}</b>
                     </div>
                 </h1>
+
+                <button id="scanButton">Press</button>
+
                 <hr class="border border-1 border-gray-300 mt-10" id="login-hr">
             </div>
 

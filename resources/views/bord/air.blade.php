@@ -15,6 +15,15 @@
         <style>
             #scanButton {
                 display: none;
+
+                border-radius: 0.15em;
+                padding: 8 16;
+                background-color: #77b5fe;
+                color: #000;
+                font-size: 1.25rem;
+                font-weight: 400;
+                margin-top: -2rem;
+                margin-bottom: 0.5rem;
             }
         </style>
 
@@ -66,7 +75,7 @@
 
             <hr class="border border-1 border-gray-300 my-10 w-4/5 mx-auto">
 
-            <button id="scanButton">scan</button>
+            <button id="scanButton">Press</button>
 
         </div>
 
