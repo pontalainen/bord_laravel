@@ -72,11 +72,11 @@ async function getNfcId(){
 
         if(cardId !== oldCardId)
         {
-
-            if(window.card.findIndex((element) => element === cardId)){
+            if(window.card.find((element) => element === cardId)){
                 let indexId = window.card.findIndex((element) => element === cardId);
                 loadPage(window.paths[indexId]);
             }
+
         }
 
         oldCardId = cardId;
