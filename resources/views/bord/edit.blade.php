@@ -64,7 +64,7 @@
 
                 <div class="flex flex-row justify-between w-full rounded-b-xl h-3/6" id="input-wrapper">
                     <div
-                        class="flex flex-row justify-between bg-white py-14 px-14 mt-4 w-11/12 shadow-lg rounded-b-xl transition-all h-4/6 min-h-full content-el">
+                        class="flex flex-row justify-around bg-white py-14 px-14 mt-4 w-11/12 shadow-lg rounded-b-xl transition-all h-4/6 min-h-full content-el">
 
                         {{-- Content input --}}
                         <textarea name="content" placeholder="Content..." contenteditable="true" type="text"
@@ -78,7 +78,7 @@
                         </div>
 
                         {{-- Stored image --}}
-                        <div id="img-div" class="w-7/12 flex justify-end">
+                        <div id="img-div" class="flex justify-end">
                             <img src="{{ URL::to('/') }}/images/{{ $page->image }}" alt="image"
                                 class=" w-max max-h-96 max-w-full">
                         </div>

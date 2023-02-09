@@ -55,10 +55,10 @@ img {
     object-fit: contain;
 }
 
-#preview,
+/* #preview,
 .hej {
     width: 100%;
-}
+} */
 
 .h-20 {
     height: 3rem;
@@ -67,4 +67,13 @@ img {
 textarea {
     resize: none;
     max-width: 50%;
+}
+
+#img-div {
+    width: fit-content;
+    max-width: 58%;
+}
+
+#img-div > img {
+    margin: 0 auto;
 }

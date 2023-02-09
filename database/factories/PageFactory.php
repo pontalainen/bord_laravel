@@ -40,6 +40,7 @@ class PageFactory extends Factory
                 $this->faker->numberBetween(0, 9) .
                 $this->faker->randomLetter(),
             'user_id' => 1,
+            'is_md' => false,
         ];
     }
 }
