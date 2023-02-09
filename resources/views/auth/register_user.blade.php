@@ -35,7 +35,7 @@
             <div class="mt-4 text">
                 <x-label for="username" :value="__('Username')" />
 
-                <x-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')"
+                <x-input id="username" class="block mt-1 w-full text-color" type="text" name="username" :value="old('username')"
                     required />
             </div>
 
@@ -43,7 +43,7 @@
             <div class="mt-4 text">
                 <x-label for="password" :value="__('Password')" />
 
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required
+                <x-input id="password" class="block mt-1 w-full text-color" type="password" name="password" required
                     autocomplete="new-password" />
             </div>
 
@@ -51,7 +51,7 @@
             <div class="mt-4 text">
                 <x-label for="password_confirmation" :value="__('Confirm Password')" />
 
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password"
+                <x-input id="password_confirmation" class="block mt-1 w-full text-color" type="password"
                     name="password_confirmation" required />
             </div>
 
