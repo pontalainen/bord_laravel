@@ -67,8 +67,9 @@ async function getNfcId(){
     
     while(true){
         cardId = await cardIdNfc("none");
-        
-        setTimeout(async function() { 
+
+        delay(1000).then();
+
         switch (cardId){
             case window.card[0]:
                 loadPage(window.paths[0]);
@@ -198,7 +199,11 @@ async function getNfcId(){
                 break;
 
         }
-        }, 1000 );
+        
     }
 }
 getNfcId();
+
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
