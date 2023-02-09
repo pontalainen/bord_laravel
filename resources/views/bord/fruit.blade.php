@@ -21,7 +21,8 @@
       var card = [];
     </script>
 
-    <!--<link rel="manifest"  href="http://localhost:5173/manifest.json">-->
+    <link rel="manifest" href="manifest.json" />
+
 
   </head>
 
@@ -183,12 +184,11 @@
     <script type="module" src="{{ asset('js/fruit_change_side.js') }}"></script>
 
     <script>
-      // if ("serviceWorker" in navigator) {
-        // window.addEventListener("load", () => {
-          // navigator.serviceWorker &&
-            // navigator.serviceWorker.register("{{ asset('js/sw.js') }}");
-        // });
-      // }
+      if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('sw.js')
+           .then(function() { console.log('Service Worker Registered'); });
+}
     </script>
   </body>
 
