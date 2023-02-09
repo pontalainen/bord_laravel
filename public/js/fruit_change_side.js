@@ -66,7 +66,7 @@ async function getNfcId(){
     let cardId;
     
     while(true){
-        cardId = await cardIdNfc("none");
+        delay(1000).then(async () => cardId = await cardIdNfc("none"));
 
         switch (cardId){
             case window.card[0]:
@@ -197,7 +197,6 @@ async function getNfcId(){
                 break;
 
         }
-        delay(1000).then();
     }
 }
 getNfcId();
