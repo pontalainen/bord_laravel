@@ -54,7 +54,7 @@ body {
 #layout-fruit .graph {
     margin-top: 2.5rem;
     grid-area: center;
-    width: 33vw;
+    
     display: grid;
     justify-self: center;
     grid-template-areas: "circle circle" "info info";
@@ -70,7 +70,7 @@ body {
     grid-area: circle;
     justify-self: center;
     margin-top: -8rem;
-    margin-left: -2.5rem;
+    /*margin-left: -2.5rem;*/
     display: flex;
     justify-content: center;
     width: 60%;
@@ -299,13 +299,14 @@ iframe {
 button.changeSideBtnLeft,
 iframe.left {
     grid-area: left;
-    margin-left: -1rem;
+    width: 150%;
 }
 
 button.changeSideBtnRight,
 iframe.right {
     grid-area: right;
-    margin-left: 1rem;
+    width: 150%;
+    margin-left: -8rem;
 }
 
 button.changeSideBtnLeft,
@@ -345,6 +346,7 @@ button.changeSideBtnRight {
     background: #203354;
     color: white;
     font-size: 1.2rem;
+    line-height: 1rem;
 }
 
 .scanModeBtn {
