@@ -68,7 +68,8 @@
 
 
                         {{-- Image preview --}}
-                        <img id="preview" alt="Select an image to preview it here" class=" w-max max-h-96 max-w-full">
+                        <img id="preview" alt="Select an image to preview it here"
+                            class=" w-max max-h-96 max-w-full mx-auto">
 
                     </div>
                 </div>
