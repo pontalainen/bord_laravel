@@ -69,8 +69,6 @@ async function getNfcId(){
     while(true){
         cardId = await cardIdNfc("none");
 
-        oldCardId = cardID;
-
         if(cardId !== oldCardId)
         {
             switch (cardId){
@@ -203,6 +201,8 @@ async function getNfcId(){
 
             }
         }
+
+        oldCardId = cardID;
         
     }
 }
