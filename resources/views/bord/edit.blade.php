@@ -68,16 +68,19 @@
 
                         {{-- Content input --}}
                         <textarea name="content" placeholder="Content..." contenteditable="true" type="text"
-                            class="h-full w-full flex flex-col px-2 none w-3xl none bg-white rounded-lg text-xl outline-none border mx-4 drop-shadow-xl resize-none"></textarea>
+                            class="h-full w-full flex flex-col px-2 none w-3xl none bg-white rounded-lg text-xl outline-none border mx-4 drop-shadow-xl resize-none"
+                            contenteditable="true">{{ $page->content }}</textarea>
 
                         {{-- Image preview --}}
-                        <img id="preview" alt="Select an image to preview it here" class=" w-max max-h-96 max-w-full">
+                        <div class="hidden" id="preview-el">
+                            <img id="preview" alt="Select an image to preview it here"
+                                class=" w-max max-h-96 max-w-full">
+                        </div>
 
                         {{-- Stored image --}}
-                        <div class="w-max max-h-96 max-w-full" id="img-div">
-                            <img src="{{ URL::to('/') }}/images/
-                            {{-- {{$page->image }} --}}
-                            " alt="image" width="500" class="w-max max-h-96 max-w-full">
+                        <div id="img-div" class="w-7/12 flex justify-end">
+                            <img src="{{ URL::to('/') }}/images/{{ $page->image }}" alt="image"
+                                class=" w-max max-h-96 max-w-full">
                         </div>
                     </div>
                 </div>
@@ -132,7 +135,7 @@
         </div>
 
         @endif
-        <script src="{{ asset('js/create.js') }}"></script>
+        <script src="{{ asset('js/edit.js') }}"></script>
     </body>
 
 </html>

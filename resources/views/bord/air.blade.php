@@ -75,8 +75,11 @@
                 class="flex flex-row justify-between bg-white py-14 px-24 mt-4 w-11/12 shadow-lg rounded-b-xl transition-all h-4/6 content-el">
                 <div class="w-max max-w-3xl h-max flex flex-col p-2 content">
                     <p>
-                        {!! $content = $page->content !!}
-                    </p>
+                        @if ($page->is_md == true)
+                        {!! Str::markdown($page->content) !!}
+                        @else
+                        {{ $page->content }}
+                        @endif
                 </div>
 
                 <div class="w-7/12 flex justify-end">

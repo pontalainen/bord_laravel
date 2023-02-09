@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id()->autoIncrement();
 
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('is_md');
             $table->string('name');
             $table->string('content');
             $table->string('image')->nullable();

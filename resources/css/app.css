@@ -83,7 +83,7 @@
 .primary-btn {
     border-radius: 0.15em;
     padding: 8 16;
-    background-color: #77B5FE;
+    background-color: #77b5fe;
     color: #000;
 }
 
@@ -117,7 +117,7 @@ h1 {
     border-radius: 0.15em;
     margin: auto;
     display: grid;
-    background-color: #77B5FE;
+    background-color: #77b5fe;
     color: #000;
 }
 
@@ -130,26 +130,35 @@ b {
 }
 
 #login-hr {
-    border-color: #77B5FE;
+    border-color: #77b5fe;
 }
-
 
 .text-color {
     color: #000;
 }
 
 .login-bn {
-    background-color: #77B5FE;
+    background-color: #77b5fe;
 }
 
 form {
-display: grid;
-justify-content: space-evenly;
+    display: grid;
+    justify-content: space-evenly;
 }
 
-input.secondary_card, input.primary_card{
+input.secondary_card,
+input.primary_card {
     padding-bottom: 1.5rem;
     font-size: 2rem;
     margin-bottom: 1rem;
     border-radius: 0.2rem;
+}
+
+img {
+    width: 100px;
+    text-align: center;
+    /* display: flex; */
+    justify-content: space-evenly;
+    align-items: center;
+    object-fit: contain;
 }
