@@ -13,8 +13,10 @@
     <body class="w-full h-full bg-gray-100">
 
         @if (Auth::user()->is_admin === "true")
-        <form action="{{ route('bord.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('bord.update', $page->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PATCH')
+
             <div class="w-4/5 mx-auto">
                 <div class="flex text-center py-5 justify-center">
 
@@ -57,7 +59,10 @@
                 {{-- Markdown checkbox --}}
                 <div class="flex flex-row my-5 w-11/12 mx-auto">
                     <input type="checkbox" id="ckbx" name="checkbox"
-                        class="bg-white block rounded-lg h-10 w-10 outline-none border-none mx-4 my-0 shadow-lg drop-shadow-xl">
+                        class="bg-white block rounded-lg h-10 w-10 outline-none border-none mx-4 my-0 shadow-lg drop-shadow-xl"
+                        @if ($page->is_md == true)
+                    checked
+                    @endif>
                     <label class="text-center leading-6 h-6 text-xl items-center text-gray-200 my-auto ljus"
                         for="md">Markdown content</label>
                 </div>
@@ -74,7 +79,7 @@
                         {{-- Image preview --}}
                         <div class="hidden" id="preview-el">
                             <img id="preview" alt="Select an image to preview it here"
-                                class=" w-max max-h-96 max-w-full">
+                                class=" w-max max-h-96 max-w-full mx-auto">
                         </div>
 
                         {{-- Stored image --}}
@@ -98,7 +103,7 @@
                     {{-- Submit button --}}
                     <button type="submit"
                         class="primary-btn uppercase mt-15 bg-gray-500 text-gray-900 text-lg font-extrabold py-4 px-8 leading-none h-16 transition-all hover:bg-gray-400">
-                        Submit page
+                        Save changes
                     </button>
                 </div>
 
