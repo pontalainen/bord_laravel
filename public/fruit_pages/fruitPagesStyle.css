@@ -11,6 +11,95 @@
     );
 }
 
+
+.container .contient {
+    margin-top: -4rem;
+    display: flex;
+    flex-direction: column;
+    color:white;
+}
+
+.container.left .contient {
+    grid-area: info;
+    justify-self: center;
+    width: max-content;
+}
+
+.container.left .contient .main-text::after,
+.container.left .contient .second-text::after {
+    right: -9.5vw;
+    transform: rotate(45deg);
+}
+
+.container.right .contient {
+    grid-area: info;
+    justify-self: center;
+    width: max-content;
+    margin-right: 4rem;
+}
+
+.container.right .contient ul {
+    justify-items: center;
+    direction: ltr;
+    transform: translateX(32.5%);
+}
+
+.container.right .contient .main-text::after,
+.container.right .contient .second-text::after {
+    left: -9.5vw;
+    transform: rotate(-45deg);
+}
+
+.container ul {
+    flex: 0 0 10%;
+    width: max-content;
+}
+
+.container ul li {
+    color: white;
+    font-size: 0.5rem;
+    padding-bottom: 1em;
+    opacity: 0;
+    animation: fadein 3s forwards linear;
+}
+
+.container .info ul li {
+    font-size: 0.75rem;
+    padding-bottom: 0;
+    width: max-content;
+}
+
+under {
+    font-size: 0.75em;
+}
+
+.container .contient ul li:nth-of-type(1) {
+    animation-delay: 6s;
+    list-style-image: url("../images/fruit/blixt.svg");
+}
+
+.container .contient ul li:nth-of-type(2) {
+    animation-delay: 8s;
+    list-style-image: url("../images/fruit/truck.svg");
+}
+
+.container .contient ul li:nth-of-type(3) {
+    animation-delay: 10s;
+    list-style-image: url("../images/fruit/factory.svg");
+}
+
+.container .contient ul li {
+    list-style-image: none;
+    font-size: 0.75rem;
+}
+
+.container .info {
+    margin-top: 5rem;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+}
+
 .container.left {
     font-family: Hemi-head;
     overflow: visible;
@@ -25,12 +114,12 @@
 .container.left .circles {
     margin-left: 2rem;
 }
-.container.left ul {
+.container.left .contient ul {
     justify-items: center;
     margin-top: 1.5rem;
     margin-left: 1.5rem;
     direction: rtl;
-    transform: translateX(-20%);
+    transform: translateX(-30%);
 }
 .container.left .info {
     direction: rtl;
@@ -41,15 +130,14 @@
     align-items: center;
 }
 .container.left .info ul {
-    border-radius: 1rem 1rem 1rem 1rem;
-    padding: 4vh 3vh 0 6vh;
-    padding-right: 1.5rem;
+    border-radius: 1rem;
+    padding: 0.1vh 20vh;
     margin-top: 1rem;
     width: 9rem;
-    margin-left: -1rem;
+    margin-left: -2.5rem;
 }
-.container.left ul li:first-child {
-    margin-top: -1rem;
+.container.left .circles ul li:first-child {
+    margin-top: 1rem;
 }
 @keyframes slide-in-left {
     0% {
@@ -76,27 +164,28 @@
 .container.right .info {
     grid-area: graph;
     direction: ltr;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -1rem;
-    height: 50vh;
 }
 .container.right .info ul {
-    border-radius: 1rem 1rem 1rem 1rem;
-    padding: 4vh 6vh 0 3vh;
-    padding-left: 2rem;
-    width: 9rem;
+    border-radius: 1rem;
+    padding: 0.1vh 20vh;
     margin-top: 1rem;
+    width: 9rem;
+    height: 8.1vh;
 }
 .container.right ul {
     justify-items: center;
     margin-top: 1.5rem;
     direction: ltr;
 }
-.container.right ul li:first-child {
-    margin-top: -1rem;
+
+.container.right .circles ul li:first-child{
+    margin-top: -0.5rem;
 }
+
 @keyframes slide-in {
     0% {
         transform: translateX(130%);
@@ -177,20 +266,20 @@ under {
     text-align: center;
 }
 .circles li:nth-of-type(1) {
-    animation-delay: 15s;
+    animation-delay: 5s;
 }
 .circles li:nth-of-type(2) {
-    animation-delay: 16s;
+    animation-delay: 6s;
 }
 .circles li:nth-of-type(3) {
     background: var(--maincircle-bg-color);
-    animation-delay: 17s;
+    animation-delay: 7s;
 }
 .circles li:nth-of-type(4) {
-    animation-delay: 18s;
+    animation-delay: 8s;
 }
 .circles li:nth-of-type(5) {
-    animation-delay: 19s;
+    animation-delay: 9s;
 }
 .text {
     color: white;
@@ -198,7 +287,7 @@ under {
     font-size: 0.65rem;
     opacity: 0;
     animation: fadein 3s forwards linear;
-    animation-delay: 14s;
+    animation-delay: 4s;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -226,14 +315,13 @@ div.second-info {
 .second-text {
     background: var(--bubble-bg-color);
     height: fit-content;
-    max-width: 75vw;
+    max-width: 55vw;
     border-radius: 1vh;
     position: relative;
     padding: 0;
     margin-top: -1.5rem;
-    margin-left: 5.5rem;
+    margin-left: 7.5rem;
     animation: fadein 5s forwards;
-    z-index: 1;
 }
 .main-text::after,
 .second-text::after {
@@ -268,6 +356,12 @@ div.second-info {
         opacity: 1;
     }
 }
+
+
+
+
+
+
 
 
 @font-face {
