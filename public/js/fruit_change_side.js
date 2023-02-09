@@ -202,7 +202,7 @@ async function getNfcId(){
             }
         }
 
-        oldCardId = cardID;
+        oldCardId = cardId;
         
     }
 }
