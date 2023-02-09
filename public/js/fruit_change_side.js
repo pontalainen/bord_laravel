@@ -67,11 +67,18 @@ async function getNfcId(){
     let oldCardId;
     
     while(true){
+
         cardId = await cardIdNfc("none");
 
         if(cardId !== oldCardId)
         {
-            switch (cardId){
+
+            if(window.card.findIndex((element) => element === cardId)){
+                let indexId = window.card.findIndex((element) => element === cardId);
+                loadPage(window.paths[indexId]);
+    
+            }
+            /*switch (cardId){
                 case window.card[0]:
                     loadPage(window.paths[0]);
                     break;
@@ -199,7 +206,7 @@ async function getNfcId(){
                     loadPage(window.paths[41]);
                     break;
 
-            }
+            }*/
         }
 
         oldCardId = cardId;
