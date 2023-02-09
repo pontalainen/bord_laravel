@@ -6,6 +6,7 @@ use App\Http\Requests\PageFormRequest;
 use App\Models\Page;
 use App\Models\Fruit;
 use Illuminate\Http\Request;
+use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -70,9 +71,10 @@ class PagesController extends Controller
 
         $pageData = [
             'user_id' => $request->user_id,
+            'is_md' => $request->checkbox === "on" ? true : false,
             'group_id' => $request->user_id,
             'name' => $request->name,
-            'content' => $request->checkbox === "on" ? Str::markdown($request->content) : $request->content,
+            'content' => $request->content,
             'image' => $request->image !== null ? $this->storeImage($request) : null
         ];
 
