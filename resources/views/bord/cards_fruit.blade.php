@@ -69,7 +69,8 @@
             @foreach($fruits as $fruit)
             <div class="m-auto pt-4 mb-40">
 
-                <form action="{{ route('bord.update_fruit', $fruit->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('bord.update_fruit', $fruit->id) }}" method="POST" enctype="multipart/form-data"
+                    class="flex flex-col">
                     @csrf
                     @method('PATCH')
 

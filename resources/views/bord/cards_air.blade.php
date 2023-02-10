@@ -70,7 +70,8 @@
             <div class="m-auto pt-4 mb-40">
 
                 {{-- Errors --}}
-                <form action="{{ route('bord.update_air', $page->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('bord.update_air', $page->id) }}" method="POST" enctype="multipart/form-data"
+                    class="flex flex-col">
                     @csrf
                     @method('PATCH')
 
