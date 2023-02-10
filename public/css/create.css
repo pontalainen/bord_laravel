@@ -67,6 +67,7 @@ img {
 textarea {
     resize: none;
     max-width: 50%;
+    font-size: 1rem !important;
 }
 
 #img-div {
