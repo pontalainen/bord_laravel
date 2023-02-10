@@ -11,6 +11,15 @@
         <style>
             #scanButton {
                 display: none;
+
+                border-radius: 0.15em;
+                padding: 8 16;
+                background-color: #77b5fe;
+                color: #000;
+                font-size: 1.25rem;
+                font-weight: 400;
+                margin-top: -2rem;
+                margin-bottom: 0.5rem;
             }
         </style>
     </head>
@@ -45,7 +54,7 @@
                     Go Back
                 </a>
 
-                <button id="scanButton">scan</button>
+                <button id="scanButton">Press</button>
             </div>
 
             <div class="py-10 px-5 absolute top-2 right-2">
@@ -54,7 +63,7 @@
                     Switch to Air
                 </a>
 
-                <button id="scanButton">scan</button>
+                <button id="scanButton">Press</button>
             </div>
 
             @foreach($fruits as $fruit)

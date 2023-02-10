@@ -35,7 +35,7 @@
       <a class="airBtn" href="{{ route('bord.index') }}">Go to Air</a>
       @endif
 
-      <button id="scanButton">scan</button>
+      <button id="scanButton">Press</button>
 
     </header>
 

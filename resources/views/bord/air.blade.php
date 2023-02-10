@@ -15,6 +15,15 @@
         <style>
             #scanButton {
                 display: none;
+
+                border-radius: 0.15em;
+                padding: 8 16;
+                background-color: #77b5fe;
+                color: #000;
+                font-size: 1.25rem;
+                font-weight: 400;
+                margin-top: -2rem;
+                margin-bottom: 0.5rem;
             }
         </style>
 
@@ -66,14 +75,14 @@
 
             <hr class="border border-1 border-gray-300 my-10 w-4/5 mx-auto">
 
-            <button id="scanButton">scan</button>
+            <button id="scanButton">Press</button>
 
         </div>
 
         <div class="h-full justify-center">
             <div
                 class="flex flex-row justify-between bg-white py-14 px-24 mt-4 w-11/12 shadow-lg rounded-b-xl transition-all h-4/6 content-el">
-                <div class="w-1/2 max-w-1/2 h-max flex flex-col p-2 content">
+                <div class="w-1/2 max-w-1/2 h-max flex flex-col p-2 content self-center">
                     <p>
                         @if ($page->is_md == true)
                         {!! Str::markdown($page->content) !!}
@@ -84,8 +93,7 @@
                 </div>
 
                 <div class="w-1/2 flex justify-end">
-                    <img src="{{ URL::to('/') }}/images/{{ $page->image }}" alt="No image chosen" width="500"
-                        class="w-full">
+                    <img src="{{ URL::to('/') }}/images/{{ $page->image }}" alt="No image chosen" class="w-full">
                 </div>
             </div>
         </div>

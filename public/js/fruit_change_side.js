@@ -17,8 +17,10 @@ window.onload = (event) => {
 function changeUrl(name, side) {
     const searchParams = new URLSearchParams(window.location.search);
     searchParams.set(name, side);
+
     const newRelativePathQuery =
         window.location.pathname + "?" + searchParams.toString();
+        
     history.pushState(null, "", newRelativePathQuery);
 }
 
@@ -26,7 +28,6 @@ scanModeBtn.addEventListener("click", function () {
     if (touch) {
         scanModeBtn.innerHTML = "Touch: Auto";
         touch = false;
-        console.log(touch);
     } else if (touch === false) {
         scanModeBtn.innerHTML = "Touch: Manual";
         touch = true;
@@ -38,13 +39,11 @@ function loadPage(page) {
         buttonLeft.addEventListener("click", function () {
             changeUrl("side", "left");
             sideToLoadOn = "left";
-            /*sideBtn.innerHTML = "Vänster sidan";*/
         });
 
         buttonRight.addEventListener("click", function () {
             changeUrl("side", "right");
             sideToLoadOn = "right";
-            /*sideBtn.innerHTML = "Höger sidan";*/
         });
     } else {
         if (sideToLoadOn === "left") {
