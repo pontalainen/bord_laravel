@@ -163,7 +163,7 @@ form {
 }
 
 
-input.primary_card, input.secondary_card{
+.primary_card, .secondary_card{
     font-size: 2rem;
     border-radius: 0.1em;
     width: max-content;
