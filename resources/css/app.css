@@ -121,6 +121,11 @@ h1 {
 
 .knapp {
     border-radius: 0.15em;
+    color: #000;
+    background-color: #77b5fe;
+    padding: 8 16;
+    display: block;
+    margin: 0 auto;
 }
 
 div#content-el {
@@ -150,4 +155,18 @@ img {
     justify-content: space-evenly;
     align-items: center;
     object-fit: contain;
+}
+
+form {
+    margin: auto;
+    display: grid;
+}
+
+
+input.primary_card, input.secondary_card{
+    font-size: 2rem;
+    border-radius: 0.1em;
+    width: max-content;
+    margin: 0 auto 0 auto;
+    margin-bottom: 0.5em;
 }
