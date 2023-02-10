@@ -81,9 +81,9 @@
 
         <div class="h-full justify-center">
             <div
-                class="flex flex-row justify-between bg-white py-14 px-24 mt-4 w-11/12 shadow-lg rounded-b-xl transition-all h-4/6 content-el">
-                <div class="w-1/2 max-w-1/2 h-max flex flex-col p-2 content self-center">
-                    <p>
+                class="flex flex-row justify-between bg-white/[.95] py-14 px-24 mt-4 w-11/12 shadow-lg rounded-b-xl transition-all h-4/6 content-el">
+                <div class="w-1/2 max-w-1/2 h-max flex flex-col p-2 content self-center mr-4">
+                    <p class="">
                         @if ($page->is_md == true)
                         {!! Str::markdown($page->content) !!}
                         @else
@@ -93,7 +93,7 @@
                 </div>
 
                 <div class="w-1/2 flex justify-end">
-                    <img src="{{ URL::to('/') }}/images/{{ $page->image }}" alt="No image chosen" class="w-full">
+                    <img src="{{ URL::to('/') }}/images/{{ $page->image }}" alt="No image chosen" class="w-full ml-4">
                 </div>
             </div>
         </div>
